@@ -1,30 +1,27 @@
-from rest_framework import generics, status
-from rest_framework.response import Response
-from .models import MainModel
-from .serializers import MainModelSerializer
+from rest_framework import viewsets
+from rest_framework.pagination import PageNumberPagination
+from django_filters.rest_framework import DjangoFilterBackend
+from .models import MainModel, Category
+from .serializers import MainModelSerializer, CategorySerializer
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 20
+    page_size_query_param = 'page_size'
+    max_page_size = 100
 
-class MainModelListCreateView(generics.ListCreateAPIView):
+class MainModelViewSet(viewsets.ModelViewSet):
     queryset = MainModel.objects.all()
     serializer_class = MainModelSerializer
+    pagination_class = StandardResultsSetPagination
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['categories']
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        # Дополнительная проверка уникальности friend_link
-        friend_link = serializer.validated_data.get('friend_link')
-        if MainModel.objects.filter(friend_link=friend_link).exists():
-            return Response(
-                {"friend_link": ["Запись с такой ссылкой уже существует"]},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        self.perform_create(serializer)
-        headers = self.get_success_headers(serializer.data)
-        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
-
-class MainModelDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = MainModel.objects.all()
-    serializer_class = MainModelSerializer
+    def get_queryset(self):
+        queryset = MainModel.objects.all()
+        category_id = self.request.query_params.get('category')
+        if category_id:
+            queryset = queryset.filter(categories__id=category_id)
+        return queryset.distinct()

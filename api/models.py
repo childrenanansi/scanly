@@ -23,13 +23,17 @@ class MainModel(models.Model):
     description = models.TextField(verbose_name="Описание")
     avatar = models.FileField(upload_to='avatars/', verbose_name="Аватарка")
     top_photo = models.FileField(upload_to='top_photos/', verbose_name="Фото верхнее")
+    link_ak = models.CharField(
+        max_length=500,
+        verbose_name="Ссылка на аккаунт",
+        unique=True, null=True, blank=True
+    )
     friend_link = models.CharField(
         max_length=500,
-        verbose_name="Ссылка на друзей",
-        unique=True
+        verbose_name="Ссылка на друзей", null=True, blank=True
     )
     is_paid = models.BooleanField(default=False, verbose_name="Платная/бесплатно")
-    categories = models.ManyToManyField(Category, verbose_name="Категория")
+    categories = models.ManyToManyField(Category, verbose_name="Категория", null=True, blank=True)
     is_requested = models.BooleanField(default=False, verbose_name="Просилась или нет")
 
     class Meta:

@@ -1,58 +1,45 @@
+# api/serializers.py
 from rest_framework import serializers
 from .models import MainModel, Category
-
+from .fields import Base64ImageField  # импортируем наше поле
 
 class CategorySerializer(serializers.ModelSerializer):
+    parent = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        allow_null=True,
+        required=False
+    )
     class Meta:
         model = Category
         fields = ['id', 'name', 'parent']
 
-
 class MainModelSerializer(serializers.ModelSerializer):
-    categories = CategorySerializer(many=True, read_only=True)
-    categories_ids = serializers.ListField(
-        child=serializers.IntegerField(),
-        write_only=True,
-        required=False
+    avatar = Base64ImageField(required=False, allow_null=True)
+    top_photo = Base64ImageField(required=False, allow_null=True)
+    categories = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        many=True
     )
 
     class Meta:
         model = MainModel
         fields = [
             'id', 'name', 'description', 'avatar', 'top_photo',
-            'friend_link', 'is_paid', 'categories', 'categories_ids', 'is_requested'
+            'link_ak', 'friend_link', 'is_paid', 'categories', 'is_requested'
         ]
-        extra_kwargs = {
-            'friend_link': {'validators': []}
-        }
 
-    def validate_friend_link(self, value):
-        """Кастомная валидация уникальности ссылки"""
-        if self.instance:  # Если это обновление существующей записи
-            if MainModel.objects.filter(friend_link=value).exclude(id=self.instance.id).exists():
-                raise serializers.ValidationError("Запись с такой ссылкой уже существует")
-        else:  # Если это создание новой записи
-            if MainModel.objects.filter(friend_link=value).exists():
-                raise serializers.ValidationError("Запись с такой ссылкой уже существует")
+    def validate_link_ak(self, value):
+        queryset = MainModel.objects.filter(link_ak=value)
+        if self.instance:
+            queryset = queryset.exclude(pk=self.instance.pk)
+        if queryset.exists():
+            raise serializers.ValidationError("Запись с таким link_ak уже существует.")
         return value
 
-    def create(self, validated_data):
-        categories_ids = validated_data.pop('categories_ids', [])
-        instance = MainModel.objects.create(**validated_data)
-
-        if categories_ids:
-            instance.categories.set(categories_ids)
-
-        return instance
-
-    def update(self, instance, validated_data):
-        categories_ids = validated_data.pop('categories_ids', None)
-
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-
-        if categories_ids is not None:
-            instance.categories.set(categories_ids)
-
-        return instance
+    def validate_friend_link(self, value):
+        queryset = MainModel.objects.filter(friend_link=value)
+        if self.instance:
+            queryset = queryset.exclude(pk=self.instance.pk)
+        if queryset.exists():
+            raise serializers.ValidationError("Запись с таким friend_link уже существует.")
+        return value

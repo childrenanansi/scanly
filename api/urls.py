@@ -1,7 +1,11 @@
-from django.urls import path
-from .views import MainModelListCreateView, MainModelDetailView
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
+from .views import *
+
+router = DefaultRouter()
+router.register(r'mainmodels', MainModelViewSet)
+router.register(r'categories', CategoryViewSet)
 
 urlpatterns = [
-    path('main-models/', MainModelListCreateView.as_view(), name='main-model-list-create'),
-    path('main-models/<int:pk>/', MainModelDetailView.as_view(), name='main-model-detail'),
+    path('', include(router.urls))
 ]
