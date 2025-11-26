@@ -28,10 +28,6 @@ class MainModel(models.Model):
         verbose_name="Ссылка на аккаунт",
         unique=True, null=True, blank=True
     )
-    friend_link = models.CharField(
-        max_length=500,
-        verbose_name="Ссылка на друзей", null=True, blank=True
-    )
     is_paid = models.BooleanField(default=False, verbose_name="Платная/бесплатно")
     categories = models.ManyToManyField(Category, verbose_name="Категория", null=True, blank=True)
     is_requested = models.BooleanField(default=False, verbose_name="Просилась или нет")
@@ -42,3 +38,15 @@ class MainModel(models.Model):
 
     def __str__(self):
         return self.name
+
+class FriendLink(models.Model):
+    main_model = models.ForeignKey(MainModel, related_name='friend_links', on_delete=models.CASCADE)
+    url = models.URLField(max_length=500, verbose_name="Ссылка на друга")
+
+    class Meta:
+        verbose_name = "Ссылка на друга"
+        verbose_name_plural = "Ссылки на друзей"
+        unique_together = ('url',)
+
+    def __str__(self):
+        return self.url

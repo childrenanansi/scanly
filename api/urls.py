@@ -5,6 +5,7 @@ from .views import *
 router = DefaultRouter()
 router.register(r'mainmodels', MainModelViewSet)
 router.register(r'categories', CategoryViewSet)
+router.register(r'friend-links', FriendLinkViewSet, basename='friendlink')
 
 urlpatterns = [
     path('', include(router.urls))
