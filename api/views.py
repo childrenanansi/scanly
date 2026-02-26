@@ -1,6 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
+from django.shortcuts import render
+from django.http import JsonResponse
 from .models import MainModel, Category, FriendLink
 from .serializers import MainModelSerializer, CategorySerializer, FriendLinkSerializer
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -43,3 +45,52 @@ class FriendLinkViewSet(viewsets.ReadOnlyModelViewSet):  # только чтен
         if main_model_id:
             queryset = queryset.filter(main_model_id=main_model_id)
         return queryset
+
+# Django views for frontend
+def home(request):
+    """
+    Главная страница сайта
+    """
+    categories = Category.objects.all()
+    featured_profiles = MainModel.objects.filter(is_paid=True)[:6]
+    recent_profiles = MainModel.objects.all().order_by('-id')[:6]
+    
+    context = {
+        'categories': categories,
+        'featured_profiles': featured_profiles,
+        'recent_profiles': recent_profiles,
+    }
+    return render(request, 'index.html', context)
+
+def api_categories(request):
+    """
+    API endpoint для получения категорий
+    """
+    categories = Category.objects.all()
+    data = []
+    for category in categories:
+        data.append({
+            'id': category.id,
+            'name': category.name,
+            'count': MainModel.objects.filter(categories=category).count()
+        })
+    return JsonResponse(data, safe=False)
+
+def api_profiles(request):
+    """
+    API endpoint для получения профилей
+    """
+    profiles = MainModel.objects.all()
+    data = []
+    for profile in profiles:
+        data.append({
+            'id': profile.id,
+            'name': profile.name,
+            'description': profile.description,
+            'avatar': profile.avatar.url if profile.avatar else None,
+            'top_photo': profile.top_photo.url if profile.top_photo else None,
+            'link_ak': profile.link_ak,
+            'is_paid': profile.is_paid,
+            'categories': [cat.name for cat in profile.categories.all()]
+        })
+    return JsonResponse(data, safe=False)

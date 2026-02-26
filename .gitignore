@@ -63,7 +63,6 @@ db.sqlite3-journal
 
 # Django specific
 /media/
-/staticfiles/
 /static_collected/
 
 # Environment specific

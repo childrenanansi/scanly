@@ -1,0 +1,493 @@
+{% extends 'base.html' %}
+
+{% block title %}SCANLY - Ваш персональный поиск моделей на основе ИИ{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container-fluid position-relative">
+            <div class="row align-items-center min-vh-75 py-5">
+                <div class="col-lg-4 order-2 order-lg-1">
+                    <div class="hero-info-card hero-card-left">
+                        <h4>Scanly - ваш персональный поиск моделей на основе ИИ</h4>
+                        <div class="card-icon mb-2"><i class="bi bi-send-fill"></i></div>
+                        <p class="mb-2">+20K Присоединяйтесь к подпискам! Более 20 тыс. активных пользователей</p>
+                        <button class="btn btn-details">Подробнее</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 order-1 order-lg-2 text-center">
+                    <h1 class="hero-title">
+                        <span class="hero-title-dark">STOP SEARCHING</span><br>
+                        <span class="hero-title-accent">START MATCHING</span>
+                    </h1>
+                    <div class="hero-illustration position-relative">
+                        <div class="hero-avatar-placeholder">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <div class="floating-avatars">
+                            <span class="fa fa-1"></span>
+                            <span class="fa fa-2"></span>
+                            <span class="fa fa-3"></span>
+                            <span class="fa fa-4"></span>
+                            <span class="fa fa-5"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-cta btn-lg mt-4">
+                        <i class="bi bi-play-fill me-2"></i>Get started for free
+                    </button>
+                </div>
+                
+                <div class="col-lg-4 order-3">
+                    <div class="hero-cards-right">
+                        <div class="hero-info-card hero-card-right mb-3">
+                            <h5>ПОПУЛЯРНЫЕ ЗАЯВКИ</h5>
+                            <p class="text-muted small mb-0">Контент заявок...</p>
+                        </div>
+                        <div class="hero-info-card hero-card-right">
+                            <h5>НОВОСТИ ПРОЕКТА</h5>
+                            <p class="text-muted small mb-0">Последние новости...</p>
+                        </div>
+                        <div class="social-icons d-flex flex-column gap-2 mt-3">
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-telegram"></i></a>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Accounts Section (макет: 3 карточки в первом ряду, 4 во втором) -->
+    <section class="popular-section popular-section-mockup py-5">
+        <div class="container-fluid">
+            <div class="section-header d-flex flex-wrap align-items-center justify-content-between mb-4">
+                <div>
+                    <h2 class="section-title">ПОПУЛЯРНЫЕ АККАУНТЫ</h2>
+                    <p class="section-subtitle">50 лучших аккаунтов OnlyFans в 2026 году</p>
+                </div>
+            </div>
+            
+            <div class="accounts-grid-mockup">
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Valeria</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@valeriacaba</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
+                                    <span><i class="bi bi-image"></i> 543</span>
+                                    <span><i class="bi bi-camera-video"></i> 543</span>
+                                </div>
+                                <div class="account-card-desc">Hi! I just turned 18 and decided to try OnlyFans...</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">cosplay</span>
+                                    <span class="tag">fitness (Gym Girl)</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Sophie</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@sophie_model</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 2.1m</span>
+                                    <span><i class="bi bi-image"></i> 892</span>
+                                    <span><i class="bi bi-camera-video"></i> 892</span>
+                                </div>
+                                <div class="account-card-desc">Fitness enthusiast and content creator...</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">BDSM</span>
+                                    <span class="tag">Creator (Gay)</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Emma</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@emma_star</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 890k</span>
+                                    <span><i class="bi bi-image"></i> 321</span>
+                                    <span><i class="bi bi-camera-video"></i> 321</span>
+                                </div>
+                                <div class="account-card-desc">Welcome to my page! Exclusive content...</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">lifestyle</span>
+                                    <span class="tag">fashion</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Luna</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@luna_moon</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 1.2m</span>
+                                    <span><i class="bi bi-image"></i> 456</span>
+                                    <span><i class="bi bi-camera-video"></i> 456</span>
+                                </div>
+                                <div class="account-card-desc">Art and creativity. Custom requests welcome!</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">art</span>
+                                    <span class="tag">cosplay</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Mia</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@mia_sweet</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 756k</span>
+                                    <span><i class="bi bi-image"></i> 234</span>
+                                    <span><i class="bi bi-camera-video"></i> 234</span>
+                                </div>
+                                <div class="account-card-desc">New here! Follow for daily updates...</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">new</span>
+                                    <span class="tag">lifestyle</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Aria</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@aria_queen</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 3.4m</span>
+                                    <span><i class="bi bi-image"></i> 1.2k</span>
+                                    <span><i class="bi bi-camera-video"></i> 1.2k</span>
+                                </div>
+                                <div class="account-card-desc">Top creator. Premium content only.</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">premium</span>
+                                    <span class="tag">exclusive</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="account-card account-card-mockup">
+                            <div class="account-card-img account-card-img-circle">
+                                <i class="bi bi-person-fill"></i>
+                                <div class="account-card-fav account-card-fav-heart"><i class="bi bi-heart"></i></div>
+                            </div>
+                            <div class="account-card-body">
+                                <div class="account-card-header">
+                                    <span class="account-card-name">Zoe</span>
+                                    <i class="bi bi-patch-check-fill verification-badge"></i>
+                                </div>
+                                <div class="account-card-handle">@zoe_fit</div>
+                                <div class="account-card-stats">
+                                    <span><i class="bi bi-heart-fill text-danger"></i> 567k</span>
+                                    <span><i class="bi bi-image"></i> 189</span>
+                                    <span><i class="bi bi-camera-video"></i> 189</span>
+                                </div>
+                                <div class="account-card-desc">Gym girl. Fitness tips and more!</div>
+                                <div class="account-card-tags">
+                                    <span class="tag">fitness</span>
+                                    <span class="tag">gym</span>
+                                </div>
+                                <button class="btn btn-view-profile"><i class="bi bi-plus-lg me-1"></i>Смотреть профиль</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Popular Accounts Section -->
+    <section class="popular-section py-5">
+        <div class="container-fluid">
+            <div class="section-header d-flex flex-wrap align-items-center justify-content-between mb-4">
+                <div>
+                    <h2 class="section-title">ПОПУЛЯРНЫЕ АККАУНТЫ</h2>
+                    <p class="section-subtitle">50 лучших аккаунтов OnlyFans в 2026 году</p>
+                </div>
+                <div class="carousel-nav d-flex gap-2">
+                    <button class="btn btn-nav prev-btn" aria-label="Назад"><i class="bi bi-chevron-left"></i></button>
+                    <button class="btn btn-nav next-btn" aria-label="Вперёд"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="accounts-slider">
+                <div class="accounts-slider-track">
+                    <div class="accounts-slider-slide">
+                        <div class="row g-4">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Valeria</div>
+                                        <div class="account-card-handle">@valeriacaba</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
+                                            <span><i class="bi bi-eye"></i> 543</span>
+                                        </div>
+                                        <div class="account-card-desc">Hi! I just turned 18 and decided to try OnlyFans...</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">cosplay</span>
+                                            <span class="tag">fitness (Gym Girl)</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Sophie</div>
+                                        <div class="account-card-handle">@sophie_model</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 2.1m</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 2.2k</span>
+                                            <span><i class="bi bi-eye"></i> 892</span>
+                                        </div>
+                                        <div class="account-card-desc">Fitness enthusiast and content creator...</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">BDSM</span>
+                                            <span class="tag">Creator (Gay)</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Emma</div>
+                                        <div class="account-card-handle">@emma_star</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 890k</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 980</span>
+                                            <span><i class="bi bi-eye"></i> 321</span>
+                                        </div>
+                                        <div class="account-card-desc">Welcome to my page! Exclusive content...</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">lifestyle</span>
+                                            <span class="tag">fashion</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Luna</div>
+                                        <div class="account-card-handle">@luna_moon</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 1.2m</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 1.1k</span>
+                                            <span><i class="bi bi-eye"></i> 456</span>
+                                        </div>
+                                        <div class="account-card-desc">Art and creativity. Custom requests welcome!</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">art</span>
+                                            <span class="tag">cosplay</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accounts-slider-slide">
+                        <div class="row g-4">
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Mia</div>
+                                        <div class="account-card-handle">@mia_sweet</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 756k</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 650</span>
+                                            <span><i class="bi bi-eye"></i> 234</span>
+                                        </div>
+                                        <div class="account-card-desc">New here! Follow for daily updates...</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">new</span>
+                                            <span class="tag">lifestyle</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Aria</div>
+                                        <div class="account-card-handle">@aria_queen</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 3.4m</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 4.5k</span>
+                                            <span><i class="bi bi-eye"></i> 1.2k</span>
+                                        </div>
+                                        <div class="account-card-desc">Top creator. Premium content only.</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">premium</span>
+                                            <span class="tag">exclusive</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Zoe</div>
+                                        <div class="account-card-handle">@zoe_fit</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 567k</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 420</span>
+                                            <span><i class="bi bi-eye"></i> 189</span>
+                                        </div>
+                                        <div class="account-card-desc">Gym girl. Fitness tips and more!</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">fitness</span>
+                                            <span class="tag">gym</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                <div class="account-card">
+                                    <div class="account-card-img">
+                                        <i class="bi bi-person-fill"></i>
+                                        <div class="account-card-fav"><i class="bi bi-plus"></i></div>
+                                    </div>
+                                    <div class="account-card-body">
+                                        <div class="account-card-name">Nina</div>
+                                        <div class="account-card-handle">@nina_style</div>
+                                        <div class="account-card-stats">
+                                            <span><i class="bi bi-heart-fill text-danger"></i> 1.1m</span>
+                                            <span><i class="bi bi-currency-dollar"></i> 1.2k</span>
+                                            <span><i class="bi bi-eye"></i> 678</span>
+                                        </div>
+                                        <div class="account-card-desc">Fashion & lifestyle content creator.</div>
+                                        <div class="account-card-tags">
+                                            <span class="tag">fashion</span>
+                                            <span class="tag">lifestyle</span>
+                                        </div>
+                                        <button class="btn btn-open-profile">Открыть профиль</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design System (optional, for reference) -->
+    <section class="design-system py-5 d-none d-md-block">
+        <div class="container">
+            <h3 class="mb-4">Цветовая палитра</h3>
+            <div class="d-flex flex-wrap gap-3 mb-5">
+                <div class="color-swatch color-swatch-dark" title="#24243C"></div>
+                <div class="color-swatch color-swatch-blue" title="#00AEEF"></div>
+                <div class="color-swatch color-swatch-pink" title="#F7588E"></div>
+                <div class="color-swatch color-swatch-purple" title="#BE8DFF"></div>
+            </div>
+            <h3 class="mb-3">Шрифтовая пара</h3>
+            <p class="font-unbounded">UNBOUNDED - Medium, Regular, Light</p>
+            <p class="font-mulish">Mulish - Medium, Regular, Light</p>
+        </div>
+    </section>
+{% endblock %}
