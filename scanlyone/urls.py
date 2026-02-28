@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from api.views import home, category_page, search_page, static_page
+from api.views import home, category_page, search_page, static_page, trending_accounts, best_accounts, free_accounts, new_accounts
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -41,6 +41,10 @@ urlpatterns = [
     path('category/<slug:category_alias>/', category_page, name='category_page'),
     path('category/', category_page, name='category_all'),
     path('search/', search_page, name='search_page'),
+    path('trending/', trending_accounts, name='trending_accounts'),
+    path('best/', best_accounts, name='best_accounts'),
+    path('free/', free_accounts, name='free_accounts'),
+    path('new/', new_accounts, name='new_accounts'),
     path('<slug:page_name>/', static_page, name='static_page'),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),

@@ -1066,6 +1066,160 @@ body::after {
     background: rgba(255, 255, 255, 0.2);
 }
 
+/* Accounts List Pages */
+.accounts-content {
+    min-height: 60vh;
+}
+
+.account-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.trending-badge, .new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--color-purple);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.trending-badge {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    animation: pulse 2s infinite;
+}
+
+.new-badge {
+    background: linear-gradient(135deg, #4ECDC4, #44A08D);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.image-premium {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+/* Quick Navigation */
+.quick-nav {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(190, 141, 255, 0.1);
+}
+
+.quick-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(190, 141, 255, 0.2);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    min-height: 100px;
+    justify-content: center;
+}
+
+.quick-nav-item:hover {
+    background: rgba(190, 141, 255, 0.1);
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(190, 141, 255, 0.2);
+}
+
+.quick-nav-item.active {
+    background: var(--color-purple);
+    color: #fff;
+    border-color: var(--color-purple);
+}
+
+.quick-nav-item i {
+    font-size: 1.5rem;
+}
+
+.quick-nav-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Load More Button */
+#loadMoreBtn {
+    background: var(--color-purple);
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+    background: var(--color-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(190, 141, 255, 0.3);
+}
+
+/* Page specific headers */
+.page-header.trending {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 142, 83, 0.05) 100%);
+}
+
+.page-header.best {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+}
+
+.page-header.free {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(68, 160, 141, 0.05) 100%);
+}
+
+.page-header.new {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(103, 58, 183, 0.05) 100%);
+}
+
+/* Responsive Design for Accounts Pages */
+@media (max-width: 768px) {
+    .trending-badge, .new-badge, .image-premium {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+    
+    .quick-nav-item {
+        min-height: 80px;
+        padding: 15px 10px;
+    }
+    
+    .quick-nav-item i {
+        font-size: 1.2rem;
+    }
+    
+    .quick-nav-item span {
+        font-size: 0.8rem;
+    }
+}
+
 .quick-faq-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1178,12 +1332,16 @@ body::after {
 /* Nav Tabs */
 .nav-tabs-wrapper {
     border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .nav-tabs-custom {
     border: none;
     flex-wrap: nowrap;
     min-width: max-content;
+    pointer-events: auto;
 }
 
 .nav-tabs-custom .nav-link {

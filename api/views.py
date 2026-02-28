@@ -241,6 +241,110 @@ def static_page(request, page_name):
     
     return render(request, config['template'], context)
 
+def trending_accounts(request):
+    """
+    Сейчас в тренде - самые популярные аккаунты
+    """
+    # Сортируем по количеству лайков (можно добавить поле likes в модель)
+    profiles = MainModel.objects.all().order_by('-id')[:50]  # Временно по id, потом можно добавить поле popularity
+    
+    # Получаем все категории для фильтров
+    all_categories = Category.objects.all().order_by('name')
+    
+    # FAQ для страницы
+    faqs = FAQ.objects.filter(
+        is_active=True,
+        for_category_pages=True
+    ).order_by('order')
+    
+    if not faqs.exists():
+        faqs = get_default_faqs()
+    
+    context = {
+        'page_title': 'Сейчас в тренде',
+        'page_description': 'Самые популярные модели платформы',
+        'profiles': profiles,
+        'all_categories': all_categories,
+        'faqs': faqs,
+        'page_type': 'trending'
+    }
+    return render(request, 'pages/accounts_list.html', context)
+
+def best_accounts(request):
+    """
+    Лучшие аккаунты - платные и высококачественные
+    """
+    profiles = MainModel.objects.filter(is_paid=True).order_by('-id')[:50]
+    all_categories = Category.objects.all().order_by('name')
+    
+    faqs = FAQ.objects.filter(
+        is_active=True,
+        for_category_pages=True
+    ).order_by('order')
+    
+    if not faqs.exists():
+        faqs = get_default_faqs()
+    
+    context = {
+        'page_title': 'Лучшие аккаунты',
+        'page_description': 'Премиум модели с лучшим качеством',
+        'profiles': profiles,
+        'all_categories': all_categories,
+        'faqs': faqs,
+        'page_type': 'best'
+    }
+    return render(request, 'pages/accounts_list.html', context)
+
+def free_accounts(request):
+    """
+    Top Free - лучшие бесплатные аккаунты
+    """
+    profiles = MainModel.objects.filter(is_paid=False).order_by('-id')[:50]
+    all_categories = Category.objects.all().order_by('name')
+    
+    faqs = FAQ.objects.filter(
+        is_active=True,
+        for_category_pages=True
+    ).order_by('order')
+    
+    if not faqs.exists():
+        faqs = get_default_faqs()
+    
+    context = {
+        'page_title': 'Top Free',
+        'page_description': 'Лучшие бесплатные модели',
+        'profiles': profiles,
+        'all_categories': all_categories,
+        'faqs': faqs,
+        'page_type': 'free'
+    }
+    return render(request, 'pages/accounts_list.html', context)
+
+def new_accounts(request):
+    """
+    Новые аккаунты - самые свежие
+    """
+    profiles = MainModel.objects.all().order_by('-id')[:50]
+    all_categories = Category.objects.all().order_by('name')
+    
+    faqs = FAQ.objects.filter(
+        is_active=True,
+        for_category_pages=True
+    ).order_by('order')
+    
+    if not faqs.exists():
+        faqs = get_default_faqs()
+    
+    context = {
+        'page_title': 'Новые аккаунты',
+        'page_description': 'Самые новые модели на платформе',
+        'profiles': profiles,
+        'all_categories': all_categories,
+        'faqs': faqs,
+        'page_type': 'new'
+    }
+    return render(request, 'pages/accounts_list.html', context)
+
 def api_categories(request):
     """
     API endpoint для получения категорий

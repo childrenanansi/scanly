@@ -43,22 +43,22 @@
         <nav class="nav-tabs-wrapper">
             <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="bi bi-list-ul me-1"></i>Сейчас в тренде</a>
+                    <a class="nav-link {% if page_type == 'trending' %}active {% endif %}" href="{% url 'trending_accounts' %}"><i class="bi bi-list-ul me-1"></i>Сейчас в тренде</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-star me-1"></i>Лучшие аккаунты</a>
+                    <a class="nav-link {% if page_type == 'best' %}active {% endif %}" href="{% url 'best_accounts' %}"><i class="bi bi-star me-1"></i>Лучшие аккаунты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-trophy me-1"></i>Top Free</a>
+                    <a class="nav-link {% if page_type == 'free' %}active {% endif %}" href="{% url 'free_accounts' %}"><i class="bi bi-trophy me-1"></i>Top Free</a>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-geo-alt me-1"></i>Рядом со мной</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-camera me-1"></i>Поиск по фото</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-person-plus me-1"></i>Новые аккаунты</a>
+                    <a class="nav-link {% if page_type == 'new' %}active {% endif %}" href="{% url 'new_accounts' %}"><i class="bi bi-person-plus me-1"></i>Новые аккаунты</a>
                 </li>
             </ul>
         </nav>

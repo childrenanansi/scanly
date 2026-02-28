@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}} - SCANLY{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-subtitle">{{page_description}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Accounts Content -->
+<section class="accounts-content py-5">
+    <div class="container-fluid">
+        <!-- Categories Filter -->
+        <div class="categories-tiles-section py-4">
+            <div class="container-fluid">
+                <div class="categories-tiles">
+                    {% for category in all_categories %}
+                        <a href="{% url 'category_page' category.alias %}" class="category-tile">
+                            <span class="category-tile-name">{{category.name}}</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Accounts Grid -->
+        <div class="section-header text-center mb-5">
+            {% if page_type == 'trending' %}
+                <h2 class="section-title">🔥 Самые популярные модели</h2>
+                <p class="section-subtitle">Модели, которые сейчас на пике популярности</p>
+            {% elif page_type == 'best' %}
+                <h2 class="section-title">⭐ Лучшие аккаунты</h2>
+                <p class="section-subtitle">Премиум модели с эксклюзивным контентом</p>
+            {% elif page_type == 'free' %}
+                <h2 class="section-title">🆓 Top Free</h2>
+                <p class="section-subtitle">Лучшие бесплатные модели платформы</p>
+            {% elif page_type == 'new' %}
+                <h2 class="section-title">✨ Новые аккаунты</h2>
+                <p class="section-subtitle">Самые свежие пополнения нашей базы</p>
+            {% endif %}
+        </div>
+        
+        <div class="row g-4">
+            {% for profile in profiles %}
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
+                    <div class="account-card">
+                        <div class="account-card-img">
+                            {% if not profile.is_paid %}
+                                <div class="image-free">Free</div>
+                            {% else %}
+                                <div class="image-premium">Premium</div>
+                            {% endif %}
+                            {% if profile.avatar %}
+                                <img src="{{profile.avatar.url}}" style="width: 100%; height: 100%;" />
+                            {% endif %}
+                            <div class="account-card-stats">
+                                <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
+                                <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
+                                <span><i class="bi bi-eye"></i> 543</span>
+                            </div>
+                            {% if page_type == 'trending' %}
+                                <div class="trending-badge">
+                                    <i class="bi bi-fire"></i> В тренде
+                                </div>
+                            {% elif page_type == 'new' %}
+                                <div class="new-badge">
+                                    <i class="bi bi-star-fill"></i> Новое
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="account-card-body">
+                            <div class="account-card-name">{{profile.name}}</div>
+                            <div class="account-card-desc">{{profile.description|truncatechars:200}}</div>
+                            <div class="account-card-tags">
+                                {% for category in profile.categories.all %}
+                                    <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
+                                {% endfor %}
+                            </div>
+                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <div class="no-results">
+                        <i class="bi bi-inbox display-1 text-muted mb-3"></i>
+                        <h4 class="text-muted">Пока нет аккаунтов</h4>
+                        <p class="text-muted">В этой категории скоро появятся новые модели</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Load More Button -->
+        {% if profiles|length >= 50 %}
+        <div class="text-center mt-5">
+            <button class="btn btn-primary btn-lg" id="loadMoreBtn">
+                <i class="bi bi-arrow-down-circle me-2"></i>Загрузить еще
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+    <div class="container-fluid">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <p class="section-subtitle">Ответы на популярные вопросы</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="faqAccordion">
+                    {% for faq in faqs %}
+                        <div class="faq-item">
+                            <div class="faq-question {% if not forloop.first %}collapsed{% endif %}" data-bs-toggle="collapse" data-bs-target="#faq{{forloop.counter}}">
+                                <h5>{{faq.question}}</h5>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% endif %}" data-bs-parent=".faqAccordion">
+                                <div class="faq-answer">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Navigation -->
+<section class="quick-nav py-4">
+    <div class="container-fluid">
+        <div class="text-center mb-4">
+            <h3>Быстрая навигация</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-6 mb-3">
+                <a href="{% url 'trending_accounts' %}" class="quick-nav-item {% if page_type == 'trending' %}active{% endif %}">
+                    <i class="bi bi-fire"></i>
+                    <span>В тренде</span>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="{% url 'best_accounts' %}" class="quick-nav-item {% if page_type == 'best' %}active{% endif %}">
+                    <i class="bi bi-star"></i>
+                    <span>Лучшие</span>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="{% url 'free_accounts' %}" class="quick-nav-item {% if page_type == 'free' %}active{% endif %}">
+                    <i class="bi bi-gift"></i>
+                    <span>Free</span>
+                </a>
+            </div>
+            <div class="col-md-3 col-6 mb-3">
+                <a href="{% url 'new_accounts' %}" class="quick-nav-item {% if page_type == 'new' %}active{% endif %}">
+                    <i class="bi bi-sparkles"></i>
+                    <span>Новые</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

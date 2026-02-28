@@ -42,10 +42,4 @@ $(document).ready(function() {
         }
     });
 
-    // Переключение вкладок навигации
-    $('.nav-tabs-custom .nav-link').on('click', function(e) {
-        e.preventDefault();
-        $('.nav-tabs-custom .nav-link').removeClass('active');
-        $(this).addClass('active');
-    });
 });
