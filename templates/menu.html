@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- Header -->
 <header class="header" id="main-header">
     <div class="container-fluid">
@@ -8,7 +9,7 @@
                     <div class="logo-icon ms-2"></div>
                 </button>
                 <ul class="dropdown-menu categories-dropdown" aria-labelledby="logoDropdown">
-                    <strong>Популярные категории</strong>
+                    <strong>{% trans "Популярные категории" %}</strong>
                     {% if categories %}
                         {% for category in categories %}
                             <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">{{category.name}}</a></li>
@@ -21,35 +22,51 @@
                 <form action="{% url 'search_page' %}" method="GET">
                     <div class="search-input-wrapper">
                         <i class="bi bi-search search-icon"></i>
-                        <input type="text" name="q" class="form-control search-input" placeholder="Find me someone who...">
+                        <input type="text" name="q" class="form-control search-input" placeholder="{% trans 'Find me someone who...' %}">
                     </div>
                 </form>
             </div>
             
             <div class="header-actions d-flex align-items-center gap-2 gap-md-3">
                 <div class="lang-selector d-flex align-items-center">
-                    <span class="active">RU</span> / <span>ENG</span>
+                    <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% for lang_code, lang_name in LANGUAGES %}
+                            {% if lang_code == LANGUAGE_CODE %}
+                                <span class="active">{{ lang_code|upper }}</span>
+                            {% else %}
+                                <button type="submit" name="language" value="{{ lang_code }}" 
+                                        style="border: none; background: none; color: var(--color-text-muted); cursor: pointer; padding: 0; margin: 0 2px;">
+                                    {{ lang_code|upper }}
+                                </button>
+                            {% endif %}
+                            {% if not forloop.last %} / {% endif %}
+                        {% endfor %}
+                    </form>
                 </div>
                 <button class="btn btn-profile">
-                    <span class="d-md-inline">Профиль</span>
+                    <span class="d-md-inline">{% trans "Профиль" %}</span>
                 </button>
             </div>
         </div>
                     <h1 class="hero-title">
-                        <span class="hero-title-dark">STOP SEARCHING</span>
-                        <span class="hero-title-accent">START MATCHING</span>
+                        <span class="hero-title-dark">{% trans "ПРЕКРАТИ ИСКАТЬ" %}</span>
+                        <span class="hero-title-accent">{% trans "НАЧНИ ПОДБИРАТЬ" %}</span>
                     </h1>
         
         <nav class="nav-tabs-wrapper">
             <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link {% if page_type == 'trending' %}active {% endif %}" href="{% url 'trending_accounts' %}"><i class="bi bi-list-ul me-1"></i>Сейчас в тренде</a>
+                    <a class="nav-link {% if page_type == 'trending' %}active {% endif %}" href="{% url 'trending_accounts' %}"><i class="bi bi-list-ul me-1"></i>{% trans "Сейчас в тренде" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if page_type == 'best' %}active {% endif %}" href="{% url 'best_accounts' %}"><i class="bi bi-star me-1"></i>Лучшие аккаунты</a>
+                    <a class="nav-link {% if page_type == 'best' %}active {% endif %}" href="{% url 'best_accounts' %}"><i class="bi bi-star me-1"></i>{% trans "Лучшие аккаунты" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if page_type == 'free' %}active {% endif %}" href="{% url 'free_accounts' %}"><i class="bi bi-trophy me-1"></i>Top Free</a>
+                    <a class="nav-link {% if page_type == 'free' %}active {% endif %}" href="{% url 'free_accounts' %}"><i class="bi bi-trophy me-1"></i>{% trans "Top Free" %}</a>
                 </li>
               <!--  <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-geo-alt me-1"></i>Рядом со мной</a>
@@ -58,7 +75,7 @@
                     <a class="nav-link" href="#"><i class="bi bi-camera me-1"></i>Поиск по фото</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link {% if page_type == 'new' %}active {% endif %}" href="{% url 'new_accounts' %}"><i class="bi bi-person-plus me-1"></i>Новые аккаунты</a>
+                    <a class="nav-link {% if page_type == 'new' %}active {% endif %}" href="{% url 'new_accounts' %}"><i class="bi bi-person-plus me-1"></i>{% trans "Новые аккаунты" %}</a>
                 </li>
             </ul>
         </nav>

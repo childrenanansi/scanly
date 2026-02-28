@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- Footer -->
 <footer class="footer">
     <div class="container-fluid">
@@ -6,7 +7,7 @@
                 <div class="footer-logo">
                     <span class="logo-text">SCANLY</span>
                 </div>
-                <p class="footer-description">Ваш персональный поиск моделей на основе ИИ</p>
+                <p class="footer-description">{% trans "Ваш персональный поиск моделей на основе ИИ" %}</p>
                 <div class="social-links">
                     <a href="#"><i class="bi bi-instagram"></i></a>
                     <a href="#"><i class="bi bi-telegram"></i></a>
@@ -15,26 +16,26 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <h5>Навигация</h5>
+                <h5>{% trans "Быстрые ссылки" %}</h5>
                 <ul class="footer-links">
-                    <li><a href="{% url 'static_page' 'about' %}">О проекте</a></li>
-                    <li><a href="{% url 'static_page' 'how-it-works' %}">Как это работает</a></li>
-                    <li><a href="{% url 'static_page' 'pricing' %}">Тарифы</a></li>
-                    <li><a href="{% url 'static_page' 'support' %}">Поддержка</a></li>
+                    <li><a href="{% url 'static_page' 'about' %}">{% trans "О проекте" %}</a></li>
+                    <li><a href="{% url 'static_page' 'how-it-works' %}">{% trans "Как это работает" %}</a></li>
+                    <li><a href="{% url 'static_page' 'pricing' %}">{% trans "Тарифы" %}</a></li>
+                    <li><a href="{% url 'static_page' 'support' %}">{% trans "Поддержка" %}</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5>Правовая информация</h5>
+                <h5>{% trans "Правовая информация" %}</h5>
                 <ul class="footer-links">
-                    <li><a href="{% url 'static_page' 'terms' %}">Условия использования</a></li>
-                    <li><a href="{% url 'static_page' 'privacy' %}">Политика конфиденциальности</a></li>
-                    <li><a href="{% url 'static_page' 'faq' %}">FAQ</a></li>
-                    <li><a href="{% url 'static_page' 'contacts' %}">Контакты</a></li>
+                    <li><a href="{% url 'static_page' 'terms' %}">{% trans "Условия использования" %}</a></li>
+                    <li><a href="{% url 'static_page' 'privacy' %}">{% trans "Политика конфиденциальности" %}</a></li>
+                    <li><a href="{% url 'static_page' 'faq' %}">{% trans "FAQ" %}</a></li>
+                    <li><a href="{% url 'static_page' 'contacts' %}">{% trans "Контакты" %}</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SCANLY. Все права защищены.</p>
+            <p>&copy; 2026 SCANLY. {% trans "Все права защищены" %}.</p>
         </div>
     </div>
 </footer>

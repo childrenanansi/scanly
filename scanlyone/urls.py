@@ -38,6 +38,9 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', home, name='home'),
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('category/<slug:category_alias>/', category_page, name='category_page'),
     path('category/', category_page, name='category_all'),
     path('search/', search_page, name='search_page'),
@@ -46,9 +49,6 @@ urlpatterns = [
     path('free/', free_accounts, name='free_accounts'),
     path('new/', new_accounts, name='new_accounts'),
     path('<slug:page_name>/', static_page, name='static_page'),
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
 # Для обслуживания медиа-файлов в разработке

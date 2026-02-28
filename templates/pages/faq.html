@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}{{page_title}} - SCANLY{% endblock %}
+{% block title %}{{ page_title }} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -22,18 +23,18 @@
                 <div class="faq-search mb-5">
                     <div class="search-input-wrapper">
                         <i class="bi bi-search search-icon"></i>
-                        <input type="text" class="form-control search-input" id="faqSearch" placeholder="Поиск по вопросам...">
+                        <input type="text" class="form-control search-input" id="faqSearch" placeholder="{% trans 'Поиск по вопросам...' %}">
                     </div>
                 </div>
                 
                 <!-- FAQ Categories -->
                 <div class="faq-categories mb-5">
                     <div class="category-tabs">
-                        <button class="category-btn active" data-category="all">Все вопросы</button>
-                        <button class="category-btn" data-category="general">Общие вопросы</button>
-                        <button class="category-btn" data-category="account">Аккаунт</button>
-                        <button class="category-btn" data-category="pricing">Тарифы</button>
-                        <button class="category-btn" data-category="technical">Технические</button>
+                        <button class="category-btn active" data-category="all">{% trans "Все вопросы" %}</button>
+                        <button class="category-btn" data-category="general">{% trans "Общие вопросы" %}</button>
+                        <button class="category-btn" data-category="account">{% trans "Аккаунт" %}</button>
+                        <button class="category-btn" data-category="pricing">{% trans "Тарифы" %}</button>
+                        <button class="category-btn" data-category="technical">{% trans "Технические" %}</button>
                     </div>
                 </div>
                 
@@ -56,72 +57,72 @@
                     <!-- Additional Static FAQs -->
                     <div class="faq-item" data-category="account">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-account-1">
-                            <h5>Как изменить пароль?</h5>
+                            <h5>{% trans "Как изменить пароль?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-account-1" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Зайдите в настройки профиля, выберите "Безопасность" и нажмите "Изменить пароль". Введите текущий пароль и новый пароль дважды для подтверждения.</p>
+                                <p>{% trans "Зайдите в настройки профиля, выберите \"Безопасность\" и нажмите \"Изменить пароль\". Введите текущий пароль и новый пароль дважды для подтверждения." %}</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item" data-category="account">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-account-2">
-                            <h5>Как удалить аккаунт?</h5>
+                            <h5>{% trans "Как удалить аккаунт?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-account-2" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Перейдите в настройки профиля, прокрутите вниз до раздела "Управление аккаунтом" и нажмите "Удалить аккаунт". Подтвердите действие - аккаунт будет удален в течение 30 дней.</p>
+                                <p>{% trans "Перейдите в настройки профиля, прокрутите вниз до раздела \"Управление аккаунтом\" и нажмите \"Удалить аккаунт\". Подтвердите действие - аккаунт будет удален в течение 30 дней." %}</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item" data-category="pricing">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-pricing-1">
-                            <h5>Как изменить тарифный план?</h5>
+                            <h5>{% trans "Как изменить тарифный план?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-pricing-1" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Зайдите в раздел "Тарифы" в личном кабинете, выберите новый план и подтвердите изменение. При переходе на более дорогой тариф разница будет рассчитана пропорционально.</p>
+                                <p>{% trans "Зайдите в раздел \"Тарифы\" в личном кабинете, выберите новый план и подтвердите изменение. При переходе на более дорогой тариф разница будет рассчитана пропорционально." %}</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item" data-category="pricing">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-pricing-2">
-                            <h5>Есть ли бесплатный период?</h5>
+                            <h5>{% trans "Есть ли бесплатный период?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-pricing-2" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период. Вы можете отменить подписку в любое время без дополнительных платежей.</p>
+                                <p>{% trans "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период. Вы можете отменить подписку в любое время без дополнительных платежей." %}</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item" data-category="technical">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-tech-1">
-                            <h5>Почему не работает поиск?</h5>
+                            <h5>{% trans "Почему не работает поиск?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-tech-1" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Проверьте подключение к интернету, очистите кэш браузера, убедитесь что вы вошли в аккаунт. Если проблема осталась, обратитесь в техническую поддержку.</p>
+                                <p>{% trans "Проверьте подключение к интернету, очистите кэш браузера, убедитесь что вы вошли в аккаунт. Если проблема осталась, обратитесь в техническую поддержку." %}</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="faq-item" data-category="technical">
                         <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq-tech-2">
-                            <h5>Какие браузеры поддерживаются?</h5>
+                            <h5>{% trans "Какие браузеры поддерживаются?" %}</h5>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div id="faq-tech-2" class="collapse" data-bs-parent="#mainFAQ">
                             <div class="faq-answer">
-                                <p>Мы поддерживаем последние версии Chrome, Firefox, Safari, Edge. Для лучшего опыта рекомендуем использовать Chrome или Firefox.</p>
+                                <p>{% trans "Мы поддерживаем последние версии Chrome, Firefox, Safari, Edge. Для лучшего опыта рекомендуем использовать Chrome или Firefox." %}</p>
                             </div>
                         </div>
                     </div>
@@ -131,22 +132,22 @@
                 <div class="no-faq-results" style="display: none;">
                     <div class="text-center py-5">
                         <i class="bi bi-search display-1 text-muted mb-3"></i>
-                        <h4>Вопросы не найдены</h4>
-                        <p class="text-muted">Попробуйте изменить поисковый запрос или выбрать другую категорию</p>
+                        <h4>{% trans "Вопросы не найдены" %}</h4>
+                        <p class="text-muted">{% trans "Попробуйте изменить поисковый запрос или выбрать другую категорию" %}</p>
                     </div>
                 </div>
                 
                 <!-- Help Section -->
                 <div class="help-section mt-5">
                     <div class="text-center">
-                        <h3>Не нашли ответ на свой вопрос?</h3>
-                        <p>Наша команда поддержки всегда готова помочь</p>
+                        <h3>{% trans "Не нашли ответ на свой вопрос?" %}</h3>
+                        <p>{% trans "Наша команда поддержки всегда готова помочь" %}</p>
                         <div class="help-buttons">
                             <a href="{% url 'static_page' 'support' %}" class="btn btn-primary me-2">
-                                <i class="bi bi-chat-dots me-2"></i>Написать в поддержку
+                                <i class="bi bi-chat-dots me-2"></i>{% trans "Написать в поддержку" %}
                             </a>
                             <a href="{% url 'static_page' 'contacts' %}" class="btn btn-outline-primary">
-                                <i class="bi bi-envelope me-2"></i>Связаться с нами
+                                <i class="bi bi-envelope me-2"></i>{% trans "Связаться с нами" %}
                             </a>
                         </div>
                     </div>
@@ -160,35 +161,35 @@
 <section class="popular-topics py-5">
     <div class="container-fluid">
         <div class="text-center mb-4">
-            <h3>Популярные темы</h3>
+            <h3>{% trans "Популярные темы" %}</h3>
         </div>
         <div class="row">
             <div class="col-md-3">
                 <div class="topic-card">
                     <i class="bi bi-person-plus"></i>
-                    <h5>Регистрация</h5>
-                    <p>Как создать аккаунт и начать использование</p>
+                    <h5>{% trans "Регистрация" %}</h5>
+                    <p>{% trans "Как создать аккаунт и начать использование" %}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="topic-card">
                     <i class="bi bi-search"></i>
-                    <h5>Поиск моделей</h5>
-                    <p>Эффективный поиск и фильтрация</p>
+                    <h5>{% trans "Поиск моделей" %}</h5>
+                    <p>{% trans "Эффективный поиск и фильтрация" %}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="topic-card">
                     <i class="bi bi-credit-card"></i>
-                    <h5>Оплата</h5>
-                    <p>Способы оплаты и тарифные планы</p>
+                    <h5>{% trans "Оплата" %}</h5>
+                    <p>{% trans "Способы оплаты и тарифные планы" %}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="topic-card">
                     <i class="bi bi-shield-check"></i>
-                    <h5>Безопасность</h5>
-                    <p>Защита данных и конфиденциальность</p>
+                    <h5>{% trans "Безопасность" %}</h5>
+                    <p>{% trans "Защита данных и конфиденциальность" %}</p>
                 </div>
             </div>
         </div>

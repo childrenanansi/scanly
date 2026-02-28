@@ -1,9 +1,10 @@
+{% load i18n static %}
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ LANGUAGE_CODE|default:'ru' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SCANLY - Ваш персональный поиск моделей на основе ИИ{% endblock %}</title>
+    <title>{% block title %}{% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}</title>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/font/bootstrap-icons.min.css">

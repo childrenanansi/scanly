@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Поиск моделей - SCANLY{% if query %}: {{query}}{% endif %}{% endblock %}
+{% block title %}{% trans "Поиск" %} моделей - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% if query %}: {{query}}{% endif %}{% endblock %}
 
 {% block content %}
 <!-- Search Section -->
 <section class="search-section py-5">
     <div class="container-fluid">
         <div class="search-header text-center mb-5">
-            <h1 class="section-title">Поиск моделей</h1>
-            <p class="section-subtitle">Найдите идеальную модель по вашим критериям</p>
+            <h1 class="section-title">{% trans "Поиск" %} моделей</h1>
+            <p class="section-subtitle">{% trans "Найдите идеальную модель по вашим критериям" %}</p>
         </div>
         
         <!-- Search Form -->
@@ -25,7 +26,7 @@
                     </div>
                     <div class="col-md-3">
                         <select name="category" class="form-select category-select">
-                            <option value="">Все категории</option>
+                            <option value="">{% trans "Все категории" %}</option>
                             {% for category in all_categories %}
                                 <option value="{{category.id}}" 
                                         {% if selected_category_id == category.id|stringformat:"s" %}selected{% endif %}>
@@ -48,9 +49,9 @@
             <div class="search-results-info mb-4">
                 <p class="results-count">
                     {% if query %}
-                        Найдено моделей по запросу "{{query}}": {{profiles|length}}
+                        {% trans "Найдено моделей" %} {% if query %}{% trans "по вашему запросу" %} "{{query}}"{% endif %}: {{profiles|length}}
                     {% elif selected_category_id %}
-                        Найдено моделей в выбранной категории: {{profiles|length}}
+                        {% trans "Найдено моделей" %} {% trans "в выбранной категории" %}: {{profiles|length}}
                     {% endif %}
                 </p>
             </div>
@@ -81,7 +82,7 @@
                                     <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
                                 {% endfor %}
                             </div>
-                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
+                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">{% trans "Открыть профиль" %}</a>
                         </div>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
                 <div class="col-12 text-center">
                     <div class="no-results">
                         <i class="bi bi-search display-1 text-muted mb-3"></i>
-                        <h4 class="text-muted">Ничего не найдено</h4>
+                        <h4 class="text-muted">{% trans "Ничего не найдено" %}</h4>
                         <p class="text-muted">
                             {% if query %}
                                 Попробуйте изменить поисковый запрос или выбрать другую категорию

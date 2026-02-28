@@ -1,0 +1,1094 @@
+# English translation for SCANLY
+# Copyright (C) 2026
+# This file is distributed under the same license as the SCANLY package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SCANLY\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-28 16:00+0400\n"
+"PO-Revision-Date: 2026-02-28 16:00+0400\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# Main titles and descriptions
+msgid "SCANLY - Ваш персональный поиск моделей на основе ИИ"
+msgstr "SCANLY - Your personal AI-powered model search"
+
+# Navigation
+msgid "Сейчас в тренде"
+msgstr "Trending Now"
+
+msgid "Лучшие аккаунты"
+msgstr "Best Accounts"
+
+msgid "Top Free"
+msgstr "Top Free"
+
+msgid "Новые аккаунты"
+msgstr "New Accounts"
+
+msgid "Поиск"
+msgstr "Search"
+
+msgid "Категории"
+msgstr "Categories"
+
+msgid "Профиль"
+msgstr "Profile"
+
+# Footer links
+msgid "О проекте"
+msgstr "About"
+
+msgid "Как это работает"
+msgstr "How It Works"
+
+msgid "Тарифы"
+msgstr "Pricing"
+
+msgid "Поддержка"
+msgstr "Support"
+
+msgid "Условия использования"
+msgstr "Terms of Use"
+
+msgid "Политика конфиденциальности"
+msgstr "Privacy Policy"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Контакты"
+msgstr "Contacts"
+
+msgid "Быстрые ссылки"
+msgstr "Quick Links"
+
+msgid "Правовая информация"
+msgstr "Legal Information"
+
+msgid "Все права защищены"
+msgstr "All rights reserved"
+
+msgid "Ваш персональный поиск моделей на основе ИИ"
+msgstr "Your personal AI-powered model search"
+
+# Main page
+msgid "ПОПУЛЯРНЫЕ АККАУНТЫ"
+msgstr "POPULAR ACCOUNTS"
+
+msgid "50 лучших аккаунтов OnlyFans в 2026 году"
+msgstr "Top 50 OnlyFans accounts in 2026"
+
+msgid "Открыть профиль"
+msgstr "Open Profile"
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Premium"
+msgstr "Premium"
+
+msgid "STOP SEARCHING"
+msgstr "STOP SEARCHING"
+
+msgid "START MATCHING"
+msgstr "START MATCHING"
+
+msgid "Find me someone who..."
+msgstr "Find me someone who..."
+
+msgid "Популярные категории"
+msgstr "Popular Categories"
+
+# Account pages
+msgid "Самые популярные модели платформы"
+msgstr "Most popular platform models"
+
+msgid "Премиум модели с лучшим качеством"
+msgstr "Premium models with best quality"
+
+msgid "Лучшие бесплатные модели"
+msgstr "Best free models"
+
+msgid "Самые свежие пополнения нашей базы"
+msgstr "Freshest additions to our database"
+
+msgid "В тренде"
+msgstr "Trending"
+
+msgid "Лучшие"
+msgstr "Best"
+
+msgid "Быстрая навигация"
+msgstr "Quick Navigation"
+
+# Static pages - About
+msgid "О SCANLY"
+msgstr "ABOUT SCANLY"
+
+msgid "Наша миссия"
+msgstr "Our Mission"
+
+msgid "SCANLY - это революционная платформа, которая использует искусственный интеллект для поиска идеальных моделей под ваши предпочтения."
+msgstr "SCANLY is a revolutionary platform that uses artificial intelligence to find perfect models based on your preferences."
+
+msgid "Наши преимущества"
+msgstr "Our Advantages"
+
+msgid "Умный поиск на основе ИИ"
+msgstr "AI-powered Smart Search"
+
+msgid "Наши алгоритмы анализируют тысячи параметров для точного matching"
+msgstr "Our algorithms analyze thousands of parameters for accurate matching"
+
+msgid "Огромная база моделей"
+msgstr "Huge Model Database"
+
+msgid "Более 10,000 проверенных моделей со всего мира"
+msgstr "Over 10,000 verified models from around the world"
+
+msgid "100% конфиденциальность"
+msgstr "100% Privacy"
+
+msgid "Ваши данные надежно защищены и никогда не будут переданы третьим лицам"
+msgstr "Your data is securely protected and will never be shared with third parties"
+
+msgid "Круглосуточная поддержка"
+msgstr "24/7 Support"
+
+msgid "Наша команда готова помочь вам в любое время"
+msgstr "Our team is ready to help you anytime"
+
+# Static pages - How It Works
+msgid "КАК ЭТО РАБОТАЕТ"
+msgstr "HOW IT WORKS"
+
+msgid "Просто 3 шага к идеальной модели"
+msgstr "Just 3 steps to your perfect model"
+
+msgid "Шаг 1"
+msgstr "Step 1"
+
+msgid "Создайте профиль"
+msgstr "Create Profile"
+
+msgid "Зарегистрируйтесь и расскажите о своих предпочтениях"
+msgstr "Sign up and tell us about your preferences"
+
+msgid "Шаг 2"
+msgstr "Step 2"
+
+msgid "Получите рекомендации"
+msgstr "Get Recommendations"
+
+msgid "Наш ИИ подберет идеальные модели специально для вас"
+msgstr "Our AI will select perfect models specifically for you"
+
+msgid "Шаг 3"
+msgstr "Step 3"
+
+msgid "Начните общение"
+msgstr "Start Chatting"
+
+msgid "Свяжитесь с выбранными моделями и наслаждайтесь общением"
+msgstr "Connect with selected models and enjoy the conversation"
+
+# Static pages - Pricing
+msgid "ТАРИФЫ"
+msgstr "PRICING"
+
+msgid "Выберите подходящий план"
+msgstr "Choose the right plan"
+
+msgid "Базовый"
+msgstr "Basic"
+
+msgid "Бесплатно"
+msgstr "Free"
+
+msgid "10 рекомендаций в день"
+msgstr "10 recommendations per day"
+
+msgid "Базовый поиск"
+msgstr "Basic search"
+
+msgid "Поддержка по email"
+msgstr "Email support"
+
+msgid "Выбрать план"
+msgstr "Choose Plan"
+
+msgid "Про"
+msgstr "Pro"
+
+msgid "499 ₽/мес"
+msgstr "$7.99/month"
+
+msgid "Безлимитные рекомендации"
+msgstr "Unlimited recommendations"
+
+msgid "Расширенный поиск"
+msgstr "Advanced search"
+
+msgid "Приоритетная поддержка"
+msgstr "Priority support"
+
+msgid "Премиум"
+msgstr "Premium"
+
+msgid "999 ₽/мес"
+msgstr "$15.99/month"
+
+msgid "Все функции Про"
+msgstr "All Pro features"
+
+msgid "Эксклюзивные модели"
+msgstr "Exclusive models"
+
+msgid "Персональный менеджер"
+msgstr "Personal manager"
+
+# Static pages - Support
+msgid "ПОДДЕРЖКА"
+msgstr "SUPPORT"
+
+msgid "Мы всегда готовы помочь"
+msgstr "We're always here to help"
+
+msgid "Часто задаваемые вопросы"
+msgstr "Frequently Asked Questions"
+
+msgid "Как начать пользоваться платформой?"
+msgstr "How to start using the platform?"
+
+msgid "Просто зарегистрируйтесь, создайте профиль и начните поиск моделей."
+msgstr "Simply register, create a profile and start searching for models."
+
+msgid "Безопасны ли мои данные?"
+msgstr "Is my data secure?"
+
+msgid "Да, мы используем современное шифрование для защиты ваших данных."
+msgstr "Yes, we use modern encryption to protect your data."
+
+msgid "Как отменить подписку?"
+msgstr "How to cancel subscription?"
+
+msgid "Вы можете отменить подписку в любой момент в настройках профиля."
+msgstr "You can cancel your subscription at any time in profile settings."
+
+msgid "Свяжитесь с нами"
+msgstr "Contact Us"
+
+msgid "Наш адрес"
+msgstr "Our Address"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Телефон"
+msgstr "Phone"
+
+# Static pages - Terms
+msgid "УСЛОВИЯ ИСПОЛЬЗОВАНИЯ"
+msgstr "TERMS OF USE"
+
+msgid "Общие положения"
+msgstr "General Terms"
+
+msgid "Используя SCANLY, вы соглашаетесь с этими условиями."
+msgstr "By using SCANLY, you agree to these terms."
+
+msgid "Правила использования"
+msgstr "Usage Rules"
+
+msgid "Запрещено использовать платформу для незаконных целей."
+msgstr "It is forbidden to use the platform for illegal purposes."
+
+msgid "Уважайте других пользователей платформы."
+msgstr "Respect other platform users."
+
+# Static pages - Privacy
+msgid "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"
+msgstr "PRIVACY POLICY"
+
+msgid "Сбор данных"
+msgstr "Data Collection"
+
+msgid "Мы собираем только необходимую информацию для предоставления услуг."
+msgstr "We collect only necessary information to provide services."
+
+msgid "Использование данных"
+msgstr "Data Usage"
+
+msgid "Ваши данные используются только для улучшения качества наших услуг."
+msgstr "Your data is used only to improve the quality of our services."
+
+msgid "Защита данных"
+msgstr "Data Protection"
+
+msgid "Мы применяем современные методы защиты данных."
+msgstr "We use modern data protection methods."
+
+# Static pages - FAQ
+msgid "ВОПРОСЫ И ОТВЕТЫ"
+msgstr "QUESTIONS AND ANSWERS"
+
+msgid "Поиск моделей"
+msgstr "Model Search"
+
+msgid "Аккаунт и профиль"
+msgstr "Account and Profile"
+
+msgid "Платежи и тарифы"
+msgstr "Payments and Pricing"
+
+msgid "Технические вопросы"
+msgstr "Technical Questions"
+
+# Static pages - Contacts
+msgid "КОНТАКТЫ"
+msgstr "CONTACTS"
+
+msgid "Остались вопросы? Свяжитесь с нами!"
+msgstr "Have questions? Contact us!"
+
+msgid "Отправить сообщение"
+msgstr "Send Message"
+
+msgid "Ваше имя"
+msgstr "Your Name"
+
+msgid "Ваш email"
+msgstr "Your Email"
+
+msgid "Тема сообщения"
+msgstr "Message Subject"
+
+msgid "Сообщение"
+msgstr "Message"
+
+msgid "Отправить"
+msgstr "Send"
+
+# Search page
+msgid "РЕЗУЛЬТАТЫ ПОИСКА"
+msgstr "SEARCH RESULTS"
+
+msgid "Найдено моделей"
+msgstr "Models found"
+
+msgid "по вашему запросу"
+msgstr "for your query"
+
+msgid "Все категории"
+msgstr "All Categories"
+
+# Category page
+msgid "КАТЕГОРИЯ"
+msgstr "CATEGORY"
+
+msgid "Модели в категории"
+msgstr "Models in category"
+
+# Buttons and actions
+msgid "Назад"
+msgstr "Back"
+
+msgid "Вперёд"
+msgstr "Forward"
+
+msgid "Загрузить еще"
+msgstr "Load More"
+
+msgid "Фильтры"
+msgstr "Filters"
+
+msgid "Сортировка"
+msgstr "Sort"
+
+msgid "По популярности"
+msgstr "By Popularity"
+
+msgid "По новизне"
+msgstr "By Newest"
+
+msgid "По рейтингу"
+msgstr "By Rating"
+
+# Messages
+msgid "Ничего не найдено"
+msgstr "Nothing Found"
+
+msgid "Попробуйте изменить параметры поиска"
+msgstr "Try changing search parameters"
+
+msgid "Загрузка..."
+msgstr "Loading..."
+
+msgid "Ошибка загрузки"
+msgstr "Loading Error"
+
+msgid "Попробуйте еще раз"
+msgstr "Try Again"
+
+# Additional translations for index page
+msgid "Scanly - ваш персональный поиск моделей на основе ИИ"
+msgstr "Scanly - your personal AI-powered model search"
+
+msgid "Привлекайте подписчиков!"
+msgstr "Attract subscribers!"
+
+msgid "Более 20 тыс. активных пользователей"
+msgstr "Over 20 thousand active users"
+
+msgid "Подробнее"
+msgstr "Learn More"
+
+msgid "Получай заявки"
+msgstr "Get requests"
+
+msgid "уже сейчас!"
+msgstr "right now!"
+
+msgid "Трафик, модели, работа с контентом, поиск сотрудников"
+msgstr "Traffic, models, content work, employee search"
+
+msgid "Новости"
+msgstr "News"
+
+msgid "Только свежие и актуальные новости"
+msgstr "Only fresh and relevant news"
+
+msgid "Все модели"
+msgstr "All Models"
+
+msgid "Все доступные модели на платформе"
+msgstr "All available models on the platform"
+
+msgid "В этой категории пока нет моделей"
+msgstr "No models in this category yet"
+
+msgid "Найдено моделей в категории"
+msgstr "Models found in category"
+
+msgid "Найдите идеальную модель по вашим критериям"
+msgstr "Find the perfect model based on your criteria"
+
+msgid "Поиск по описанию моделей..."
+msgstr "Search by model descriptions..."
+
+msgid "в выбранной категории"
+msgstr "in selected category"
+
+msgid "Попробуйте изменить поисковый запрос или выбрать другую категорию"
+msgstr "Try changing your search query or select another category"
+
+msgid "Используйте поиск или выберите категорию для поиска моделей"
+msgstr "Use search or select a category to find models"
+
+msgid "Ответы на популярные вопросы о SCANLY"
+msgstr "Answers to popular questions about SCANLY"
+
+msgid "Ответы на популярные вопросы о поиске"
+msgstr "Answers to popular questions about search"
+
+# FAQ page translations
+msgid "Поиск по вопросам..."
+msgstr "Search by questions..."
+
+msgid "Все вопросы"
+msgstr "All Questions"
+
+msgid "Общие вопросы"
+msgstr "General Questions"
+
+msgid "Аккаунт"
+msgstr "Account"
+
+msgid "Технические"
+msgstr "Technical"
+
+msgid "Как изменить пароль?"
+msgstr "How to change password?"
+
+msgid "Как удалить аккаунт?"
+msgstr "How to delete account?"
+
+msgid "Как изменить тарифный план?"
+msgstr "How to change pricing plan?"
+
+msgid "Есть ли бесплатный период?"
+msgstr "Is there a free trial?"
+
+msgid "Почему не работает поиск?"
+msgstr "Why doesn't search work?"
+
+msgid "Какие браузеры поддерживаются?"
+msgstr "Which browsers are supported?"
+
+msgid "Вопросы не найдены"
+msgstr "No Questions Found"
+
+msgid "Не нашли ответ на свой вопрос?"
+msgstr "Didn't find answer to your question?"
+
+msgid "Наша команда поддержки всегда готова помочь"
+msgstr "Our support team is always ready to help"
+
+msgid "Написать в поддержку"
+msgstr "Contact Support"
+
+msgid "Связаться с нами"
+msgstr "Contact Us"
+
+# Support page translations
+msgid "Чат поддержки"
+msgstr "Support Chat"
+
+msgid "Быстрая помощь в режиме реального времени"
+msgstr "Real-time quick help"
+
+msgid "Работает 24/7"
+msgstr "Available 24/7"
+
+msgid "Начать чат"
+msgstr "Start Chat"
+
+msgid "Email поддержка"
+msgstr "Email Support"
+
+msgid "Отправьте нам письмо с вашим вопросом"
+msgstr "Send us an email with your question"
+
+msgid "Написать письмо"
+msgstr "Send Email"
+
+msgid "Телефон поддержки"
+msgstr "Phone Support"
+
+msgid "Позвоните нам для получения помощи"
+msgstr "Call us for assistance"
+
+msgid "Позвонить"
+msgstr "Call"
+
+msgid "Как быстро я получу ответ?"
+msgstr "How quickly will I get a response?"
+
+msgid "Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы"
+msgstr "We are always happy to answer your questions and help solve any problems"
+
+msgid "Адрес"
+msgstr "Address"
+
+msgid "Время работы"
+msgstr "Working Hours"
+
+msgid "Понедельник - Пятница: 9:00 - 18:00"
+msgstr "Monday - Friday: 9:00 - 18:00"
+
+msgid "Форма обратной связи"
+msgstr "Contact Form"
+
+msgid "Тема"
+msgstr "Subject"
+
+msgid "Выберите тему"
+msgstr "Select Topic"
+
+msgid "Общий вопрос"
+msgstr "General Question"
+
+msgid "Техническая поддержка"
+msgstr "Technical Support"
+
+msgid "Вопросы оплаты"
+msgstr "Billing Issues"
+
+msgid "Партнерство"
+msgstr "Partnership"
+
+msgid "Жалоба"
+msgstr "Complaint"
+
+msgid "Другое"
+msgstr "Other"
+
+msgid "Опишите ваш вопрос или предложение..."
+msgstr "Describe your question or suggestion..."
+
+msgid "Отправить копию на мой email"
+msgstr "Send copy to my email"
+
+msgid "Я согласен с"
+msgstr "I agree with"
+
+msgid "политикой конфиденциальности"
+msgstr "privacy policy"
+
+msgid "Очистить форму"
+msgstr "Clear Form"
+
+msgid "Как нас найти"
+msgstr "How to Find Us"
+
+# How it works page translations
+msgid "Регистрация"
+msgstr "Registration"
+
+msgid "Создайте аккаунт за несколько минут. Укажите ваши предпочтения и требования к моделям."
+msgstr "Create an account in minutes. Specify your preferences and requirements for models."
+
+msgid "Анализ предпочтений"
+msgstr "Preference Analysis"
+
+msgid "Наш ИИ анализирует ваши требования и создает профиль ваших предпочтений."
+msgstr "Our AI analyzes your requirements and creates your preference profile."
+
+msgid "Подбор моделей"
+msgstr "Model Matching"
+
+msgid "Система находит наиболее подходящие модели из нашей базы данных."
+msgstr "The system finds the most suitable models from our database."
+
+msgid "Просмотр результатов"
+msgstr "View Results"
+
+msgid "Изучите предложенные варианты, используйте фильтры для уточнения поиска."
+msgstr "Review suggested options, use filters to refine your search."
+
+msgid "Связь с моделями"
+msgstr "Contact Models"
+
+msgid "Выберите подходящие модели и установите контакт через платформу."
+msgstr "Select suitable models and establish contact through the platform."
+
+msgid "Технологии, которые мы используем"
+msgstr "Technologies We Use"
+
+msgid "Машинное обучение"
+msgstr "Machine Learning"
+
+msgid "Алгоритмы ML для точного анализа и предсказания"
+msgstr "ML algorithms for accurate analysis and prediction"
+
+msgid "Большие данные"
+msgstr "Big Data"
+
+msgid "Обработка тысяч профилей для нахождения идеальных совпадений"
+msgstr "Processing thousands of profiles to find perfect matches"
+
+msgid "Шифрование"
+msgstr "Encryption"
+
+msgid "Защита ваших данных с помощью современных криптографических методов"
+msgstr "Protecting your data with modern cryptographic methods"
+
+msgid "Аналитика"
+msgstr "Analytics"
+
+msgid "Детальная статистика и отчеты о результатах поиска"
+msgstr "Detailed statistics and reports on search results"
+
+msgid "Как работает наш алгоритм"
+msgstr "How Our Algorithm Works"
+
+# Pricing page translations
+msgid "/месяц"
+msgstr "/month"
+
+msgid "До 10 поисков в день"
+msgstr "Up to 10 searches per day"
+
+msgid "Базовые фильтры"
+msgstr "Basic filters"
+
+msgid "Просмотр профилей"
+msgstr "Profile viewing"
+
+msgid "Расширенная аналитика"
+msgstr "Advanced analytics"
+
+msgid "Начать бесплатно"
+msgstr "Start Free"
+
+msgid "Популярный"
+msgstr "Popular"
+
+msgid "Профи"
+msgstr "Pro"
+
+msgid "Неограниченные поиски"
+msgstr "Unlimited searches"
+
+msgid "Все фильтры"
+msgstr "All filters"
+
+msgid "Экспорт результатов"
+msgstr "Export results"
+
+msgid "Выбрать Профи"
+msgstr "Choose Pro"
+
+msgid "Бизнес"
+msgstr "Business"
+
+msgid "Все функции Профи"
+msgstr "All Pro features"
+
+msgid "Многопользовательский доступ"
+msgstr "Multi-user access"
+
+msgid "API доступ"
+msgstr "API access"
+
+msgid "Кастомные отчеты"
+msgstr "Custom reports"
+
+msgid "SLA гарантии"
+msgstr "SLA guarantees"
+
+msgid "Сравнение тарифов"
+msgstr "Pricing Comparison"
+
+msgid "Функция"
+msgstr "Feature"
+
+msgid "Количество поисков"
+msgstr "Number of searches"
+
+msgid "10 в день"
+msgstr "10 per day"
+
+msgid "Неограниченно"
+msgstr "Unlimited"
+
+# About page translations
+msgid "Что такое SCANLY?"
+msgstr "What is SCANLY?"
+
+msgid "ИИ-подбор"
+msgstr "AI Matching"
+
+msgid "Умные алгоритмы анализируют ваши предпочтения и находят идеальные совпадения"
+msgstr "Smart algorithms analyze your preferences and find perfect matches"
+
+msgid "Безопасность"
+msgstr "Security"
+
+msgid "Все профили проходят верификацию и проверку качества"
+msgstr "All profiles undergo verification and quality checks"
+
+msgid "Скорость"
+msgstr "Speed"
+
+msgid "Мгновенный поиск и подбор моделей по вашим критериям"
+msgstr "Instant search and model matching according to your criteria"
+
+msgid "Глобальный охват"
+msgstr "Global Reach"
+
+msgid "Доступ к моделям со всего мира"
+msgstr "Access to models from around the world"
+
+msgid "Как мы работаем"
+msgstr "How We Work"
+
+msgid "Наша платформа собирает данные о моделях со всего мира, анализирует их характеристики и помогает вам найти именно то, что вы ищете. Мы используем передовые технологии машинного обучения для обеспечения точности и релевантности результатов."
+msgstr "Our platform collects data about models from around the world, analyzes their characteristics, and helps you find exactly what you're looking for. We use advanced machine learning technologies to ensure accuracy and relevance of results."
+
+msgid "Наша команда"
+msgstr "Our Team"
+
+msgid "SCANLY создана командой экспертов в области искусственного интеллекта, маркетинга и технологий. Мы объединили наши знания и опыт, чтобы создать уникальный инструмент для поиска моделей."
+msgstr "SCANLY was created by a team of experts in artificial intelligence, marketing, and technology. We combined our knowledge and experience to create a unique tool for model search."
+
+# Terms page translations
+msgid "Последнее обновление:"
+msgstr "Last updated:"
+
+msgid "1 января 2026 года"
+msgstr "January 1, 2026"
+
+msgid "1. Общие положения"
+msgstr "1. General Provisions"
+
+msgid "Настоящие Условия использования (далее \"Условия\") регулируют использование платформы SCANLY (далее \"Платформа\"). Используя Платформу, вы соглашаетесь с этими Условиями."
+msgstr "These Terms of Use (hereinafter \"Terms\") govern the use of the SCANLY platform (hereinafter \"Platform\"). By using the Platform, you agree to these Terms."
+
+msgid "1.1. Определения"
+msgstr "1.1. Definitions"
+
+msgid "веб-сайт и мобильные приложения SCANLY"
+msgstr "SCANLY website and mobile applications"
+
+msgid "любое физическое или юридическое лицо, использующее Платформу"
+msgstr "any natural or legal person using the Platform"
+
+msgid "вся информация, размещенная на Платформе"
+msgstr "all information posted on the Platform"
+
+msgid "функционал Платформы по поиску и подбору моделей"
+msgstr "Platform functionality for searching and selecting models"
+
+msgid "2. Регистрация и аккаунт"
+msgstr "2. Registration and Account"
+
+msgid "Для использования некоторых функций Платформы требуется регистрация аккаунта."
+msgstr "Account registration is required to use some Platform features."
+
+msgid "2.1. Требования к регистрации"
+msgstr "2.1. Registration Requirements"
+
+msgid "Возраст от 18 лет"
+msgstr "Age 18+"
+
+msgid "Предоставление достоверной информации"
+msgstr "Providing accurate information"
+
+msgid "Соблюдение настоящих Условий"
+msgstr "Compliance with these Terms"
+
+msgid "2.2. Безопасность аккаунта"
+msgstr "2.2. Account Security"
+
+msgid "Пользователь несет ответственность за сохранность логина и пароля. Платформа не несет ответственности за несанкционированный доступ к аккаунту."
+msgstr "User is responsible for keeping login and password secure. Platform is not responsible for unauthorized access to account."
+
+msgid "3. Использование Платформы"
+msgstr "3. Platform Usage"
+
+msgid "Пользователь обязуется использовать Платформу в соответствии с законодательством и настоящими Условиями."
+msgstr "User undertakes to use the Platform in accordance with legislation and these Terms."
+
+msgid "3.1. Разрешенные действия"
+msgstr "3.1. Permitted Actions"
+
+msgid "Поиск и просмотр профилей моделей"
+msgstr "Searching and viewing model profiles"
+
+msgid "Использование фильтров и инструментов поиска"
+msgstr "Using filters and search tools"
+
+msgid "Связь с моделями через Платформу"
+msgstr "Contacting models through the Platform"
+
+msgid "Оставление отзывов и рейтингов"
+msgstr "Leaving reviews and ratings"
+
+msgid "3.2. Запрещенные действия"
+msgstr "3.2. Prohibited Actions"
+
+msgid "Размещение ложной информации"
+msgstr "Posting false information"
+
+msgid "Спам и нежелательная реклама"
+msgstr "Spam and unwanted advertising"
+
+msgid "Нарушение авторских прав"
+msgstr "Copyright infringement"
+
+msgid "Угрозы и оскорбления"
+msgstr "Threats and insults"
+
+msgid "Мошенничество"
+msgstr "Fraud"
+
+msgid "4. Контент и интеллектуальная собственность"
+msgstr "4. Content and Intellectual Property"
+
+msgid "Весь Контент на Платформе защищен авторским правом."
+msgstr "All Content on the Platform is protected by copyright."
+
+msgid "4.1. Права на Контент"
+msgstr "4.1. Content Rights"
+
+msgid "Платформа принадлежит SCANLY"
+msgstr "Platform belongs to SCANLY"
+
+msgid "Пользовательские профили принадлежат пользователям"
+msgstr "User profiles belong to users"
+
+msgid "Использование Контента только в личных целях"
+msgstr "Content usage for personal purposes only"
+
+# Privacy page translations
+msgid "Настоящая Политика конфиденциальности (далее \"Политика\") описывает, как SCANLY (далее \"Мы\" или \"Платформа\") собирает, использует и защищает персональные данные пользователей (далее \"Вы\" или \"Пользователь\")."
+msgstr "This Privacy Policy (hereinafter \"Policy\") describes how SCANLY (hereinafter \"We\" or \"Platform\") collects, uses and protects users' personal data (hereinafter \"You\" or \"User\")."
+
+msgid "1.1. Основные принципы"
+msgstr "1.1. Basic Principles"
+
+msgid "Законность обработки персональных данных"
+msgstr "Lawfulness of personal data processing"
+
+msgid "Ограничение цели сбора данных"
+msgstr "Purpose limitation of data collection"
+
+msgid "Минимизация собираемых данных"
+msgstr "Data minimization"
+
+msgid "Точность и актуальность данных"
+msgstr "Data accuracy and relevance"
+
+msgid "Ограничение срока хранения"
+msgstr "Storage limitation"
+
+msgid "Обеспечение безопасности данных"
+msgstr "Data security"
+
+msgid "2. Собираемые данные"
+msgstr "2. Collected Data"
+
+msgid "Мы собираем различные типы данных для предоставления качественных услуг."
+msgstr "We collect various types of data to provide quality services."
+
+msgid "2.1. Персональные данные"
+msgstr "2.1. Personal Data"
+
+msgid "Имя и контактная информация"
+msgstr "Name and contact information"
+
+msgid "email, телефон"
+msgstr "email, phone"
+
+msgid "Данные аккаунта"
+msgstr "Account data"
+
+msgid "логин, пароль (в зашифрованном виде)"
+msgstr "login, password (encrypted)"
+
+# Additional FAQ answer translations
+msgid "Зайдите в настройки профиля, выберите \"Безопасность\" и нажмите \"Изменить пароль\". Введите текущий пароль и новый пароль дважды для подтверждения."
+msgstr "Go to profile settings, select \"Security\" and click \"Change Password\". Enter your current password and new password twice for confirmation."
+
+msgid "Перейдите в настройки профиля, прокрутите вниз до раздела \"Управление аккаунтом\" и нажмите \"Удалить аккаунт\". Подтвердите действие - аккаунт будет удален в течение 30 дней."
+msgstr "Go to profile settings, scroll down to \"Account Management\" section and click \"Delete Account\". Confirm the action - the account will be deleted within 30 days."
+
+msgid "Зайдите в раздел \"Тарифы\" в личном кабинете, выберите новый план и подтвердите изменение. При переходе на более дорогой тариф разница будет рассчитана пропорционально."
+msgstr "Go to \"Pricing\" section in your personal account, select a new plan and confirm the change. When upgrading to a more expensive plan, the difference will be calculated proportionally."
+
+# Additional FAQ translations
+msgid "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период. Вы можете отменить подписку в любое время без дополнительных платежей."
+msgstr "Yes, for the Pro plan we provide a 14-day free trial period. You can cancel your subscription at any time without additional payments."
+
+msgid "Проверьте подключение к интернету, очистите кэш браузера, убедитесь что вы вошли в аккаунт. Если проблема осталась, обратитесь в техническую поддержку."
+msgstr "Check your internet connection, clear browser cache, make sure you are logged into your account. If the problem persists, contact technical support."
+
+msgid "Мы поддерживаем последние версии Chrome, Firefox, Safari, Edge. Для лучшего опыта рекомендуем использовать Chrome или Firefox."
+msgstr "We support the latest versions of Chrome, Firefox, Safari, Edge. For the best experience, we recommend using Chrome or Firefox."
+
+msgid "Популярные темы"
+msgstr "Popular Topics"
+
+msgid "Как создать аккаунт и начать использование"
+msgstr "How to create an account and get started"
+
+msgid "Эффективный поиск и фильтрация"
+msgstr "Effective search and filtering"
+
+msgid "Способы оплаты и тарифные планы"
+msgstr "Payment methods and pricing plans"
+
+msgid "Защита данных и конфиденциальность"
+msgstr "Data protection and privacy"
+
+# Pricing FAQ translations
+msgid "Вопросы о тарифах"
+msgstr "Pricing Questions"
+
+msgid "Можно ли изменить тариф?"
+msgstr "Can I change my plan?"
+
+msgid "Да, вы можете изменить тариф в любой момент. При переходе на более дорогой тариф разница будет рассчитана пропорционально."
+msgstr "Yes, you can change your plan at any time. When upgrading to a more expensive plan, the difference will be calculated proportionally."
+
+msgid "Какие способы оплаты доступны?"
+msgstr "What payment methods are available?"
+
+msgid "Мы принимаем кредитные карты, PayPal, банковские переводы и криптовалюты."
+msgstr "We accept credit cards, PayPal, bank transfers and cryptocurrencies."
+
+msgid "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период."
+msgstr "Yes, for the Pro plan we provide a 14-day free trial period."
+
+# English to Russian translations
+msgid "ПРЕКРАТИ ИСКАТЬ"
+msgstr "STOP SEARCHING"
+
+msgid "НАЧНИ ПОДБИРАТЬ"
+msgstr "START MATCHING"
+
+msgid "OFTV"
+msgstr "OFTV"
+
+# Additional privacy translations
+msgid "Демографические данные"
+msgstr "Demographic data"
+
+msgid "возраст, страна, город"
+msgstr "age, country, city"
+
+msgid "Предпочтения"
+msgstr "Preferences"
+
+msgid "интересы, категории поиска"
+msgstr "interests, search categories"
+
+msgid "IP-адрес"
+msgstr "IP address"
+
+msgid "для определения местоположения"
+msgstr "for location determination"
+
+msgid "Данные устройства"
+msgstr "Device data"
+
+msgid "тип, ОС, браузер"
+msgstr "type, OS, browser"
+
+msgid "Данные использования"
+msgstr "Usage data"
+
+msgid "страницы, время на сайте"
+msgstr "pages, time on site"
+
+msgid "для персонализации и аналитики"
+msgstr "for personalization and analytics"
+
+# Final missing translations
+msgid "В этой категории скоро появятся новые модели"
+msgstr "New models will be added to this category soon"
+
+msgid "Оплата"
+msgstr "Payment"
+
+msgid "Бесплатный"
+msgstr "Free"
+
+msgid "Расширенные фильтры"
+msgstr "Advanced filters"
+
+msgid "Cookies"
+msgstr "Cookies"
+
+msgid "Частые вопросы"
+msgstr "Frequently Asked Questions"
+
+msgid "Контент"
+msgstr "Content"
+
+msgid "Платформа"
+msgstr "Platform"
+
+msgid "Пользователь"
+msgstr "User"
+
+msgid "Услуги"
+msgstr "Services"

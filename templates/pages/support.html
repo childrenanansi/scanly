@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}{{page_title}} - SCANLY{% endblock %}
+{% block title %}{{ page_title }} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -24,10 +25,10 @@
                             <i class="bi bi-chat-dots"></i>
                         </div>
                         <div class="support-content">
-                            <h3>Чат поддержки</h3>
-                            <p>Быстрая помощь в режиме реального времени</p>
-                            <p class="support-time">Работает 24/7</p>
-                            <button class="btn btn-primary">Начать чат</button>
+                            <h3>{% trans "Чат поддержки" %}</h3>
+                            <p>{% trans "Быстрая помощь в режиме реального времени" %}</p>
+                            <p class="support-time">{% trans "Работает 24/7" %}</p>
+                            <button class="btn btn-primary">{% trans "Начать чат" %}</button>
                         </div>
                     </div>
                     
@@ -36,10 +37,10 @@
                             <i class="bi bi-envelope"></i>
                         </div>
                         <div class="support-content">
-                            <h3>Email поддержка</h3>
-                            <p>Отправьте нам письмо с вашим вопросом</p>
+                            <h3>{% trans "Email поддержка" %}</h3>
+                            <p>{% trans "Отправьте нам письмо с вашим вопросом" %}</p>
                             <p class="support-email">support@scanly.com</p>
-                            <button class="btn btn-outline-primary">Написать письмо</button>
+                            <button class="btn btn-outline-primary">{% trans "Написать письмо" %}</button>
                         </div>
                     </div>
                     
@@ -48,16 +49,16 @@
                             <i class="bi bi-telephone"></i>
                         </div>
                         <div class="support-content">
-                            <h3>Телефон поддержки</h3>
-                            <p>Позвоните нам для получения помощи</p>
+                            <h3>{% trans "Телефон поддержки" %}</h3>
+                            <p>{% trans "Позвоните нам для получения помощи" %}</p>
                             <p class="support-phone">+7 (999) 123-45-67</p>
-                            <button class="btn btn-outline-primary">Позвонить</button>
+                            <button class="btn btn-outline-primary">{% trans "Позвонить" %}</button>
                         </div>
                     </div>
                 </div>
                 
                 <div class="faq-section">
-                    <h2>Частые вопросы</h2>
+                    <h2>{% trans "Частые вопросы" %}</h2>
                     <div class="faqAccordion">
                         <div class="faq-item">
                             <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#support-faq1">
@@ -109,7 +110,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="email">Email</label>
+                                    <label for="email">{% trans "Email" %}</label>
                                     <input type="email" class="form-control" id="email" required>
                                 </div>
                             </div>

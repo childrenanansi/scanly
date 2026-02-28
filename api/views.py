@@ -1,13 +1,23 @@
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.utils import translation
+from django.urls import reverse
 from .models import MainModel, Category, FriendLink, FAQ
-from .serializers import MainModelSerializer, CategorySerializer, FriendLinkSerializer
+from .serializers import MainModelSerializer, CategorySerializer, FriendLinkSerializer, FAQSerializer
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class FAQViewSet(viewsets.ModelViewSet):
+    queryset = FAQ.objects.all()
+    serializer_class = FAQSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['is_active', 'for_home_page', 'for_category_pages', 'categories']
+    ordering = ['order']
 
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = 20
@@ -84,7 +94,7 @@ def category_page(request, category_alias=None):
             selected_category = None
     
     # Сортируем все категории по алфавиту
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     # Получаем FAQ для категории
     faqs = FAQ.objects.filter(
@@ -114,22 +124,41 @@ def category_page(request, category_alias=None):
 
 def get_default_faqs():
     """
-    Возвращает дефолтные FAQ
+    Возвращает дефолтные FAQ в зависимости от языка
     """
-    default_faqs = [
-        {
-            'question': 'Как работает SCANLY?',
-            'answer': 'SCANLY использует искусственный интеллект для анализа и подбора моделей на основе ваших предпочтений. Наш алгоритм учитывает множество параметров для точного matching.'
-        },
-        {
-            'question': 'Как выбрать подходящую категорию?',
-            'answer': 'Используйте плитку категорий вверху страницы для быстрой навигации. Каждая категория содержит модели с соответствующими интересами и специализацией.'
-        },
-        {
-            'question': 'Можно ли фильтровать модели по нескольким категориям?',
-            'answer': 'Да, вы можете использовать теги на карточках моделей для поиска по пересечению интересов и находить модели с несколькими категориями.'
-        }
-    ]
+    from django.utils import translation
+    current_language = translation.get_language()
+    
+    if current_language == 'en':
+        default_faqs = [
+            {
+                'question': 'How does SCANLY work?',
+                'answer': 'SCANLY uses artificial intelligence to analyze and match models based on your preferences. Our algorithm considers multiple parameters for accurate matching.'
+            },
+            {
+                'question': 'How to choose the right category?',
+                'answer': 'Use the category tiles at the top of the page for quick navigation. Each category contains models with corresponding interests and specialization.'
+            },
+            {
+                'question': 'Can I filter models by multiple categories?',
+                'answer': 'Yes, you can use tags on model cards to search by intersection of interests and find models with multiple categories.'
+            }
+        ]
+    else:
+        default_faqs = [
+            {
+                'question': 'Как работает SCANLY?',
+                'answer': 'SCANLY использует искусственный интеллект для анализа и подбора моделей на основе ваших предпочтений. Наш алгоритм учитывает множество параметров для точного matching.'
+            },
+            {
+                'question': 'Как выбрать подходящую категорию?',
+                'answer': 'Используйте плитку категорий вверху страницы для быстрой навигации. Каждая категория содержит модели с соответствующими интересами и специализацией.'
+            },
+            {
+                'question': 'Можно ли фильтровать модели по нескольким категориям?',
+                'answer': 'Да, вы можете использовать теги на карточках моделей для поиска по пересечению интересов и находить модели с несколькими категориями.'
+            }
+        ]
     return default_faqs
 
 def search_page(request):
@@ -140,7 +169,7 @@ def search_page(request):
     category_id = request.GET.get('category', '')
     
     profiles = MainModel.objects.all()
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     # Поиск по описанию
     if query:
@@ -249,7 +278,7 @@ def trending_accounts(request):
     profiles = MainModel.objects.all().order_by('-id')[:50]  # Временно по id, потом можно добавить поле popularity
     
     # Получаем все категории для фильтров
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     # FAQ для страницы
     faqs = FAQ.objects.filter(
@@ -275,7 +304,7 @@ def best_accounts(request):
     Лучшие аккаунты - платные и высококачественные
     """
     profiles = MainModel.objects.filter(is_paid=True).order_by('-id')[:50]
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     faqs = FAQ.objects.filter(
         is_active=True,
@@ -300,7 +329,7 @@ def free_accounts(request):
     Top Free - лучшие бесплатные аккаунты
     """
     profiles = MainModel.objects.filter(is_paid=False).order_by('-id')[:50]
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     faqs = FAQ.objects.filter(
         is_active=True,
@@ -325,7 +354,7 @@ def new_accounts(request):
     Новые аккаунты - самые свежие
     """
     profiles = MainModel.objects.all().order_by('-id')[:50]
-    all_categories = Category.objects.all().order_by('name')
+    all_categories = Category.objects.all().order_by('name_ru')
     
     faqs = FAQ.objects.filter(
         is_active=True,
@@ -354,7 +383,7 @@ def api_categories(request):
     for category in categories:
         data.append({
             'id': category.id,
-            'name': category.name,
+            'name': category.get_localized_name,
             'count': MainModel.objects.filter(categories=category).count()
         })
     return JsonResponse(data, safe=False)
@@ -374,6 +403,23 @@ def api_profiles(request):
             'top_photo': profile.top_photo.url if profile.top_photo else None,
             'link_ak': profile.link_ak,
             'is_paid': profile.is_paid,
-            'categories': [cat.name for cat in profile.categories.all()]
+            'categories': [cat.get_localized_name for cat in profile.categories.all()]
         })
     return JsonResponse(data, safe=False)
+
+@require_POST
+def set_language(request):
+    """
+    Switch language function
+    """
+    language = request.POST.get('language', 'ru')
+    next_url = request.POST.get('next', request.META.get('HTTP_REFERER', '/'))
+    
+    if language in ['ru', 'en']:
+        response = redirect(next_url)
+        response.set_cookie('django_language', language, max_age=365*24*60*60)  # 1 year
+        translation.activate(language)
+        request.LANGUAGE_CODE = language
+        return response
+    
+    return redirect(next_url)

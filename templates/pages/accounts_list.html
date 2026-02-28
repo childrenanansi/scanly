@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}{{page_title}} - SCANLY{% endblock %}
+{% block title %}{{ page_title }} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -41,7 +42,7 @@
                 <h2 class="section-title">🆓 Top Free</h2>
                 <p class="section-subtitle">Лучшие бесплатные модели платформы</p>
             {% elif page_type == 'new' %}
-                <h2 class="section-title">✨ Новые аккаунты</h2>
+                <h2 class="section-title">✨ {% trans "Новые аккаунты" %}</h2>
                 <p class="section-subtitle">Самые свежие пополнения нашей базы</p>
             {% endif %}
         </div>
@@ -82,7 +83,7 @@
                                     <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
                                 {% endfor %}
                             </div>
-                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
+                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">{% trans "Открыть профиль" %}</a>
                         </div>
                     </div>
                 </div>
@@ -90,8 +91,8 @@
                 <div class="col-12 text-center">
                     <div class="no-results">
                         <i class="bi bi-inbox display-1 text-muted mb-3"></i>
-                        <h4 class="text-muted">Пока нет аккаунтов</h4>
-                        <p class="text-muted">В этой категории скоро появятся новые модели</p>
+                        <h4 class="text-muted">{% trans "Ничего не найдено" %}</h4>
+                        <p class="text-muted">{% trans "В этой категории скоро появятся новые модели" %}</p>
                     </div>
                 </div>
             {% endfor %}
@@ -101,7 +102,7 @@
         {% if profiles|length >= 50 %}
         <div class="text-center mt-5">
             <button class="btn btn-primary btn-lg" id="loadMoreBtn">
-                <i class="bi bi-arrow-down-circle me-2"></i>Загрузить еще
+                <i class="bi bi-arrow-down-circle me-2"></i>{% trans "Загрузить еще" %}
             </button>
         </div>
         {% endif %}
@@ -142,19 +143,19 @@
 <section class="quick-nav py-4">
     <div class="container-fluid">
         <div class="text-center mb-4">
-            <h3>Быстрая навигация</h3>
+            <h3>{% trans "Быстрая навигация" %}</h3>
         </div>
         <div class="row justify-content-center">
             <div class="col-md-3 col-6 mb-3">
                 <a href="{% url 'trending_accounts' %}" class="quick-nav-item {% if page_type == 'trending' %}active{% endif %}">
                     <i class="bi bi-fire"></i>
-                    <span>В тренде</span>
+                    <span>{% trans "В тренде" %}</span>
                 </a>
             </div>
             <div class="col-md-3 col-6 mb-3">
                 <a href="{% url 'best_accounts' %}" class="quick-nav-item {% if page_type == 'best' %}active{% endif %}">
                     <i class="bi bi-star"></i>
-                    <span>Лучшие</span>
+                    <span>{% trans "Лучшие" %}</span>
                 </a>
             </div>
             <div class="col-md-3 col-6 mb-3">

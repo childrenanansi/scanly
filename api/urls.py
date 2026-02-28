@@ -8,6 +8,7 @@ from django.conf import settings
 router = DefaultRouter()
 router.register(r'mainmodels', MainModelViewSet)
 router.register(r'categories', CategoryViewSet)
+router.register(r'faqs', FAQViewSet)
 router.register(r'friend-links', FriendLinkViewSet, basename='friendlink')
 
 urlpatterns = [
@@ -15,6 +16,7 @@ urlpatterns = [
     path('home/', home, name='home'),
     path('api/categories/', api_categories, name='api_categories'),
     path('api/profiles/', api_profiles, name='api_profiles'),
+    path('set-language/', set_language, name='set_language'),
 ]
 
 

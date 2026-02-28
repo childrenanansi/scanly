@@ -1,13 +1,33 @@
 from rest_framework import serializers
-from .models import MainModel, Category, FriendLink
+from .models import MainModel, Category, FriendLink, FAQ
 from .fields import Base64ImageField
 from collections import OrderedDict
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    
     class Meta:
         model = Category
         fields = ['id', 'name', 'parent']
+    
+    def get_name(self, obj):
+        return obj.get_localized_name
+
+
+class FAQSerializer(serializers.ModelSerializer):
+    question = serializers.SerializerMethodField()
+    answer = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = FAQ
+        fields = ['id', 'question', 'answer', 'order', 'is_active', 'for_home_page', 'for_category_pages', 'categories']
+    
+    def get_question(self, obj):
+        return obj.get_localized_question
+    
+    def get_answer(self, obj):
+        return obj.get_localized_answer
 
 class FriendLinkNestedSerializer(serializers.ModelSerializer):
     class Meta:

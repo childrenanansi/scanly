@@ -1,9 +1,18 @@
 # api/models.py
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from pytils.translit import slugify
 
 class Category(models.Model):
-    name = models.CharField(max_length=200, verbose_name="Название")
+    name = models.CharField(max_length=200, verbose_name="Название (RU)",
+        null=True,
+        blank=True)
+    name_ru = models.CharField(max_length=200, verbose_name="Название (RU)",
+        null=True,
+        blank=True)
+    name_en = models.CharField(max_length=200, verbose_name="Name (EN)",
+        null=True,
+        blank=True)
     alias = models.SlugField(max_length=200, unique=True, verbose_name="Alias для URL",
         null=True,
         blank=True,)
@@ -20,16 +29,35 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
 
     def __str__(self):
-        return self.name
+        return self.get_localized_name
+    
+    @property
+    def get_localized_name(self):
+        from django.utils import translation
+        current_language = translation.get_language()
+        if current_language == 'en':
+            return self.name_en or self.name_ru or ''
+        return self.name_ru or ''
     
     def save(self, *args, **kwargs):
         if not self.alias:
-            self.alias = slugify(self.name)
+            # Use Russian name for alias by default
+            self.alias = slugify(self.name_ru)
         super().save(*args, **kwargs)
 
 class FAQ(models.Model):
-    question = models.TextField(verbose_name="Вопрос")
-    answer = models.TextField(verbose_name="Ответ")
+    question_ru = models.TextField(verbose_name="Вопрос (RU)",
+        null=True,
+        blank=True)
+    question_en = models.TextField(verbose_name="Question (EN)",
+        null=True,
+        blank=True)
+    answer_ru = models.TextField(verbose_name="Ответ (RU)",
+        null=True,
+        blank=True)
+    answer_en = models.TextField(verbose_name="Answer (EN)",
+        null=True,
+        blank=True)
     order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
     is_active = models.BooleanField(default=True, verbose_name="Активен")
     
@@ -44,7 +72,23 @@ class FAQ(models.Model):
         ordering = ['order']
 
     def __str__(self):
-        return self.question[:100]
+        return self.get_localized_question[:100]
+    
+    @property
+    def get_localized_question(self):
+        from django.utils import translation
+        current_language = translation.get_language()
+        if current_language == 'en':
+            return self.question_en or self.question_ru or ''
+        return self.question_ru or ''
+    
+    @property
+    def get_localized_answer(self):
+        from django.utils import translation
+        current_language = translation.get_language()
+        if current_language == 'en':
+            return self.answer_en or self.answer_ru or ''
+        return self.answer_ru or ''
 
 class MainModel(models.Model):
     name = models.CharField(max_length=200, verbose_name="Имя")

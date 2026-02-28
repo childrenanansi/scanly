@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}{{page_title}} - SCANLY{% endblock %}
+{% block title %}{{ page_title }} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -20,8 +21,8 @@
             <div class="col-lg-12 mx-auto">
                 <div class="contact-grid">
                     <div class="contact-info-section">
-                        <h2>Свяжитесь с нами</h2>
-                        <p>Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы</p>
+                        <h2>{% trans "Свяжитесь с нами" %}</h2>
+                        <p>{% trans "Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы" %}</p>
                         
                         <div class="contact-items">
                             <div class="contact-item">
@@ -29,7 +30,7 @@
                                     <i class="bi bi-geo-alt"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <h4>Адрес</h4>
+                                    <h4>{% trans "Адрес" %}</h4>
                                     <p>Москва, ул. Примерная, д. 123, офис 456</p>
                                     <p>123456, Россия</p>
                                 </div>
@@ -40,7 +41,7 @@
                                     <i class="bi bi-telephone"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <h4>Телефон</h4>
+                                    <h4>{% trans "Телефон" %}</h4>
                                     <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
                                     <p>Пн-Пт: 9:00 - 18:00 МСК</p>
                                 </div>
@@ -51,7 +52,7 @@
                                     <i class="bi bi-envelope"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <h4>Email</h4>
+                                    <h4>{% trans "Email" %}</h4>
                                     <p><a href="mailto:info@scanly.com">info@scanly.com</a></p>
                                     <p><a href="mailto:support@scanly.com">support@scanly.com</a></p>
                                 </div>
@@ -62,8 +63,8 @@
                                     <i class="bi bi-clock"></i>
                                 </div>
                                 <div class="contact-details">
-                                    <h4>Время работы</h4>
-                                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                                    <h4>{% trans "Время работы" %}</h4>
+                                    <p>{% trans "Понедельник - Пятница: 9:00 - 18:00" %}</p>
                                     <p>Суббота, Воскресенье: выходной</p>
                                 </div>
                             </div>
@@ -71,18 +72,18 @@
                     </div>
                     
                     <div class="contact-form-section">
-                        <h3>Форма обратной связи</h3>
+                        <h3>{% trans "Форма обратной связи" %}</h3>
                         <form class="contact-form">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Ваше имя *</label>
+                                        <label for="name">{% trans "Ваше имя" %} *</label>
                                         <input type="text" class="form-control" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="email">Email *</label>
+                                        <label for="email">{% trans "Email" %} *</label>
                                         <input type="email" class="form-control" id="email" required>
                                     </div>
                                 </div>
@@ -91,36 +92,36 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="phone">Телефон</label>
+                                        <label for="phone">{% trans "Телефон" %}</label>
                                         <input type="tel" class="form-control" id="phone" placeholder="+7 (999) 123-45-67">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="subject">Тема *</label>
+                                        <label for="subject">{% trans "Тема" %} *</label>
                                         <select class="form-control" id="subject" required>
-                                            <option value="">Выберите тему</option>
-                                            <option value="general">Общий вопрос</option>
-                                            <option value="technical">Техническая поддержка</option>
-                                            <option value="billing">Вопросы оплаты</option>
-                                            <option value="partnership">Партнерство</option>
-                                            <option value="complaint">Жалоба</option>
-                                            <option value="other">Другое</option>
+                                            <option value="">{% trans "Выберите тему" %}</option>
+                                            <option value="general">{% trans "Общий вопрос" %}</option>
+                                            <option value="technical">{% trans "Техническая поддержка" %}</option>
+                                            <option value="billing">{% trans "Вопросы оплаты" %}</option>
+                                            <option value="partnership">{% trans "Партнерство" %}</option>
+                                            <option value="complaint">{% trans "Жалоба" %}</option>
+                                            <option value="other">{% trans "Другое" %}</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                                <label for="message">Сообщение *</label>
-                                <textarea class="form-control" id="message" rows="5" required placeholder="Опишите ваш вопрос или предложение..."></textarea>
+                                <label for="message">{% trans "Сообщение" %} *</label>
+                                <textarea class="form-control" id="message" rows="5" required placeholder="{% trans "Опишите ваш вопрос или предложение..." %}"></textarea>
                             </div>
                             
                             <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="copy">
                                     <label class="form-check-label" for="copy">
-                                        Отправить копию на мой email
+                                        {% trans "Отправить копию на мой email" %}
                                     </label>
                                 </div>
                             </div>
@@ -129,17 +130,17 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="agree" required>
                                     <label class="form-check-label" for="agree">
-                                        Я согласен с <a href="{% url 'static_page' 'privacy' %}" target="_blank">политикой конфиденциальности</a>
+                                        {% trans "Я согласен с" %} <a href="{% url 'static_page' 'privacy' %}" target="_blank">{% trans "политикой конфиденциальности" %}</a>
                                     </label>
                                 </div>
                             </div>
                             
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-send me-2"></i>Отправить сообщение
+                                    <i class="bi bi-send me-2"></i>{% trans "Отправить сообщение" %}
                                 </button>
                                 <button type="reset" class="btn btn-outline-secondary">
-                                    <i class="bi bi-arrow-clockwise me-2"></i>Очистить форму
+                                    <i class="bi bi-arrow-clockwise me-2"></i>{% trans "Очистить форму" %}
                                 </button>
                             </div>
                         </form>
@@ -148,7 +149,7 @@
                 
                 <!-- Map Section -->
                 <div class="map-section mt-5">
-                    <h3>Как нас найти</h3>
+                    <h3>{% trans "Как нас найти" %}</h3>
                     <div class="map-container">
                         <div class="map-placeholder">
                             <i class="bi bi-map"></i>
