@@ -2,10 +2,20 @@
 <header class="header" id="main-header">
     <div class="container-fluid">
         <div class="header-top d-flex align-items-center justify-content-between py-3 flex-wrap gap-2">
-            <a href="#" class="logo d-flex align-items-center">
-                <span class="logo-text">SCANLY</span>
-                <div class="logo-icon ms-2"></div>
-            </a>
+            <div class="logo-dropdown">
+                <button class="logo d-flex align-items-center" type="button" id="logoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="logo-text">SCANLY</span>
+                    <div class="logo-icon ms-2"></div>
+                </button>
+                <ul class="dropdown-menu categories-dropdown" aria-labelledby="logoDropdown">
+                    <strong>Популярные категории</strong>
+                    {% if categories %}
+                        {% for category in categories %}
+                            <li><a class="dropdown-item category-item" href="#">{{category.name}}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
             
             <div class="search-wrapper flex-grow-1 mx-3 mx-md-0">
                 <div class="search-input-wrapper">
