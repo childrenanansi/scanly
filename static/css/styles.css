@@ -1386,7 +1386,7 @@ body::after {
 
 .hero-card-left2{
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 3%;
     max-width: 400px;
 }
@@ -1407,7 +1407,7 @@ body::after {
 }
 
 .min-vh-75 {
-    min-height: 75vh;
+    min-height: 50vh;
 }
 
 .hero-title {
@@ -1535,6 +1535,7 @@ body::after {
 .accounts-slider {
     position: relative;
     overflow: hidden;
+    margin: 0 -15px;
 }
 
 .accounts-slider-track {
@@ -1542,23 +1543,86 @@ body::after {
     transition: transform 0.4s ease;
 }
 
-.accounts-slider-slide {
-    flex: 0 0 100%;
+.accounts-slider-slide-group {
+    flex: 0 0 auto;
     width: 100%;
-    min-width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.accounts-slider-slide {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Desktop: 6 cards per group */
+@media (min-width: 1200px) {
+    .accounts-slider-slide {
+        width: calc((100% - 100px) / 6);
+    }
+}
+
+/* Large tablets: 4 cards per group */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .accounts-slider-slide {
+        width: calc((100% - 60px) / 4);
+    }
+}
+
+/* Tablets: 2 cards per group */
+@media (min-width: 768px) and (max-width: 991px) {
+    .accounts-slider-slide {
+        width: calc((100% - 20px) / 2);
+    }
+}
+
+/* Mobile: 1 card per group */
+@media (max-width: 767px) {
+    .accounts-slider {
+        margin: 0 -10px;
+    }
+    
+    .accounts-slider-slide-group {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .accounts-slider-slide {
+        width: calc(100% - 20px);
+    }
 }
 
 .accounts-slider .account-card-wrapper {
     height: 100%;
 }
 
-.accounts-slider .account-card {
-    height: 100%;
-}
 
 .accounts-slider .carousel-nav {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: -50px;
+    right: 15px;
+    z-index: 10;
+}
+
+.btn-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-purple);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.btn-nav:hover {
+    background: var(--color-purple);
+    color: white;
+    transform: scale(1.1);
 }
 
 /* Popular Section */
@@ -1603,7 +1667,6 @@ body::after {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     transition: transform 0.2s, box-shadow 0.2s;
-    height: 100%;
 }
 
 .account-card:hover {

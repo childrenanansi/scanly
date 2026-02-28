@@ -21,13 +21,13 @@
                 </div>
                 
                 <div class="col-lg-4 order-1 order-lg-2">
-                    <a href="#" class="btn" style="position: absolute;top: 45%;">
+                    <a href="#" class="btn" style="position: absolute;top: 70%;">
                        <img src="/static/img/butgetst.svg">
                     </a>
                 </div>
                 
                 <div class="col-lg-4 order-3">
-                    <div class="hero-cards-right" style="position: absolute; top: 7%; right: 8.5%;">
+                    <div class="hero-cards-right" style="position: absolute; top: 10%; right: 8.5%;">
                         <div class="social-icons d-flex flex-column gap-2 mt-3" style="max-width: 190px;     text-align: right;">
                             <a href="#"><i class="bi bi-instagram"></i></a>
                             <a href="#"><i class="bi bi-telegram"></i></a>
@@ -70,106 +70,35 @@
             </div>
             <div class="accounts-slider">
                 <div class="accounts-slider-track">
-                    <div class="accounts-slider-slide">
-                        <div class="row g-4">
-                            {% for i in recent_profiles|slice:":6" %}
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
-                                    <div class="account-card">
-                                        <div class="account-card-img">
-                                            {% if not i.is_paid %}
-                                                <div class="image-free">Free</div>
-                                            {% endif %}
-                                            {% if i.avatar %}
-                                                <img src="{{i.avatar.url}}" style="width: 100%;    height: 100%;" />
-                                            {% endif %}
-                                            <div class="account-card-stats">
-                                                <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
-                                                <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
-                                                <span><i class="bi bi-eye"></i> 543</span>
-                                            </div>
-                                        </div>
-                                        <div class="account-card-body">
-                                            <div class="account-card-name">{{i.name}}</div>
-                                            <!--<div class="account-card-handle">{{i.link_ak}}</div>-->
-                                            <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
-                                            <div class="account-card-tags">
-                                                {% for category in i.categories.all %}
-                                                    <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
-                                                {% endfor %}
-                                            </div>
-                                            <a href="{{i.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
-                                        </div>
+                    {% for i in recent_profiles %}
+                        <div class="accounts-slider-slide">
+                            <div class="account-card">
+                                <div class="account-card-img">
+                                    {% if not i.is_paid %}
+                                        <div class="image-free">Free</div>
+                                    {% endif %}
+                                    {% if i.avatar %}
+                                        <img src="{{i.avatar.url}}" style="width: 100%; height: 100%;" />
+                                    {% endif %}
+                                    <div class="account-card-stats">
+                                        <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
+                                        <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
+                                        <span><i class="bi bi-eye"></i> 543</span>
                                     </div>
                                 </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="accounts-slider-slide">
-                        <div class="row g-4">
-                            {% for i in recent_profiles|slice:"6:12" %}
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
-                                    <div class="account-card">
-                                        <div class="account-card-img">
-                                            {% if not i.is_paid %}
-                                                <div class="image-free">Free</div>
-                                            {% endif %}
-                                            {% if i.avatar %}
-                                                <img src="{{i.avatar.url}}" style="width: 100%;    height: 100%;" />
-                                            {% endif %}
-                                            <div class="account-card-stats">
-                                                <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
-                                                <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
-                                                <span><i class="bi bi-eye"></i> 543</span>
-                                            </div>
-                                        </div>
-                                        <div class="account-card-body">
-                                            <div class="account-card-name">{{i.name}}</div>
-                                            <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
-                                            <div class="account-card-tags">
-                                                {% for category in i.categories.all %}
-                                                    <span class="tag">{{category.name}}</span>
-                                                {% endfor %}
-                                            </div>
-                                            <a href="{{i.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
-                                        </div>
+                                <div class="account-card-body">
+                                    <div class="account-card-name">{{i.name}}</div>
+                                    <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
+                                    <div class="account-card-tags">
+                                        {% for category in i.categories.all %}
+                                            <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
+                                        {% endfor %}
                                     </div>
+                                    <a href="{{i.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                    <div class="accounts-slider-slide">
-                        <div class="row g-4">
-                            {% for i in recent_profiles|slice:"12:18" %}
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
-                                    <div class="account-card">
-                                        <div class="account-card-img">
-                                            {% if not i.is_paid %}
-                                                <div class="image-free">Free</div>
-                                            {% endif %}
-                                            {% if i.avatar %}
-                                                <img src="{{i.avatar.url}}" style="width: 100%;    height: 100%;" />
-                                            {% endif %}
-                                            <div class="account-card-stats">
-                                                <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
-                                                <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
-                                                <span><i class="bi bi-eye"></i> 543</span>
-                                            </div>
-                                        </div>
-                                        <div class="account-card-body">
-                                            <div class="account-card-name">{{i.name}}</div>
-                                            <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
-                                            <div class="account-card-tags">
-                                                {% for category in i.categories.all %}
-                                                    <span class="tag">{{category.name}}</span>
-                                                {% endfor %}
-                                            </div>
-                                            <a href="{{i.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
