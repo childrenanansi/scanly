@@ -48,12 +48,10 @@ class FriendLinkViewSet(viewsets.ReadOnlyModelViewSet):  # только чтен
 
 # Django views for frontend
 def home(request):
-    """
-    Главная страница сайта
-    """
+
     categories = Category.objects.all()
     featured_profiles = MainModel.objects.filter(is_paid=True)[:6]
-    recent_profiles = MainModel.objects.all().order_by('-id')[:6]
+    recent_profiles = MainModel.objects.all().order_by('-id')[:50]
     
     context = {
         'categories': categories,
