@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}} - SCANLY{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-subtitle">{{page_description}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="contact-content py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="contact-grid">
+                    <div class="contact-info-section">
+                        <h2>Свяжитесь с нами</h2>
+                        <p>Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы</p>
+                        
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Адрес</h4>
+                                    <p>Москва, ул. Примерная, д. 123, офис 456</p>
+                                    <p>123456, Россия</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Телефон</h4>
+                                    <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+                                    <p>Пн-Пт: 9:00 - 18:00 МСК</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@scanly.com">info@scanly.com</a></p>
+                                    <p><a href="mailto:support@scanly.com">support@scanly.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Время работы</h4>
+                                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                                    <p>Суббота, Воскресенье: выходной</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-section">
+                        <h3>Форма обратной связи</h3>
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Ваше имя *</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Телефон</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="+7 (999) 123-45-67">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="subject">Тема *</label>
+                                        <select class="form-control" id="subject" required>
+                                            <option value="">Выберите тему</option>
+                                            <option value="general">Общий вопрос</option>
+                                            <option value="technical">Техническая поддержка</option>
+                                            <option value="billing">Вопросы оплаты</option>
+                                            <option value="partnership">Партнерство</option>
+                                            <option value="complaint">Жалоба</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea class="form-control" id="message" rows="5" required placeholder="Опишите ваш вопрос или предложение..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="copy">
+                                    <label class="form-check-label" for="copy">
+                                        Отправить копию на мой email
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agree" required>
+                                    <label class="form-check-label" for="agree">
+                                        Я согласен с <a href="{% url 'static_page' 'privacy' %}" target="_blank">политикой конфиденциальности</a>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-send me-2"></i>Отправить сообщение
+                                </button>
+                                <button type="reset" class="btn btn-outline-secondary">
+                                    <i class="bi bi-arrow-clockwise me-2"></i>Очистить форму
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="map-section mt-5">
+                    <h3>Как нас найти</h3>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="bi bi-map"></i>
+                            <p>Интерактивная карта</p>
+                            <small>Москва, ул. Примерная, д. 123</small>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- FAQ Section -->
+                <div class="quick-faq mt-5">
+                    <h3>Быстрые ответы</h3>
+                    <div class="quick-faq-items">
+                        <div class="quick-faq-item">
+                            <h5>Как быстро вы отвечаете?</h5>
+                            <p>Мы стараемся отвечать на все запросы в течение 24 часов в рабочие дни.</p>
+                        </div>
+                        <div class="quick-faq-item">
+                            <h5>Есть ли у вас мобильное приложение?</h5>
+                            <p>Да, наши приложения доступны в App Store и Google Play.</p>
+                        </div>
+                        <div class="quick-faq-item">
+                            <h5>Как стать партнером?</h5>
+                            <p>Отправьте запрос на email: partners@scanly.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

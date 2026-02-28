@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if selected_category %}{{selected_category.name}} - SCANLY{% else %}Все категории - SCANLY{% endif %}{% endblock %}
+
+{% block content %}
+<!-- Categories Tiles Section -->
+<section class="categories-tiles-section py-4">
+    <div class="container-fluid">
+        <div class="categories-tiles">
+            {% for category in all_categories %}
+                <a href="{% url 'category_page' category.alias %}" class="category-tile {% if selected_category and selected_category.id == category.id %}active{% endif %}">
+                    <span class="category-tile-name">{{category.name}}</span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Profiles Section -->
+<section class="profiles-section py-5">
+    <div class="container-fluid">
+        <div class="section-header text-center mb-5">
+            {% if selected_category %}
+                <h1 class="section-title">{{selected_category.name}}</h1>
+                <p class="section-subtitle">Найдено моделей в категории {{selected_category.name}}</p>
+            {% else %}
+                <h1 class="section-title">Все модели</h1>
+                <p class="section-subtitle">Все доступные модели на платформе</p>
+            {% endif %}
+        </div>
+        
+        <div class="row g-4">
+            {% for profile in profiles %}
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
+                    <div class="account-card">
+                        <div class="account-card-img">
+                            {% if not profile.is_paid %}
+                                <div class="image-free">Free</div>
+                            {% endif %}
+                            {% if profile.avatar %}
+                                <img src="{{profile.avatar.url}}" style="width: 100%; height: 100%;" />
+                            {% endif %}
+                            <div class="account-card-stats">
+                                <span><i class="bi bi-heart-fill text-danger"></i> 1.9m</span>
+                                <span><i class="bi bi-currency-dollar"></i> 1.5k</span>
+                                <span><i class="bi bi-eye"></i> 543</span>
+                            </div>
+                        </div>
+                        <div class="account-card-body">
+                            <div class="account-card-name">{{profile.name}}</div>
+                            <div class="account-card-desc">{{profile.description|truncatechars:200}}</div>
+                            <div class="account-card-tags">
+                                {% for category in profile.categories.all %}
+                                    <span class="tag">{{category.name}}</span>
+                                {% endfor %}
+                            </div>
+                            <a href="{{profile.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p class="text-muted">В этой категории пока нет моделей.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5">
+    <div class="container-fluid">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <p class="section-subtitle">Ответы на популярные вопросы о SCANLY</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="faqAccordion">
+                    {% for faq in faqs %}
+                        <div class="faq-item">
+                            <div class="faq-question {% if not forloop.first %}collapsed{% endif %}" data-bs-toggle="collapse" data-bs-target="#faq{{forloop.counter}}">
+                                <h5>{{faq.question}}</h5>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% endif %}" data-bs-parent=".faqAccordion">
+                                <div class="faq-answer">
+                                    <p>{{faq.answer}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

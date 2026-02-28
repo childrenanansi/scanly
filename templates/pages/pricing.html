@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}} - SCANLY{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-subtitle">{{page_description}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Content -->
+<section class="pricing-section py-5">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Бесплатный</h3>
+                        <div class="price">
+                            <span class="currency">$0</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> До 10 поисков в день</li>
+                            <li><i class="bi bi-check-circle"></i> Базовые фильтры</li>
+                            <li><i class="bi bi-check-circle"></i> Просмотр профилей</li>
+                            <li><i class="bi bi-check-circle"></i> Email поддержка</li>
+                            <li><i class="bi bi-x-circle"></i> Расширенная аналитика</li>
+                            <li><i class="bi bi-x-circle"></i> Приоритетная поддержка</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <button class="btn btn-outline-primary w-100">Начать бесплатно</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Популярный</div>
+                    <div class="pricing-header">
+                        <h3>Профи</h3>
+                        <div class="price">
+                            <span class="currency">$29</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Неограниченные поиски</li>
+                            <li><i class="bi bi-check-circle"></i> Все фильтры</li>
+                            <li><i class="bi bi-check-circle"></i> Просмотр профилей</li>
+                            <li><i class="bi bi-check-circle"></i> Расширенная аналитика</li>
+                            <li><i class="bi bi-check-circle"></i> Приоритетная поддержка</li>
+                            <li><i class="bi bi-check-circle"></i> Экспорт результатов</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <button class="btn btn-primary w-100">Выбрать Профи</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Бизнес</h3>
+                        <div class="price">
+                            <span class="currency">$99</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> Все функции Профи</li>
+                            <li><i class="bi bi-check-circle"></i> Многопользовательский доступ</li>
+                            <li><i class="bi bi-check-circle"></i> API доступ</li>
+                            <li><i class="bi bi-check-circle"></i> Персональный менеджер</li>
+                            <li><i class="bi bi-check-circle"></i> Кастомные отчеты</li>
+                            <li><i class="bi bi-check-circle"></i> SLA гарантии</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <button class="btn btn-outline-primary w-100">Связаться с нами</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comparison-section mt-5">
+            <h2 class="text-center">Сравнение тарифов</h2>
+            <div class="comparison-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Функция</th>
+                            <th>Бесплатный</th>
+                            <th>Профи</th>
+                            <th>Бизнес</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Количество поисков</td>
+                            <td>10 в день</td>
+                            <td>Неограниченно</td>
+                            <td>Неограниченно</td>
+                        </tr>
+                        <tr>
+                            <td>Расширенные фильтры</td>
+                            <td><i class="bi bi-x text-danger"></i></td>
+                            <td><i class="bi bi-check text-success"></i></td>
+                            <td><i class="bi bi-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Аналитика</td>
+                            <td><i class="bi bi-x text-danger"></i></td>
+                            <td><i class="bi bi-check text-success"></i></td>
+                            <td><i class="bi bi-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>API доступ</td>
+                            <td><i class="bi bi-x text-danger"></i></td>
+                            <td><i class="bi bi-x text-danger"></i></td>
+                            <td><i class="bi bi-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="faq-section mt-5">
+            <h2 class="text-center">Вопросы о тарифах</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faqAccordion">
+                        <div class="faq-item">
+                            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#pricing-faq1">
+                                <h5>Можно ли изменить тариф?</h5>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div id="pricing-faq1" class="collapse show" data-bs-parent=".faqAccordion">
+                                <div class="faq-answer">
+                                    <p>Да, вы можете изменить тариф в любой момент. При переходе на более дорогой тариф разница будет рассчитана пропорционально.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#pricing-faq2">
+                                <h5>Какие способы оплаты доступны?</h5>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div id="pricing-faq2" class="collapse" data-bs-parent=".faqAccordion">
+                                <div class="faq-answer">
+                                    <p>Мы принимаем кредитные карты, PayPal, банковские переводы и криптовалюты.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#pricing-faq3">
+                                <h5>Есть ли бесплатный период?</h5>
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <div id="pricing-faq3" class="collapse" data-bs-parent=".faqAccordion">
+                                <div class="faq-answer">
+                                    <p>Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

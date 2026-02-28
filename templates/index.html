@@ -94,7 +94,7 @@
                                             <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
                                             <div class="account-card-tags">
                                                 {% for category in i.categories.all %}
-                                                    <span class="tag">{{category.name}}</span>
+                                                    <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
                                                 {% endfor %}
                                             </div>
                                             <a href="{{i.link_ak}}" class="btn btn-open-profile">Открыть профиль</a>
@@ -186,65 +186,19 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="faqAccordion">
-                        <div class="faq-item">
-                            <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                <h5>Как работает SCANLY?</h5>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq1" class="collapse show" data-bs-parent=".faqAccordion">
-                                <div class="faq-answer">
-                                    <p>SCANLY использует искусственный интеллект для анализа и подбора моделей на основе ваших предпочтений. Наш алгоритм учитывает множество параметров для точного matching.</p>
+                        {% for faq in faqs %}
+                            <div class="faq-item">
+                                <div class="faq-question {% if not forloop.first %}collapsed{% endif %}" data-bs-toggle="collapse" data-bs-target="#faq{{forloop.counter}}">
+                                    <h5>{{faq.question}}</h5>
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                                <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% endif %}" data-bs-parent=".faqAccordion">
+                                    <div class="faq-answer">
+                                        <p>{{faq.answer}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                <h5>Сколько стоит использование платформы?</h5>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq2" class="collapse" data-bs-parent=".faqAccordion">
-                                <div class="faq-answer">
-                                    <p>Мы предлагаем различные тарифные планы: бесплатный базовый доступ и премиум-подписки с расширенными функциями. Детальную информацию о тарифах вы найдете в соответствующем разделе.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                <h5>Как начать работу с SCANLY?</h5>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq3" class="collapse" data-bs-parent=".faqAccordion">
-                                <div class="faq-answer">
-                                    <p>Регистрация занимает всего несколько минут. Создайте профиль, укажите ваши предпочтения, и система начнет подбирать подходящих вариантов для вас.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                <h5>Гарантируется ли конфиденциальность данных?</h5>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq4" class="collapse" data-bs-parent=".faqAccordion">
-                                <div class="faq-answer">
-                                    <p>Да, мы строго соблюдаем политику конфиденциальности и используем современные методы шифрования для защиты ваших персональных данных.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                <h5>Можно ли использовать SCANLY для бизнеса?</h5>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq5" class="collapse" data-bs-parent=".faqAccordion">
-                                <div class="faq-answer">
-                                    <p>Да, у нас есть специальные решения для бизнес-клиентов с расширенными возможностями для поиска моделей под коммерческие проекты.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

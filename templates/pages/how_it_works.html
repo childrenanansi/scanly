@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}} - SCANLY{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-subtitle">{{page_description}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Content -->
+<section class="how-it-works py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Регистрация</h3>
+                            <p>Создайте аккаунт за несколько минут. Укажите ваши предпочтения и требования к моделям.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Анализ предпочтений</h3>
+                            <p>Наш ИИ анализирует ваши требования и создает профиль ваших предпочтений.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Подбор моделей</h3>
+                            <p>Система находит наиболее подходящие модели из нашей базы данных.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Просмотр результатов</h3>
+                            <p>Изучите предложенные варианты, используйте фильтры для уточнения поиска.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Связь с моделями</h3>
+                            <p>Выберите подходящие модели и установите контакт через платформу.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-section">
+                    <h2>Технологии, которые мы используем</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="bi bi-cpu"></i>
+                            <h4>Машинное обучение</h4>
+                            <p>Алгоритмы ML для точного анализа и предсказания</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bi bi-database"></i>
+                            <h4>Большие данные</h4>
+                            <p>Обработка тысяч профилей для нахождения идеальных совпадений</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bi bi-shield-lock"></i>
+                            <h4>Шифрование</h4>
+                            <p>Защита ваших данных с помощью современных криптографических методов</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="bi bi-graph-up"></i>
+                            <h4>Аналитика</h4>
+                            <p>Детальная статистика и отчеты о результатах поиска</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="algorithm-section">
+                    <h2>Как работает наш алгоритм</h2>
+                    <div class="algorithm-flow">
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="bi bi-person-check"></i>
+                            </div>
+                            <p>Верификация профилей</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="bi bi-tags"></i>
+                            </div>
+                            <p>Категоризация</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="bi bi-search"></i>
+                            </div>
+                            <p>Поиск совпадений</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-icon">
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <p>Ранжирование</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section py-5">
+    <div class="container-fluid">
+        <div class="text-center mb-5">
+            <h2>Преимущества нашей платформы</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="benefit-card">
+                    <i class="bi bi-clock-history"></i>
+                    <h4>Экономия времени</h4>
+                    <p>Находите нужных моделей за минуты вместо часов ручного поиска</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="benefit-card">
+                    <i class="bi bi-bullseye"></i>
+                    <h4>Точность</h4>
+                    <p>ИИ обеспечивает релевантность результатов на уровне 98%</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="benefit-card">
+                    <i class="bi bi-cash-stack"></i>
+                    <h4>Экономия денег</h4>
+                    <p>Не переплачивайте за ненужные услуги и рекламу</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

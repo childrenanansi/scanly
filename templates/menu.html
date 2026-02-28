@@ -2,26 +2,28 @@
 <header class="header" id="main-header">
     <div class="container-fluid">
         <div class="header-top d-flex align-items-center justify-content-between py-3 flex-wrap gap-2">
-            <div class="logo-dropdown">
+            <div class="logo-dropdown d-flex">
+                    <a href="/" class="logo-text logo">SCANLY</a>
                 <button class="logo d-flex align-items-center" type="button" id="logoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="logo-text">SCANLY</span>
                     <div class="logo-icon ms-2"></div>
                 </button>
                 <ul class="dropdown-menu categories-dropdown" aria-labelledby="logoDropdown">
                     <strong>Популярные категории</strong>
                     {% if categories %}
                         {% for category in categories %}
-                            <li><a class="dropdown-item category-item" href="#">{{category.name}}</a></li>
+                            <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">{{category.name}}</a></li>
                         {% endfor %}
                     {% endif %}
                 </ul>
             </div>
             
             <div class="search-wrapper flex-grow-1 mx-3 mx-md-0">
-                <div class="search-input-wrapper">
-                    <i class="bi bi-search search-icon"></i>
-                    <input type="text" class="form-control search-input" placeholder="Find me someone who...">
-                </div>
+                <form action="{% url 'search_page' %}" method="GET">
+                    <div class="search-input-wrapper">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" name="q" class="form-control search-input" placeholder="Find me someone who...">
+                    </div>
+                </form>
             </div>
             
             <div class="header-actions d-flex align-items-center gap-2 gap-md-3">
@@ -41,7 +43,7 @@
         <nav class="nav-tabs-wrapper">
             <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="bi bi-list-ul me-1"></i>Список в курсе</a>
+                    <a class="nav-link active" href="#"><i class="bi bi-list-ul me-1"></i>Сейчас в тренде</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-star me-1"></i>Лучшие аккаунты</a>

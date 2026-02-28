@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}{{page_title}} - SCANLY{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-subtitle">{{page_description}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content py-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="content-block">
+                    <h2>Что такое SCANLY?</h2>
+                    <p>SCANLY - это инновационная платформа, которая использует искусственный интеллект для подбора идеальных моделей под ваши требования. Наша миссия - сделать процесс поиска моделей максимально простым, быстрым и эффективным.</p>
+                    
+                    <h3>Наши преимущества</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-robot"></i>
+                            </div>
+                            <h4>ИИ-подбор</h4>
+                            <p>Умные алгоритмы анализируют ваши предпочтения и находят идеальные совпадения</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h4>Безопасность</h4>
+                            <p>Все профили проходят верификацию и проверку качества</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-lightning-charge"></i>
+                            </div>
+                            <h4>Скорость</h4>
+                            <p>Мгновенный поиск и подбор моделей по вашим критериям</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-globe"></i>
+                            </div>
+                            <h4>Глобальный охват</h4>
+                            <p>Доступ к моделям со всего мира</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Как мы работаем</h3>
+                    <p>Наша платформа собирает данные о моделях со всего мира, анализирует их характеристики и помогает вам найти именно то, что вы ищете. Мы используем передовые технологии машинного обучения для обеспечения точности и релевантности результатов.</p>
+                    
+                    <h3>Наша команда</h3>
+                    <p>SCANLY создана командой экспертов в области искусственного интеллекта, маркетинга и технологий. Мы объединили наши знания и опыт, чтобы создать уникальный инструмент для поиска моделей.</p>
+                    
+                    <div class="stats-section">
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">50,000+</div>
+                                    <div class="stat-label">Моделей в базе</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">98%</div>
+                                    <div class="stat-label">Точность подбора</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">24/7</div>
+                                    <div class="stat-label">Поддержка</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-item">
+                                    <div class="stat-number">150+</div>
+                                    <div class="stat-label">Стран</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2>Готовы начать?</h2>
+            <p>Присоединяйтесь к тысячам пользователей, которые уже нашли идеальных моделей с помощью SCANLY</p>
+            <div class="cta-buttons">
+                <a href="{% url 'search_page' %}" class="btn btn-primary btn-lg">Начать поиск</a>
+                <a href="{% url 'static_page' 'pricing' %}" class="btn btn-outline-primary btn-lg">Узнать о тарифах</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

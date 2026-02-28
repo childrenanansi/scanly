@@ -1,8 +1,12 @@
 # api/models.py
 from django.db import models
+from pytils.translit import slugify
 
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name="Название")
+    alias = models.SlugField(max_length=200, unique=True, verbose_name="Alias для URL",
+        null=True,
+        blank=True,)
     parent = models.ForeignKey(
         'self',
         on_delete=models.SET_NULL,
@@ -17,6 +21,30 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        if not self.alias:
+            self.alias = slugify(self.name)
+        super().save(*args, **kwargs)
+
+class FAQ(models.Model):
+    question = models.TextField(verbose_name="Вопрос")
+    answer = models.TextField(verbose_name="Ответ")
+    order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+    is_active = models.BooleanField(default=True, verbose_name="Активен")
+    
+    # Связи с категориями и страницами
+    categories = models.ManyToManyField(Category, blank=True, verbose_name="Категории")
+    for_home_page = models.BooleanField(default=False, verbose_name="Для главной страницы")
+    for_category_pages = models.BooleanField(default=True, verbose_name="Для страниц категорий")
+
+    class Meta:
+        verbose_name = "Частый вопрос"
+        verbose_name_plural = "Частые вопросы"
+        ordering = ['order']
+
+    def __str__(self):
+        return self.question[:100]
 
 class MainModel(models.Model):
     name = models.CharField(max_length=200, verbose_name="Имя")
