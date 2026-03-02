@@ -9,10 +9,16 @@
                     <div class="logo-icon ms-2"></div>
                 </button>
                 <ul class="dropdown-menu categories-dropdown" aria-labelledby="logoDropdown">
-                    <strong>{% trans "Популярные категории" %}</strong>
+                    <li class="category-dropdown-header"><strong>{% trans "Популярные категории" %}</strong></li>
                     {% if categories %}
                         {% for category in categories %}
-                            <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">{{category.name}}</a></li>
+                            <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">
+                                {% if current_language == 'en' %}
+                                    {{category.name_en}}
+                                {% else %}
+                                    {{category.name_ru}}
+                                {% endif %}
+                            </a></li>
                         {% endfor %}
                     {% endif %}
                 </ul>

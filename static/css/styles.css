@@ -194,17 +194,28 @@ body::after {
     box-shadow: none;
 }
 
-/* Categories Dropdown Menu */
+/* Categories Dropdown Menu - full width, multi-column */
 .categories-dropdown {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(190, 141, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 12px;
-    min-width: 250px;
+    padding: 20px 24px;
     margin-top: 10px;
     animation: dropdownFadeIn 0.3s ease;
+    /* Full width of screen */
+    position: fixed !important;
+    top: 20px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    /* Multi-column layout */
+    column-count: 5;
+    column-gap: 24px;
+    column-fill: balance;
 }
 
 @keyframes dropdownFadeIn {
@@ -238,6 +249,22 @@ body::after {
 
 .category-item:last-child {
     margin-bottom: 0;
+}
+
+.categories-dropdown .category-dropdown-header {
+    column-span: all;
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(190, 141, 255, 0.2);
+    margin-bottom: 12px;
+    background: rgba(190, 141, 255, 0.08);
+    border-radius: 8px 8px 0 0;
+    list-style: none;
+}
+
+.categories-dropdown .category-dropdown-header strong {
+    font-size: 1rem;
+    color: var(--color-text);
 }
 
 .categories-dropdown::before {
@@ -2361,12 +2388,13 @@ body::after {
         top: 60px !important;
         left: 10px !important;
         right: 10px !important;
-        width: auto !important;
+        width: calc(100vw - 20px) !important;
         max-width: none !important;
         border-radius: 12px !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
         max-height: 70vh !important;
         overflow-y: auto !important;
+        column-count: 2 !important;
     }
     
     .categories-dropdown strong {
@@ -2417,6 +2445,7 @@ body::after {
     }
     
     .categories-dropdown {
+        column-count: 3;
         min-width: 280px;
     }
     

@@ -8,8 +8,8 @@
 <section class="page-header py-5">
     <div class="container-fluid">
         <div class="text-center">
-            <h1 class="page-title">{{page_title}}</h1>
-            <p class="page-subtitle">{{page_description}}</p>
+            <h1 class="page-title">{% trans page_title %}</h1>
+            <p class="page-subtitle">{% trans page_description %}</p>
         </div>
     </div>
 </section>
@@ -66,25 +66,25 @@
                             <div class="col-md-3">
                                 <div class="stat-item">
                                     <div class="stat-number">50,000+</div>
-                                    <div class="stat-label">Моделей в базе</div>
+                                    <div class="stat-label">{% trans "Моделей в базе" %}</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="stat-item">
                                     <div class="stat-number">98%</div>
-                                    <div class="stat-label">Точность подбора</div>
+                                    <div class="stat-label">{% trans "Точность подбора" %}</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="stat-item">
                                     <div class="stat-number">24/7</div>
-                                    <div class="stat-label">Поддержка</div>
+                                    <div class="stat-label">{% trans "Поддержка" %}</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="stat-item">
                                     <div class="stat-number">150+</div>
-                                    <div class="stat-label">Стран</div>
+                                    <div class="stat-label">{% trans "Стран" %}</div>
                                 </div>
                             </div>
                         </div>
@@ -99,11 +99,11 @@
 <section class="cta-section py-5">
     <div class="container-fluid">
         <div class="text-center">
-            <h2>Готовы начать?</h2>
-            <p>Присоединяйтесь к тысячам пользователей, которые уже нашли идеальных моделей с помощью SCANLY</p>
+            <h2>{% trans "Готовы начать?" %}</h2>
+            <p>{% trans "Присоединяйтесь к тысячам пользователей, которые уже нашли идеальных моделей с помощью SCANLY" %}</p>
             <div class="cta-buttons">
-                <a href="{% url 'search_page' %}" class="btn btn-primary btn-lg">Начать поиск</a>
-                <a href="{% url 'static_page' 'pricing' %}" class="btn btn-outline-primary btn-lg">Узнать о тарифах</a>
+                <a href="{% url 'search_page' %}" class="btn btn-primary btn-lg">{% trans "Начать поиск" %}</a>
+                <a href="{% url 'static_page' 'pricing' %}" class="btn btn-outline-primary btn-lg">{% trans "Узнать о тарифах" %}</a>
             </div>
         </div>
     </div>

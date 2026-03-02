@@ -8,8 +8,8 @@
 <section class="page-header py-5">
     <div class="container-fluid">
         <div class="text-center">
-            <h1 class="page-title">{{page_title}}</h1>
-            <p class="page-subtitle">{{page_description}}</p>
+            <h1 class="page-title">{% trans page_title %}</h1>
+            <p class="page-subtitle">{% trans page_description %}</p>
         </div>
     </div>
 </section>
@@ -23,7 +23,13 @@
                 <div class="categories-tiles">
                     {% for category in all_categories %}
                         <a href="{% url 'category_page' category.alias %}" class="category-tile">
-                            <span class="category-tile-name">{{category.name}}</span>
+                            <span class="category-tile-name">
+                                {% if current_language == 'en' %}
+                                    {{category.name_en}}
+                                {% else %}
+                                    {{category.name_ru}}
+                                {% endif %}
+                            </span>
                         </a>
                     {% endfor %}
                 </div>
@@ -33,17 +39,17 @@
         <!-- Accounts Grid -->
         <div class="section-header text-center mb-5">
             {% if page_type == 'trending' %}
-                <h2 class="section-title">🔥 Самые популярные модели</h2>
-                <p class="section-subtitle">Модели, которые сейчас на пике популярности</p>
+                <h2 class="section-title">🔥 {% trans "Самые популярные модели" %}</h2>
+                <p class="section-subtitle">{% trans "Модели, которые сейчас на пике популярности" %}</p>
             {% elif page_type == 'best' %}
-                <h2 class="section-title">⭐ Лучшие аккаунты</h2>
-                <p class="section-subtitle">Премиум модели с эксклюзивным контентом</p>
+                <h2 class="section-title">⭐ {% trans "Лучшие аккаунты" %}</h2>
+                <p class="section-subtitle">{% trans "Премиум модели с эксклюзивным контентом" %}</p>
             {% elif page_type == 'free' %}
-                <h2 class="section-title">🆓 Top Free</h2>
-                <p class="section-subtitle">Лучшие бесплатные модели платформы</p>
+                <h2 class="section-title">🆓 {% trans "Top Free" %}</h2>
+                <p class="section-subtitle">{% trans "Лучшие бесплатные модели платформы" %}</p>
             {% elif page_type == 'new' %}
                 <h2 class="section-title">✨ {% trans "Новые аккаунты" %}</h2>
-                <p class="section-subtitle">Самые свежие пополнения нашей базы</p>
+                <p class="section-subtitle">{% trans "Самые свежие пополнения нашей базы" %}</p>
             {% endif %}
         </div>
         
@@ -113,8 +119,8 @@
 <section class="faq-section py-5">
     <div class="container-fluid">
         <div class="text-center mb-5">
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-            <p class="section-subtitle">Ответы на популярные вопросы</p>
+            <h2 class="section-title">{% trans "Часто задаваемые вопросы" %}</h2>
+            <p class="section-subtitle">{% trans "Ответы на популярные вопросы" %}</p>
         </div>
         
         <div class="row justify-content-center">
@@ -123,12 +129,22 @@
                     {% for faq in faqs %}
                         <div class="faq-item">
                             <div class="faq-question {% if not forloop.first %}collapsed{% endif %}" data-bs-toggle="collapse" data-bs-target="#faq{{forloop.counter}}">
-                                <h5>{{faq.question}}</h5>
+                                <h5>
+                                    {% if current_language == 'en' %}
+                                        {{faq.question_en}}
+                                    {% else %}
+                                        {{faq.question_ru}}
+                                    {% endif %}
+                                </h5>
                                 <i class="bi bi-chevron-down"></i>
                             </div>
                             <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% endif %}" data-bs-parent=".faqAccordion">
                                 <div class="faq-answer">
-                                    <p>{{faq.answer}}</p>
+                                    {% if current_language == 'en' %}
+                                    <p>{{faq.answer_en}}</p>
+                                    {% else %}
+                                    <p>{{faq.answer_ru}}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -161,13 +177,13 @@
             <div class="col-md-3 col-6 mb-3">
                 <a href="{% url 'free_accounts' %}" class="quick-nav-item {% if page_type == 'free' %}active{% endif %}">
                     <i class="bi bi-gift"></i>
-                    <span>Free</span>
+                    <span>{% trans "Free" %}</span>
                 </a>
             </div>
             <div class="col-md-3 col-6 mb-3">
                 <a href="{% url 'new_accounts' %}" class="quick-nav-item {% if page_type == 'new' %}active{% endif %}">
                     <i class="bi bi-sparkles"></i>
-                    <span>Новые</span>
+                    <span>{% trans "Новые" %}</span>
                 </a>
             </div>
         </div>

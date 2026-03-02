@@ -8,7 +8,7 @@
 <section class="search-section py-5">
     <div class="container-fluid">
         <div class="search-header text-center mb-5">
-            <h1 class="section-title">{% trans "Поиск" %} моделей</h1>
+            <h1 class="section-title">{% trans "Поиск" %} {% trans "моделей" %}</h1>
             <p class="section-subtitle">{% trans "Найдите идеальную модель по вашим критериям" %}</p>
         </div>
         
@@ -20,7 +20,7 @@
                         <div class="search-input-wrapper">
                             <i class="bi bi-search search-icon"></i>
                             <input type="text" name="q" class="form-control search-input" 
-                                   placeholder="Поиск по описанию моделей..." 
+                                   placeholder="{% trans "Поиск по описанию моделей..." %}"
                                    value="{{query}}">
                         </div>
                     </div>
@@ -30,7 +30,12 @@
                             {% for category in all_categories %}
                                 <option value="{{category.id}}" 
                                         {% if selected_category_id == category.id|stringformat:"s" %}selected{% endif %}>
-                                    {{category.name}}
+
+                                        {% if current_language == 'en' %}
+                                            {{category.name_en}}
+                                        {% else %}
+                                            {{category.name_ru}}
+                                        {% endif %}
                                 </option>
                             {% endfor %}
                         </select>
@@ -93,9 +98,9 @@
                         <h4 class="text-muted">{% trans "Ничего не найдено" %}</h4>
                         <p class="text-muted">
                             {% if query %}
-                                Попробуйте изменить поисковый запрос или выбрать другую категорию
+                                {% trans "Попробуйте изменить поисковый запрос или выбрать другую категорию" %}
                             {% else %}
-                                Используйте поиск или выберите категорию для поиска моделей
+                                {% trans "Используйте поиск или выберите категорию для поиска моделей" %}
                             {% endif %}
                         </p>
                     </div>
@@ -109,8 +114,8 @@
 <section class="faq-section py-5">
     <div class="container-fluid">
         <div class="text-center mb-5">
-            <h2 class="section-title">Часто задаваемые вопросы</h2>
-            <p class="section-subtitle">Ответы на популярные вопросы о поиске</p>
+            <h2 class="section-title">{% trans "Часто задаваемые вопросы" %}</h2>
+            <p class="section-subtitle">{% trans "Ответы на популярные вопросы о поиске" %}</p>
         </div>
         
         <div class="row justify-content-center">
@@ -119,12 +124,22 @@
                     {% for faq in faqs %}
                         <div class="faq-item">
                             <div class="faq-question {% if not forloop.first %}collapsed{% endif %}" data-bs-toggle="collapse" data-bs-target="#faq{{forloop.counter}}">
-                                <h5>{{faq.question}}</h5>
+                                <h5>
+                                    {% if current_language == 'en' %}
+                                            {{faq.question_en}}
+                                        {% else %}
+                                            {{faq.question_ru}}
+                                        {% endif %}
+                                </h5>
                                 <i class="bi bi-chevron-down"></i>
                             </div>
                             <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% endif %}" data-bs-parent=".faqAccordion">
                                 <div class="faq-answer">
-                                    <p>{{faq.answer}}</p>
+                                    {% if current_language == 'en' %}
+                                            <p>{{faq.answer_en}}</p>
+                                        {% else %}
+                                            <p>{{faq.answer_ru}}</p>
+                                        {% endif %}
                                 </div>
                             </div>
                         </div>

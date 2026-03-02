@@ -75,6 +75,7 @@ def home(request):
     context = {
         'featured_profiles': featured_profiles,
         'recent_profiles': recent_profiles,
+        'current_language': translation.get_language(),
         'faqs': faqs,
     }
     return render(request, 'index.html', context)
@@ -118,6 +119,7 @@ def category_page(request, category_alias=None):
         'selected_category': selected_category,
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
     }
     return render(request, 'category.html', context)
@@ -132,31 +134,31 @@ def get_default_faqs():
     if current_language == 'en':
         default_faqs = [
             {
-                'question': 'How does SCANLY work?',
-                'answer': 'SCANLY uses artificial intelligence to analyze and match models based on your preferences. Our algorithm considers multiple parameters for accurate matching.'
+                'question_en': 'How does SCANLY work?',
+                'answer_en': 'SCANLY uses artificial intelligence to analyze and match models based on your preferences. Our algorithm considers multiple parameters for accurate matching.'
             },
             {
-                'question': 'How to choose the right category?',
-                'answer': 'Use the category tiles at the top of the page for quick navigation. Each category contains models with corresponding interests and specialization.'
+                'question_en': 'How to choose the right category?',
+                'answer_en': 'Use the category tiles at the top of the page for quick navigation. Each category contains models with corresponding interests and specialization.'
             },
             {
-                'question': 'Can I filter models by multiple categories?',
-                'answer': 'Yes, you can use tags on model cards to search by intersection of interests and find models with multiple categories.'
+                'question_en': 'Can I filter models by multiple categories?',
+                'answer_en': 'Yes, you can use tags on model cards to search by intersection of interests and find models with multiple categories.'
             }
         ]
     else:
         default_faqs = [
             {
-                'question': 'Как работает SCANLY?',
-                'answer': 'SCANLY использует искусственный интеллект для анализа и подбора моделей на основе ваших предпочтений. Наш алгоритм учитывает множество параметров для точного matching.'
+                'question_ru': 'Как работает SCANLY?',
+                'answer_ru': 'SCANLY использует искусственный интеллект для анализа и подбора моделей на основе ваших предпочтений. Наш алгоритм учитывает множество параметров для точного matching.'
             },
             {
-                'question': 'Как выбрать подходящую категорию?',
-                'answer': 'Используйте плитку категорий вверху страницы для быстрой навигации. Каждая категория содержит модели с соответствующими интересами и специализацией.'
+                'question_ru': 'Как выбрать подходящую категорию?',
+                'answer_ru': 'Используйте плитку категорий вверху страницы для быстрой навигации. Каждая категория содержит модели с соответствующими интересами и специализацией.'
             },
             {
-                'question': 'Можно ли фильтровать модели по нескольким категориям?',
-                'answer': 'Да, вы можете использовать теги на карточках моделей для поиска по пересечению интересов и находить модели с несколькими категориями.'
+                'question_ru': 'Можно ли фильтровать модели по нескольким категориям?',
+                'answer_ru': 'Да, вы можете использовать теги на карточках моделей для поиска по пересечению интересов и находить модели с несколькими категориями.'
             }
         ]
     return default_faqs
@@ -199,6 +201,7 @@ def search_page(request):
         'selected_category_id': category_id,
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
     }
     return render(request, 'search.html', context)
@@ -265,6 +268,7 @@ def static_page(request, page_name):
     context = {
         'page_title': config['title'],
         'page_description': config['description'],
+        'current_language': translation.get_language(),
         'faqs': faqs,
     }
     
@@ -294,6 +298,7 @@ def trending_accounts(request):
         'page_description': 'Самые популярные модели платформы',
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
         'page_type': 'trending'
     }
@@ -319,6 +324,7 @@ def best_accounts(request):
         'page_description': 'Премиум модели с лучшим качеством',
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
         'page_type': 'best'
     }
@@ -344,6 +350,7 @@ def free_accounts(request):
         'page_description': 'Лучшие бесплатные модели',
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
         'page_type': 'free'
     }
@@ -369,6 +376,7 @@ def new_accounts(request):
         'page_description': 'Самые новые модели на платформе',
         'profiles': profiles,
         'all_categories': all_categories,
+        'current_language': translation.get_language(),
         'faqs': faqs,
         'page_type': 'new'
     }
