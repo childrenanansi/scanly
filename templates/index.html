@@ -92,7 +92,11 @@
                                     <div class="account-card-desc">{{i.description|truncatechars:200}}</div>
                                     <div class="account-card-tags">
                                         {% for category in i.categories.all %}
-                                            <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{{category.name}}</a>
+                                            <a href="{% url 'category_page' category.alias %}" class="tag" style="text-decoration:none;">{% if current_language == 'en' %}
+                                                    {{category.name_en}}
+                                                {% else %}
+                                                    {{category.name_ru}}
+                                                {% endif %}</a>
                                         {% endfor %}
                                     </div>
                                     <a href="{{i.link_ak}}" class="btn btn-open-profile">{% trans "Открыть профиль" %}</a>

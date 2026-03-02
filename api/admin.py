@@ -52,7 +52,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ['parent']
     fieldsets = (
         (None, {
-            'fields': ('name_ru', 'name_en', 'alias', 'parent')
+            'fields': ('name', 'name_ru', 'name_en', 'alias', 'parent')
         }),
     )
     actions = ['make_published']
