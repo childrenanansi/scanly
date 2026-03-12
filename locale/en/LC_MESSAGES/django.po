@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SCANLY\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-28 16:00+0400\n"
+"POT-Creation-Date: 2026-03-12 15:35+0000\n"
 "PO-Revision-Date: 2026-02-28 16:00+0400\n"
 "Last-Translator: \n"
 "Language-Team: English\n"
@@ -16,1079 +16,1972 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 # Main titles and descriptions
+#: templates/base.html:7 templates/blog/blog_category.html:4
+#: templates/blog/blog_detail.html:4 templates/blog/blog_list.html:4
+#: templates/category.html:4 templates/index.html:4
+#: templates/pages/about.html:4 templates/pages/accounts_list.html:4
+#: templates/pages/contacts.html:4 templates/pages/faq.html:4
+#: templates/pages/how_it_works.html:4 templates/pages/pricing.html:4
+#: templates/pages/privacy.html:4 templates/pages/support.html:4
+#: templates/pages/terms.html:4 templates/search.html:4
 msgid "SCANLY - Ваш персональный поиск моделей на основе ИИ"
 msgstr "SCANLY - Your personal AI-powered model search"
 
-# Navigation
-msgid "Сейчас в тренде"
-msgstr "Trending Now"
+# Blog translations
+#: templates/blog/blog_category.html:4 templates/blog/blog_list.html:15
+msgid "Блог SCANLY"
+msgstr "SCANLY Blog"
+
+#: templates/blog/blog_category.html:6
+msgid "Все новости и статьи категории"
+msgstr "All news and articles of the category"
+
+#: templates/blog/blog_category.html:8
+msgid "блог scanly, новости, статьи"
+msgstr "scanly blog, news, articles"
+
+#: templates/blog/blog_category.html:38
+msgid "статей"
+msgstr "articles"
+
+#: templates/blog/blog_category.html:42
+msgid "избранных"
+msgstr "featured"
+
+#: templates/blog/blog_category.html:46
+msgid "на странице"
+msgstr "on page"
+
+#: templates/blog/blog_category.html:60 templates/blog/blog_detail.html:119
+#: templates/blog/blog_list.html:50
+msgid "Срочно"
+msgstr "Breaking"
+
+#: templates/blog/blog_category.html:62 templates/blog/blog_detail.html:121
+#: templates/blog/blog_list.html:52
+msgid "Избранное"
+msgstr "Featured"
+
+#: templates/blog/blog_category.html:70 templates/blog/blog_detail.html:114
+#: templates/blog/blog_list.html:65
+msgid "мин чтения"
+msgstr "min read"
+
+#: templates/blog/blog_category.html:87 templates/blog/blog_detail.html:116
+#: templates/blog/blog_list.html:82
+msgid "просмотров"
+msgstr "views"
+
+#: templates/blog/blog_category.html:97
+msgid "В этой категории новостей пока нет"
+msgstr "No news in this category yet"
+
+#: templates/blog/blog_category.html:98
+msgid "Здесь появятся статьи и новости категории"
+msgstr "Articles and news of this category will appear here"
+
+#: templates/blog/blog_category.html:100
+msgid "Перейти ко всем новостям"
+msgstr "Go to all news"
+
+#: templates/blog/blog_category.html:148
+msgid "О категории"
+msgstr "About category"
+
+#: templates/blog/blog_category.html:155
+msgid "Избранные статьи"
+msgstr "Featured articles"
+
+#: templates/blog/blog_category.html:168
+msgid "Избранных статей в этой категории пока нет"
+msgstr "No featured articles in this category yet"
+
+#: templates/blog/blog_category.html:175
+msgid "Другие категории"
+msgstr "Other categories"
+
+#: templates/blog/blog_category.html:192
+msgid "Ко всем новостям"
+msgstr "To all news"
+
+#: templates/blog/blog_detail.html:91
+msgid "Главная"
+msgstr "Home"
+
+#: templates/blog/blog_detail.html:92 templates/menu.html:82
+msgid "Блог"
+msgstr "Blog"
+
+#: templates/blog/blog_detail.html:157
+msgid "Автор статьи"
+msgstr "Article author"
+
+#: templates/blog/blog_detail.html:171
+msgid "Проверено экспертом"
+msgstr "Expert reviewed"
+
+#: templates/blog/blog_detail.html:182
+msgid "Эксперт"
+msgstr "Expert"
+
+#: templates/blog/blog_detail.html:192
+msgid "Теги"
+msgstr "Tags"
+
+#: templates/blog/blog_detail.html:203
+msgid "Поделиться статьей"
+msgstr "Share article"
 
-msgid "Лучшие аккаунты"
-msgstr "Best Accounts"
+#: templates/blog/blog_detail.html:226
+msgid "Содержание"
+msgstr "Table of contents"
 
-msgid "Top Free"
-msgstr "Top Free"
+#: templates/blog/blog_detail.html:235
+msgid "Похожие статьи"
+msgstr "Related articles"
 
-msgid "Новые аккаунты"
-msgstr "New Accounts"
+#: templates/blog/blog_detail.html:255
+msgid "Последние новости"
+msgstr "Latest news"
 
-msgid "Поиск"
-msgstr "Search"
+#: templates/blog/blog_detail.html:269
+msgid "Подписка на новости"
+msgstr "Newsletter subscription"
 
-msgid "Категории"
-msgstr "Categories"
+#: templates/blog/blog_detail.html:270
+msgid "Получайте последние новости и обновления SCANLY"
+msgstr "Get the latest SCANLY news and updates"
 
-msgid "Профиль"
-msgstr "Profile"
-
-# Footer links
-msgid "О проекте"
-msgstr "About"
-
-msgid "Как это работает"
-msgstr "How It Works"
-
-msgid "Тарифы"
-msgstr "Pricing"
-
-msgid "Поддержка"
-msgstr "Support"
-
-msgid "Условия использования"
-msgstr "Terms of Use"
-
-msgid "Политика конфиденциальности"
-msgstr "Privacy Policy"
-
-msgid "FAQ"
-msgstr "FAQ"
-
-msgid "Контакты"
-msgstr "Contacts"
-
-msgid "Быстрые ссылки"
-msgstr "Quick Links"
-
-msgid "Правовая информация"
-msgstr "Legal Information"
-
-msgid "Все права защищены"
-msgstr "All rights reserved"
-
-msgid "Ваш персональный поиск моделей на основе ИИ"
-msgstr "Your personal AI-powered model search"
-
-# Main page
-msgid "ПОПУЛЯРНЫЕ АККАУНТЫ"
-msgstr "POPULAR ACCOUNTS"
-
-msgid "50 лучших аккаунтов OnlyFans в 2026 году"
-msgstr "Top 50 OnlyFans accounts in 2026"
-
-msgid "Открыть профиль"
-msgstr "Open Profile"
-
-msgid "Free"
-msgstr "Free"
-
-msgid "Premium"
-msgstr "Premium"
-
-msgid "STOP SEARCHING"
-msgstr "STOP SEARCHING"
-
-msgid "START MATCHING"
-msgstr "START MATCHING"
-
-msgid "Find me someone who..."
-msgstr "Find me someone who..."
-
-msgid "Популярные категории"
-msgstr "Popular Categories"
-
-# Account pages
-msgid "Самые популярные модели платформы"
-msgstr "Most popular platform models"
-
-msgid "Премиум модели с лучшим качеством"
-msgstr "Premium models with best quality"
-
-msgid "Лучшие бесплатные модели"
-msgstr "Best free models"
-
-msgid "Самые свежие пополнения нашей базы"
-msgstr "Freshest additions to our database"
-
-msgid "В тренде"
-msgstr "Trending"
-
-msgid "Лучшие"
-msgstr "Best"
-
-msgid "Быстрая навигация"
-msgstr "Quick Navigation"
-
-# Static pages - About
-msgid "О SCANLY"
-msgstr "ABOUT SCANLY"
-
-msgid "Наша миссия"
-msgstr "Our Mission"
-
-msgid "SCANLY - это революционная платформа, которая использует искусственный интеллект для поиска идеальных моделей под ваши предпочтения."
-msgstr "SCANLY is a revolutionary platform that uses artificial intelligence to find perfect models based on your preferences."
-
-msgid "Наши преимущества"
-msgstr "Our Advantages"
-
-msgid "Умный поиск на основе ИИ"
-msgstr "AI-powered Smart Search"
-
-msgid "Наши алгоритмы анализируют тысячи параметров для точного matching"
-msgstr "Our algorithms analyze thousands of parameters for accurate matching"
-
-msgid "Огромная база моделей"
-msgstr "Huge Model Database"
-
-msgid "Более 10,000 проверенных моделей со всего мира"
-msgstr "Over 10,000 verified models from around the world"
-
-msgid "100% конфиденциальность"
-msgstr "100% Privacy"
-
-msgid "Ваши данные надежно защищены и никогда не будут переданы третьим лицам"
-msgstr "Your data is securely protected and will never be shared with third parties"
-
-msgid "Круглосуточная поддержка"
-msgstr "24/7 Support"
-
-msgid "Наша команда готова помочь вам в любое время"
-msgstr "Our team is ready to help you anytime"
-
-# Static pages - How It Works
-msgid "КАК ЭТО РАБОТАЕТ"
-msgstr "HOW IT WORKS"
-
-msgid "Просто 3 шага к идеальной модели"
-msgstr "Just 3 steps to your perfect model"
-
-msgid "Шаг 1"
-msgstr "Step 1"
-
-msgid "Создайте профиль"
-msgstr "Create Profile"
-
-msgid "Зарегистрируйтесь и расскажите о своих предпочтениях"
-msgstr "Sign up and tell us about your preferences"
-
-msgid "Шаг 2"
-msgstr "Step 2"
-
-msgid "Получите рекомендации"
-msgstr "Get Recommendations"
-
-msgid "Наш ИИ подберет идеальные модели специально для вас"
-msgstr "Our AI will select perfect models specifically for you"
-
-msgid "Шаг 3"
-msgstr "Step 3"
-
-msgid "Начните общение"
-msgstr "Start Chatting"
-
-msgid "Свяжитесь с выбранными моделями и наслаждайтесь общением"
-msgstr "Connect with selected models and enjoy the conversation"
-
-# Static pages - Pricing
-msgid "ТАРИФЫ"
-msgstr "PRICING"
-
-msgid "Выберите подходящий план"
-msgstr "Choose the right plan"
-
-msgid "Базовый"
-msgstr "Basic"
-
-msgid "Бесплатно"
-msgstr "Free"
-
-msgid "10 рекомендаций в день"
-msgstr "10 recommendations per day"
-
-msgid "Базовый поиск"
-msgstr "Basic search"
-
-msgid "Поддержка по email"
-msgstr "Email support"
-
-msgid "Выбрать план"
-msgstr "Choose Plan"
-
-msgid "Про"
-msgstr "Pro"
-
-msgid "499 ₽/мес"
-msgstr "$7.99/month"
-
-msgid "Безлимитные рекомендации"
-msgstr "Unlimited recommendations"
-
-msgid "Расширенный поиск"
-msgstr "Advanced search"
-
-msgid "Приоритетная поддержка"
-msgstr "Priority support"
-
-msgid "Премиум"
-msgstr "Premium"
-
-msgid "999 ₽/мес"
-msgstr "$15.99/month"
-
-msgid "Все функции Про"
-msgstr "All Pro features"
-
-msgid "Эксклюзивные модели"
-msgstr "Exclusive models"
-
-msgid "Персональный менеджер"
-msgstr "Personal manager"
-
-# Static pages - Support
-msgid "ПОДДЕРЖКА"
-msgstr "SUPPORT"
-
-msgid "Мы всегда готовы помочь"
-msgstr "We're always here to help"
-
-msgid "Часто задаваемые вопросы"
-msgstr "Frequently Asked Questions"
-
-msgid "Как начать пользоваться платформой?"
-msgstr "How to start using the platform?"
-
-msgid "Просто зарегистрируйтесь, создайте профиль и начните поиск моделей."
-msgstr "Simply register, create a profile and start searching for models."
-
-msgid "Безопасны ли мои данные?"
-msgstr "Is my data secure?"
-
-msgid "Да, мы используем современное шифрование для защиты ваших данных."
-msgstr "Yes, we use modern encryption to protect your data."
-
-msgid "Как отменить подписку?"
-msgstr "How to cancel subscription?"
-
-msgid "Вы можете отменить подписку в любой момент в настройках профиля."
-msgstr "You can cancel your subscription at any time in profile settings."
-
-msgid "Свяжитесь с нами"
-msgstr "Contact Us"
-
-msgid "Наш адрес"
-msgstr "Our Address"
-
-msgid "Email"
-msgstr "Email"
-
-msgid "Телефон"
-msgstr "Phone"
-
-# Static pages - Terms
-msgid "УСЛОВИЯ ИСПОЛЬЗОВАНИЯ"
-msgstr "TERMS OF USE"
-
-msgid "Общие положения"
-msgstr "General Terms"
-
-msgid "Используя SCANLY, вы соглашаетесь с этими условиями."
-msgstr "By using SCANLY, you agree to these terms."
-
-msgid "Правила использования"
-msgstr "Usage Rules"
-
-msgid "Запрещено использовать платформу для незаконных целей."
-msgstr "It is forbidden to use the platform for illegal purposes."
-
-msgid "Уважайте других пользователей платформы."
-msgstr "Respect other platform users."
-
-# Static pages - Privacy
-msgid "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ"
-msgstr "PRIVACY POLICY"
-
-msgid "Сбор данных"
-msgstr "Data Collection"
-
-msgid "Мы собираем только необходимую информацию для предоставления услуг."
-msgstr "We collect only necessary information to provide services."
-
-msgid "Использование данных"
-msgstr "Data Usage"
-
-msgid "Ваши данные используются только для улучшения качества наших услуг."
-msgstr "Your data is used only to improve the quality of our services."
-
-msgid "Защита данных"
-msgstr "Data Protection"
-
-msgid "Мы применяем современные методы защиты данных."
-msgstr "We use modern data protection methods."
-
-# Static pages - FAQ
-msgid "ВОПРОСЫ И ОТВЕТЫ"
-msgstr "QUESTIONS AND ANSWERS"
-
-msgid "Поиск моделей"
-msgstr "Model Search"
-
-msgid "Аккаунт и профиль"
-msgstr "Account and Profile"
-
-msgid "Платежи и тарифы"
-msgstr "Payments and Pricing"
-
-msgid "Технические вопросы"
-msgstr "Technical Questions"
-
-# Static pages - Contacts
-msgid "КОНТАКТЫ"
-msgstr "CONTACTS"
-
-msgid "Остались вопросы? Свяжитесь с нами!"
-msgstr "Have questions? Contact us!"
-
-msgid "Отправить сообщение"
-msgstr "Send Message"
-
-msgid "Ваше имя"
-msgstr "Your Name"
-
+#: templates/blog/blog_detail.html:272
 msgid "Ваш email"
 msgstr "Your Email"
 
-msgid "Тема сообщения"
-msgstr "Message Subject"
+#: templates/blog/blog_detail.html:273
+msgid "Подписаться"
+msgstr "Subscribe"
 
-msgid "Сообщение"
-msgstr "Message"
+# Blog translations
+#: templates/blog/blog_list.html:4
+#, fuzzy
+#| msgid "Блог SCANLY"
+msgid "Блог новостей SCANLY"
+msgstr "SCANLY Blog"
 
-msgid "Отправить"
-msgstr "Send"
+#: templates/blog/blog_list.html:6
+msgid ""
+"Читайте последние новости и статьи о SCANLY, обновлениях платформы, советах "
+"по поиску моделей и многом другом в нашем блоге."
+msgstr ""
+"Read the latest news and articles about SCANLY, platform updates, model "
+"search tips and much more in our blog."
 
-# Search page
-msgid "РЕЗУЛЬТАТЫ ПОИСКА"
-msgstr "SEARCH RESULTS"
+#: templates/blog/blog_list.html:8
+msgid ""
+"блог scanly, новости, статьи, обновления, советы, поиск моделей, "
+"искусственный интеллект"
+msgstr ""
+"scanly blog, news, articles, updates, tips, model search, artificial "
+"intelligence"
 
-msgid "Найдено моделей"
-msgstr "Models found"
+#: templates/blog/blog_list.html:16
+msgid "Последние новости, советы и обновления платформы"
+msgstr "Latest news, tips and platform updates"
 
-msgid "по вашему запросу"
-msgstr "for your query"
+#: templates/blog/blog_list.html:31
+msgid "Все новости"
+msgstr "All news"
 
+#: templates/blog/blog_list.html:92
+msgid "Новостей пока нет"
+msgstr "No news yet"
+
+#: templates/blog/blog_list.html:93
+msgid "Здесь появятся наши новости и статьи"
+msgstr "Our news and articles will appear here"
+
+#: templates/blog/blog_list.html:139
+msgid "Избранные новости"
+msgstr "Featured news"
+
+#: templates/blog/blog_list.html:157
+msgid "Категории"
+msgstr "Categories"
+
+#: templates/blog/blog_list.html:172
+msgid "Популярные теги"
+msgstr "Popular tags"
+
+#: templates/category.html:4 templates/category.html:21
+#: templates/search.html:29
 msgid "Все категории"
 msgstr "All Categories"
 
-# Category page
-msgid "КАТЕГОРИЯ"
-msgstr "CATEGORY"
-
-msgid "Модели в категории"
-msgstr "Models in category"
-
-# Buttons and actions
-msgid "Назад"
-msgstr "Back"
-
-msgid "Вперёд"
-msgstr "Forward"
-
-msgid "Загрузить еще"
-msgstr "Load More"
-
-msgid "Фильтры"
-msgstr "Filters"
-
-msgid "Сортировка"
-msgstr "Sort"
-
-msgid "По популярности"
-msgstr "By Popularity"
-
-msgid "По новизне"
-msgstr "By Newest"
-
-msgid "По рейтингу"
-msgstr "By Rating"
-
-# Messages
-msgid "Ничего не найдено"
-msgstr "Nothing Found"
-
-msgid "Попробуйте изменить параметры поиска"
-msgstr "Try changing search parameters"
-
-msgid "Загрузка..."
-msgstr "Loading..."
-
-msgid "Ошибка загрузки"
-msgstr "Loading Error"
-
-msgid "Попробуйте еще раз"
-msgstr "Try Again"
-
-# Additional translations for index page
-msgid "Scanly - ваш персональный поиск моделей на основе ИИ"
-msgstr "Scanly - your personal AI-powered model search"
-
-msgid "Привлекайте подписчиков!"
-msgstr "Attract subscribers!"
-
-msgid "Более 20 тыс. активных пользователей"
-msgstr "Over 20 thousand active users"
-
-msgid "Подробнее"
-msgstr "Learn More"
-
-msgid "Получай заявки"
-msgstr "Get requests"
-
-msgid "уже сейчас!"
-msgstr "right now!"
-
-msgid "Трафик, модели, работа с контентом, поиск сотрудников"
-msgstr "Traffic, models, content work, employee search"
-
-msgid "Новости"
-msgstr "News"
-
-msgid "Только свежие и актуальные новости"
-msgstr "Only fresh and relevant news"
-
+#: templates/category.html:65
 msgid "Все модели"
 msgstr "All Models"
 
+#: templates/category.html:66
 msgid "Все доступные модели на платформе"
 msgstr "All available models on the platform"
 
+#: templates/category.html:76 templates/index.html:79
+#: templates/pages/accounts_list.html:62 templates/pages/accounts_list.html:180
+#: templates/search.html:71
+msgid "Free"
+msgstr "Free"
+
+#: templates/category.html:95 templates/index.html:102
+#: templates/pages/accounts_list.html:92 templates/search.html:90
+msgid "Открыть профиль"
+msgstr "Open Profile"
+
+#: templates/category.html:101
 msgid "В этой категории пока нет моделей"
 msgstr "No models in this category yet"
 
-msgid "Найдено моделей в категории"
-msgstr "Models found in category"
+#: templates/category.html:112 templates/index.html:116
+#: templates/pages/accounts_list.html:122 templates/search.html:117
+msgid "Часто задаваемые вопросы"
+msgstr "Frequently Asked Questions"
 
-msgid "Найдите идеальную модель по вашим критериям"
-msgstr "Find the perfect model based on your criteria"
-
-msgid "Поиск по описанию моделей..."
-msgstr "Search by model descriptions..."
-
-msgid "в выбранной категории"
-msgstr "in selected category"
-
-msgid "Попробуйте изменить поисковый запрос или выбрать другую категорию"
-msgstr "Try changing your search query or select another category"
-
-msgid "Используйте поиск или выберите категорию для поиска моделей"
-msgstr "Use search or select a category to find models"
-
+#: templates/category.html:113 templates/index.html:117
 msgid "Ответы на популярные вопросы о SCANLY"
 msgstr "Answers to popular questions about SCANLY"
 
-msgid "Ответы на популярные вопросы о поиске"
-msgstr "Answers to popular questions about search"
-
-# FAQ page translations
-msgid "Поиск по вопросам..."
-msgstr "Search by questions..."
-
-msgid "Все вопросы"
-msgstr "All Questions"
-
-msgid "Общие вопросы"
-msgstr "General Questions"
-
-msgid "Аккаунт"
-msgstr "Account"
-
-msgid "Технические"
-msgstr "Technical"
-
-msgid "Как изменить пароль?"
-msgstr "How to change password?"
-
-msgid "Как удалить аккаунт?"
-msgstr "How to delete account?"
-
-msgid "Как изменить тарифный план?"
-msgstr "How to change pricing plan?"
-
-msgid "Есть ли бесплатный период?"
-msgstr "Is there a free trial?"
-
-msgid "Почему не работает поиск?"
-msgstr "Why doesn't search work?"
-
-msgid "Какие браузеры поддерживаются?"
-msgstr "Which browsers are supported?"
-
-msgid "Вопросы не найдены"
-msgstr "No Questions Found"
-
-msgid "Не нашли ответ на свой вопрос?"
-msgstr "Didn't find answer to your question?"
-
-msgid "Наша команда поддержки всегда готова помочь"
-msgstr "Our support team is always ready to help"
-
-msgid "Написать в поддержку"
-msgstr "Contact Support"
-
-msgid "Связаться с нами"
-msgstr "Contact Us"
-
-# Support page translations
-msgid "Чат поддержки"
-msgstr "Support Chat"
-
-msgid "Быстрая помощь в режиме реального времени"
-msgstr "Real-time quick help"
-
-msgid "Работает 24/7"
-msgstr "Available 24/7"
-
-msgid "Начать чат"
-msgstr "Start Chat"
-
-msgid "Email поддержка"
-msgstr "Email Support"
-
-msgid "Отправьте нам письмо с вашим вопросом"
-msgstr "Send us an email with your question"
-
-msgid "Написать письмо"
-msgstr "Send Email"
-
-msgid "Телефон поддержки"
-msgstr "Phone Support"
-
-msgid "Позвоните нам для получения помощи"
-msgstr "Call us for assistance"
-
-msgid "Позвонить"
-msgstr "Call"
-
-msgid "Как быстро я получу ответ?"
-msgstr "How quickly will I get a response?"
-
-msgid "Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы"
-msgstr "We are always happy to answer your questions and help solve any problems"
-
-msgid "Адрес"
-msgstr "Address"
-
-msgid "Время работы"
-msgstr "Working Hours"
-
-msgid "Понедельник - Пятница: 9:00 - 18:00"
-msgstr "Monday - Friday: 9:00 - 18:00"
-
-msgid "Форма обратной связи"
-msgstr "Contact Form"
-
-msgid "Тема"
-msgstr "Subject"
-
-msgid "Выберите тему"
-msgstr "Select Topic"
-
-msgid "Общий вопрос"
-msgstr "General Question"
-
-msgid "Техническая поддержка"
-msgstr "Technical Support"
-
-msgid "Вопросы оплаты"
-msgstr "Billing Issues"
-
-msgid "Партнерство"
-msgstr "Partnership"
-
-msgid "Жалоба"
-msgstr "Complaint"
-
-msgid "Другое"
-msgstr "Other"
-
-msgid "Опишите ваш вопрос или предложение..."
-msgstr "Describe your question or suggestion..."
-
-msgid "Отправить копию на мой email"
-msgstr "Send copy to my email"
-
-msgid "Я согласен с"
-msgstr "I agree with"
-
-msgid "политикой конфиденциальности"
-msgstr "privacy policy"
-
-msgid "Очистить форму"
-msgstr "Clear Form"
-
-msgid "Как нас найти"
-msgstr "How to Find Us"
-
-# How it works page translations
-msgid "Регистрация"
-msgstr "Registration"
-
-msgid "Создайте аккаунт за несколько минут. Укажите ваши предпочтения и требования к моделям."
-msgstr "Create an account in minutes. Specify your preferences and requirements for models."
-
-msgid "Анализ предпочтений"
-msgstr "Preference Analysis"
-
-msgid "Наш ИИ анализирует ваши требования и создает профиль ваших предпочтений."
-msgstr "Our AI analyzes your requirements and creates your preference profile."
-
-msgid "Подбор моделей"
-msgstr "Model Matching"
-
-msgid "Система находит наиболее подходящие модели из нашей базы данных."
-msgstr "The system finds the most suitable models from our database."
-
-msgid "Просмотр результатов"
-msgstr "View Results"
-
-msgid "Изучите предложенные варианты, используйте фильтры для уточнения поиска."
-msgstr "Review suggested options, use filters to refine your search."
-
-msgid "Связь с моделями"
-msgstr "Contact Models"
-
-msgid "Выберите подходящие модели и установите контакт через платформу."
-msgstr "Select suitable models and establish contact through the platform."
-
-msgid "Технологии, которые мы используем"
-msgstr "Technologies We Use"
-
-msgid "Машинное обучение"
-msgstr "Machine Learning"
-
-msgid "Алгоритмы ML для точного анализа и предсказания"
-msgstr "ML algorithms for accurate analysis and prediction"
-
-msgid "Большие данные"
-msgstr "Big Data"
-
-msgid "Обработка тысяч профилей для нахождения идеальных совпадений"
-msgstr "Processing thousands of profiles to find perfect matches"
-
-msgid "Шифрование"
-msgstr "Encryption"
-
-msgid "Защита ваших данных с помощью современных криптографических методов"
-msgstr "Protecting your data with modern cryptographic methods"
-
-msgid "Аналитика"
-msgstr "Analytics"
-
-msgid "Детальная статистика и отчеты о результатах поиска"
-msgstr "Detailed statistics and reports on search results"
-
-msgid "Как работает наш алгоритм"
-msgstr "How Our Algorithm Works"
-
-# Pricing page translations
-msgid "/месяц"
-msgstr "/month"
-
-msgid "До 10 поисков в день"
-msgstr "Up to 10 searches per day"
-
-msgid "Базовые фильтры"
-msgstr "Basic filters"
-
-msgid "Просмотр профилей"
-msgstr "Profile viewing"
-
-msgid "Расширенная аналитика"
-msgstr "Advanced analytics"
-
-msgid "Начать бесплатно"
-msgstr "Start Free"
-
-msgid "Популярный"
-msgstr "Popular"
-
-msgid "Профи"
-msgstr "Pro"
-
-msgid "Неограниченные поиски"
-msgstr "Unlimited searches"
-
-msgid "Все фильтры"
-msgstr "All filters"
-
-msgid "Экспорт результатов"
-msgstr "Export results"
-
-msgid "Выбрать Профи"
-msgstr "Choose Pro"
-
-msgid "Бизнес"
-msgstr "Business"
-
-msgid "Все функции Профи"
-msgstr "All Pro features"
-
-msgid "Многопользовательский доступ"
-msgstr "Multi-user access"
-
-msgid "API доступ"
-msgstr "API access"
-
-msgid "Кастомные отчеты"
-msgstr "Custom reports"
-
-msgid "SLA гарантии"
-msgstr "SLA guarantees"
-
-msgid "Сравнение тарифов"
-msgstr "Pricing Comparison"
-
-msgid "Функция"
-msgstr "Feature"
-
-msgid "Количество поисков"
-msgstr "Number of searches"
-
-msgid "10 в день"
-msgstr "10 per day"
-
-msgid "Неограниченно"
-msgstr "Unlimited"
-
-# About page translations
-msgid "Что такое SCANLY?"
-msgstr "What is SCANLY?"
-
-msgid "ИИ-подбор"
-msgstr "AI Matching"
-
-msgid "Умные алгоритмы анализируют ваши предпочтения и находят идеальные совпадения"
-msgstr "Smart algorithms analyze your preferences and find perfect matches"
-
-msgid "Безопасность"
-msgstr "Security"
-
-msgid "Все профили проходят верификацию и проверку качества"
-msgstr "All profiles undergo verification and quality checks"
-
-msgid "Скорость"
-msgstr "Speed"
-
-msgid "Мгновенный поиск и подбор моделей по вашим критериям"
-msgstr "Instant search and model matching according to your criteria"
-
-msgid "Глобальный охват"
-msgstr "Global Reach"
-
-msgid "Доступ к моделям со всего мира"
-msgstr "Access to models from around the world"
-
-msgid "Как мы работаем"
-msgstr "How We Work"
-
-msgid "Наша платформа собирает данные о моделях со всего мира, анализирует их характеристики и помогает вам найти именно то, что вы ищете. Мы используем передовые технологии машинного обучения для обеспечения точности и релевантности результатов."
-msgstr "Our platform collects data about models from around the world, analyzes their characteristics, and helps you find exactly what you're looking for. We use advanced machine learning technologies to ensure accuracy and relevance of results."
-
-msgid "Наша команда"
-msgstr "Our Team"
-
-msgid "SCANLY создана командой экспертов в области искусственного интеллекта, маркетинга и технологий. Мы объединили наши знания и опыт, чтобы создать уникальный инструмент для поиска моделей."
-msgstr "SCANLY was created by a team of experts in artificial intelligence, marketing, and technology. We combined our knowledge and experience to create a unique tool for model search."
-
-# Terms page translations
-msgid "Последнее обновление:"
-msgstr "Last updated:"
-
-msgid "1 января 2026 года"
-msgstr "January 1, 2026"
-
-msgid "1. Общие положения"
-msgstr "1. General Provisions"
-
-msgid "Настоящие Условия использования (далее \"Условия\") регулируют использование платформы SCANLY (далее \"Платформа\"). Используя Платформу, вы соглашаетесь с этими Условиями."
-msgstr "These Terms of Use (hereinafter \"Terms\") govern the use of the SCANLY platform (hereinafter \"Platform\"). By using the Platform, you agree to these Terms."
-
-msgid "1.1. Определения"
-msgstr "1.1. Definitions"
-
-msgid "веб-сайт и мобильные приложения SCANLY"
-msgstr "SCANLY website and mobile applications"
-
-msgid "любое физическое или юридическое лицо, использующее Платформу"
-msgstr "any natural or legal person using the Platform"
-
-msgid "вся информация, размещенная на Платформе"
-msgstr "all information posted on the Platform"
-
-msgid "функционал Платформы по поиску и подбору моделей"
-msgstr "Platform functionality for searching and selecting models"
-
-msgid "2. Регистрация и аккаунт"
-msgstr "2. Registration and Account"
-
-msgid "Для использования некоторых функций Платформы требуется регистрация аккаунта."
-msgstr "Account registration is required to use some Platform features."
-
-msgid "2.1. Требования к регистрации"
-msgstr "2.1. Registration Requirements"
-
-msgid "Возраст от 18 лет"
-msgstr "Age 18+"
-
-msgid "Предоставление достоверной информации"
-msgstr "Providing accurate information"
-
-msgid "Соблюдение настоящих Условий"
-msgstr "Compliance with these Terms"
-
-msgid "2.2. Безопасность аккаунта"
-msgstr "2.2. Account Security"
-
-msgid "Пользователь несет ответственность за сохранность логина и пароля. Платформа не несет ответственности за несанкционированный доступ к аккаунту."
-msgstr "User is responsible for keeping login and password secure. Platform is not responsible for unauthorized access to account."
-
-msgid "3. Использование Платформы"
-msgstr "3. Platform Usage"
-
-msgid "Пользователь обязуется использовать Платформу в соответствии с законодательством и настоящими Условиями."
-msgstr "User undertakes to use the Platform in accordance with legislation and these Terms."
-
-msgid "3.1. Разрешенные действия"
-msgstr "3.1. Permitted Actions"
-
-msgid "Поиск и просмотр профилей моделей"
-msgstr "Searching and viewing model profiles"
-
-msgid "Использование фильтров и инструментов поиска"
-msgstr "Using filters and search tools"
-
-msgid "Связь с моделями через Платформу"
-msgstr "Contacting models through the Platform"
-
-msgid "Оставление отзывов и рейтингов"
-msgstr "Leaving reviews and ratings"
-
-msgid "3.2. Запрещенные действия"
-msgstr "3.2. Prohibited Actions"
-
-msgid "Размещение ложной информации"
-msgstr "Posting false information"
-
-msgid "Спам и нежелательная реклама"
-msgstr "Spam and unwanted advertising"
-
-msgid "Нарушение авторских прав"
-msgstr "Copyright infringement"
-
-msgid "Угрозы и оскорбления"
-msgstr "Threats and insults"
-
-msgid "Мошенничество"
-msgstr "Fraud"
-
-msgid "4. Контент и интеллектуальная собственность"
-msgstr "4. Content and Intellectual Property"
-
-msgid "Весь Контент на Платформе защищен авторским правом."
-msgstr "All Content on the Platform is protected by copyright."
-
-msgid "4.1. Права на Контент"
-msgstr "4.1. Content Rights"
-
-msgid "Платформа принадлежит SCANLY"
-msgstr "Platform belongs to SCANLY"
-
-msgid "Пользовательские профили принадлежат пользователям"
-msgstr "User profiles belong to users"
-
-msgid "Использование Контента только в личных целях"
-msgstr "Content usage for personal purposes only"
-
-# Privacy page translations
-msgid "Настоящая Политика конфиденциальности (далее \"Политика\") описывает, как SCANLY (далее \"Мы\" или \"Платформа\") собирает, использует и защищает персональные данные пользователей (далее \"Вы\" или \"Пользователь\")."
-msgstr "This Privacy Policy (hereinafter \"Policy\") describes how SCANLY (hereinafter \"We\" or \"Platform\") collects, uses and protects users' personal data (hereinafter \"You\" or \"User\")."
-
-msgid "1.1. Основные принципы"
-msgstr "1.1. Basic Principles"
-
-msgid "Законность обработки персональных данных"
-msgstr "Lawfulness of personal data processing"
-
-msgid "Ограничение цели сбора данных"
-msgstr "Purpose limitation of data collection"
-
-msgid "Минимизация собираемых данных"
-msgstr "Data minimization"
-
-msgid "Точность и актуальность данных"
-msgstr "Data accuracy and relevance"
-
-msgid "Ограничение срока хранения"
-msgstr "Storage limitation"
-
-msgid "Обеспечение безопасности данных"
-msgstr "Data security"
-
-msgid "2. Собираемые данные"
-msgstr "2. Collected Data"
-
-msgid "Мы собираем различные типы данных для предоставления качественных услуг."
-msgstr "We collect various types of data to provide quality services."
-
-msgid "2.1. Персональные данные"
-msgstr "2.1. Personal Data"
-
-msgid "Имя и контактная информация"
-msgstr "Name and contact information"
-
-msgid "email, телефон"
-msgstr "email, phone"
-
-msgid "Данные аккаунта"
-msgstr "Account data"
-
-msgid "логин, пароль (в зашифрованном виде)"
-msgstr "login, password (encrypted)"
-
-# Additional FAQ answer translations
-msgid "Зайдите в настройки профиля, выберите \"Безопасность\" и нажмите \"Изменить пароль\". Введите текущий пароль и новый пароль дважды для подтверждения."
-msgstr "Go to profile settings, select \"Security\" and click \"Change Password\". Enter your current password and new password twice for confirmation."
-
-msgid "Перейдите в настройки профиля, прокрутите вниз до раздела \"Управление аккаунтом\" и нажмите \"Удалить аккаунт\". Подтвердите действие - аккаунт будет удален в течение 30 дней."
-msgstr "Go to profile settings, scroll down to \"Account Management\" section and click \"Delete Account\". Confirm the action - the account will be deleted within 30 days."
-
-msgid "Зайдите в раздел \"Тарифы\" в личном кабинете, выберите новый план и подтвердите изменение. При переходе на более дорогой тариф разница будет рассчитана пропорционально."
-msgstr "Go to \"Pricing\" section in your personal account, select a new plan and confirm the change. When upgrading to a more expensive plan, the difference will be calculated proportionally."
-
-# Additional FAQ translations
-msgid "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период. Вы можете отменить подписку в любое время без дополнительных платежей."
-msgstr "Yes, for the Pro plan we provide a 14-day free trial period. You can cancel your subscription at any time without additional payments."
-
-msgid "Проверьте подключение к интернету, очистите кэш браузера, убедитесь что вы вошли в аккаунт. Если проблема осталась, обратитесь в техническую поддержку."
-msgstr "Check your internet connection, clear browser cache, make sure you are logged into your account. If the problem persists, contact technical support."
-
-msgid "Мы поддерживаем последние версии Chrome, Firefox, Safari, Edge. Для лучшего опыта рекомендуем использовать Chrome или Firefox."
-msgstr "We support the latest versions of Chrome, Firefox, Safari, Edge. For the best experience, we recommend using Chrome or Firefox."
-
-msgid "Популярные темы"
-msgstr "Popular Topics"
-
-msgid "Как создать аккаунт и начать использование"
-msgstr "How to create an account and get started"
-
-msgid "Эффективный поиск и фильтрация"
-msgstr "Effective search and filtering"
-
-msgid "Способы оплаты и тарифные планы"
-msgstr "Payment methods and pricing plans"
-
-msgid "Защита данных и конфиденциальность"
-msgstr "Data protection and privacy"
-
-# Pricing FAQ translations
-msgid "Вопросы о тарифах"
-msgstr "Pricing Questions"
-
-msgid "Можно ли изменить тариф?"
-msgstr "Can I change my plan?"
-
-msgid "Да, вы можете изменить тариф в любой момент. При переходе на более дорогой тариф разница будет рассчитана пропорционально."
-msgstr "Yes, you can change your plan at any time. When upgrading to a more expensive plan, the difference will be calculated proportionally."
-
-msgid "Какие способы оплаты доступны?"
-msgstr "What payment methods are available?"
-
-msgid "Мы принимаем кредитные карты, PayPal, банковские переводы и криптовалюты."
-msgstr "We accept credit cards, PayPal, bank transfers and cryptocurrencies."
-
-msgid "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период."
-msgstr "Yes, for the Pro plan we provide a 14-day free trial period."
-
-# English to Russian translations
-msgid "ПРЕКРАТИ ИСКАТЬ"
-msgstr "STOP SEARCHING"
-
-msgid "НАЧНИ ПОДБИРАТЬ"
-msgstr "START MATCHING"
-
+#: templates/footer.html:10
+msgid "Ваш персональный поиск моделей на основе ИИ"
+msgstr "Your personal AI-powered model search"
+
+#: templates/footer.html:19
+msgid "Быстрые ссылки"
+msgstr "Quick Links"
+
+# Footer links
+#: templates/footer.html:21
+msgid "О проекте"
+msgstr "About"
+
+#: templates/footer.html:22
+msgid "Как это работает"
+msgstr "How It Works"
+
+#: templates/footer.html:23 templates/pages/faq.html:36
+msgid "Тарифы"
+msgstr "Pricing"
+
+#: templates/footer.html:24 templates/pages/about.html:81
+msgid "Поддержка"
+msgstr "Support"
+
+#: templates/footer.html:28
+msgid "Правовая информация"
+msgstr "Legal Information"
+
+#: templates/footer.html:30
+msgid "Условия использования"
+msgstr "Terms of Use"
+
+#: templates/footer.html:31
+msgid "Политика конфиденциальности"
+msgstr "Privacy Policy"
+
+#: templates/footer.html:32
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/footer.html:33
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/footer.html:38
+msgid "Все права защищены"
+msgstr "All rights reserved"
+
+# Additional translations for index page
+#: templates/index.html:15
+msgid "Scanly - ваш персональный поиск моделей на основе ИИ"
+msgstr "Scanly - your personal AI-powered model search"
+
+#: templates/index.html:19
+msgid "Привлекайте подписчиков!"
+msgstr "Attract subscribers!"
+
+#: templates/index.html:19
+msgid "Более 20 тыс. активных пользователей"
+msgstr "Over 20 thousand active users"
+
+#: templates/index.html:20
+msgid "Подробнее"
+msgstr "Learn More"
+
+#: templates/index.html:40
+msgid "Получай заявки"
+msgstr "Get requests"
+
+#: templates/index.html:40
+msgid "уже сейчас!"
+msgstr "right now!"
+
+#: templates/index.html:43
+msgid "Трафик, модели, работа с контентом, поиск сотрудников"
+msgstr "Traffic, models, content work, employee search"
+
+#: templates/index.html:48
+msgid "Новости"
+msgstr "News"
+
+#: templates/index.html:48
 msgid "OFTV"
 msgstr "OFTV"
 
-# Additional privacy translations
-msgid "Демографические данные"
-msgstr "Demographic data"
+#: templates/index.html:51
+msgid "Только свежие и актуальные новости"
+msgstr "Only fresh and relevant news"
 
-msgid "возраст, страна, город"
-msgstr "age, country, city"
+# Main page
+#: templates/index.html:64
+msgid "ПОПУЛЯРНЫЕ АККАУНТЫ"
+msgstr "POPULAR ACCOUNTS"
 
-msgid "Предпочтения"
-msgstr "Preferences"
+#: templates/index.html:65
+msgid "50 лучших аккаунтов OnlyFans в 2026 году"
+msgstr "Top 50 OnlyFans accounts in 2026"
 
-msgid "интересы, категории поиска"
-msgstr "interests, search categories"
+#: templates/index.html:68
+msgid "Назад"
+msgstr "Back"
 
-msgid "IP-адрес"
-msgstr "IP address"
+#: templates/index.html:69
+msgid "Вперёд"
+msgstr "Forward"
 
-msgid "для определения местоположения"
-msgstr "for location determination"
+#: templates/menu.html:12
+msgid "Популярные категории"
+msgstr "Popular Categories"
 
-msgid "Данные устройства"
-msgstr "Device data"
+#: templates/menu.html:35
+msgid "Find me someone who..."
+msgstr "Find me someone who..."
 
-msgid "тип, ОС, браузер"
-msgstr "type, OS, browser"
+#: templates/menu.html:61
+msgid "Профиль"
+msgstr "Profile"
 
-msgid "Данные использования"
-msgstr "Usage data"
+# English to Russian translations
+#: templates/menu.html:66
+msgid "ПРЕКРАТИ ИСКАТЬ"
+msgstr "STOP SEARCHING"
 
-msgid "страницы, время на сайте"
-msgstr "pages, time on site"
+#: templates/menu.html:67
+msgid "НАЧНИ ПОДБИРАТЬ"
+msgstr "START MATCHING"
 
-msgid "для персонализации и аналитики"
-msgstr "for personalization and analytics"
+# Navigation
+#: templates/menu.html:73
+msgid "Сейчас в тренде"
+msgstr "Trending Now"
+
+#: templates/menu.html:76 templates/pages/accounts_list.html:45
+msgid "Лучшие аккаунты"
+msgstr "Best Accounts"
+
+#: templates/menu.html:79 templates/pages/accounts_list.html:48
+msgid "Top Free"
+msgstr "Top Free"
+
+#: templates/menu.html:91 templates/pages/accounts_list.html:51
+msgid "Новые аккаунты"
+msgstr "New Accounts"
+
+# About page translations
+#: templates/pages/about.html:23
+msgid "Что такое SCANLY?"
+msgstr "What is SCANLY?"
+
+#: templates/pages/about.html:24
+msgid ""
+"SCANLY - это революционная платформа, которая использует искусственный "
+"интеллект для поиска идеальных моделей под ваши предпочтения."
+msgstr ""
+"SCANLY is a revolutionary platform that uses artificial intelligence to find "
+"perfect models based on your preferences."
+
+#: templates/pages/about.html:26
+msgid "Наши преимущества"
+msgstr "Our Advantages"
+
+#: templates/pages/about.html:32
+msgid "ИИ-подбор"
+msgstr "AI Matching"
+
+#: templates/pages/about.html:33
+msgid ""
+"Умные алгоритмы анализируют ваши предпочтения и находят идеальные совпадения"
+msgstr "Smart algorithms analyze your preferences and find perfect matches"
+
+#: templates/pages/about.html:39 templates/pages/faq.html:201
+msgid "Безопасность"
+msgstr "Security"
+
+#: templates/pages/about.html:40
+msgid "Все профили проходят верификацию и проверку качества"
+msgstr "All profiles undergo verification and quality checks"
+
+#: templates/pages/about.html:46
+msgid "Скорость"
+msgstr "Speed"
+
+#: templates/pages/about.html:47
+msgid "Мгновенный поиск и подбор моделей по вашим критериям"
+msgstr "Instant search and model matching according to your criteria"
+
+#: templates/pages/about.html:53
+msgid "Глобальный охват"
+msgstr "Global Reach"
+
+#: templates/pages/about.html:54
+msgid "Доступ к моделям со всего мира"
+msgstr "Access to models from around the world"
+
+#: templates/pages/about.html:58
+msgid "Как мы работаем"
+msgstr "How We Work"
+
+#: templates/pages/about.html:59
+msgid ""
+"Наша платформа собирает данные о моделях со всего мира, анализирует их "
+"характеристики и помогает вам найти именно то, что вы ищете. Мы используем "
+"передовые технологии машинного обучения для обеспечения точности и "
+"релевантности результатов."
+msgstr ""
+"Our platform collects data about models from around the world, analyzes "
+"their characteristics, and helps you find exactly what you're looking for. "
+"We use advanced machine learning technologies to ensure accuracy and "
+"relevance of results."
+
+#: templates/pages/about.html:61
+msgid "Наша команда"
+msgstr "Our Team"
+
+#: templates/pages/about.html:62
+msgid ""
+"SCANLY создана командой экспертов в области искусственного интеллекта, "
+"маркетинга и технологий. Мы объединили наши знания и опыт, чтобы создать "
+"уникальный инструмент для поиска моделей."
+msgstr ""
+"SCANLY was created by a team of experts in artificial intelligence, "
+"marketing, and technology. We combined our knowledge and experience to "
+"create a unique tool for model search."
+
+#: templates/pages/about.html:69
+msgid "Моделей в базе"
+msgstr "Models in database"
+
+#: templates/pages/about.html:75
+msgid "Точность подбора"
+msgstr "Matching accuracy"
+
+#: templates/pages/about.html:87
+msgid "Стран"
+msgstr "Countries"
+
+#: templates/pages/about.html:102
+msgid "Готовы начать?"
+msgstr "Ready to start?"
+
+#: templates/pages/about.html:103
+msgid ""
+"Присоединяйтесь к тысячам пользователей, которые уже нашли идеальных моделей "
+"с помощью SCANLY"
+msgstr ""
+"Join thousands of users who have already found perfect models with SCANLY"
+
+#: templates/pages/about.html:105
+msgid "Начать поиск"
+msgstr "Start search"
+
+#: templates/pages/about.html:106
+msgid "Узнать о тарифах"
+msgstr "Learn about pricing"
+
+#: templates/pages/accounts_list.html:42
+msgid "Самые популярные модели"
+msgstr "Most popular models"
+
+#: templates/pages/accounts_list.html:43
+msgid "Модели, которые сейчас на пике популярности"
+msgstr "Models currently at peak popularity"
+
+#: templates/pages/accounts_list.html:46
+msgid "Премиум модели с эксклюзивным контентом"
+msgstr "Premium models with exclusive content"
+
+#: templates/pages/accounts_list.html:49
+msgid "Лучшие бесплатные модели платформы"
+msgstr "Best free models on the platform"
+
+#: templates/pages/accounts_list.html:52
+msgid "Самые свежие пополнения нашей базы"
+msgstr "Freshest additions to our database"
+
+#: templates/pages/accounts_list.html:64
+msgid "Premium"
+msgstr "Premium"
+
+# Messages
+#: templates/pages/accounts_list.html:100 templates/search.html:98
+msgid "Ничего не найдено"
+msgstr "Nothing Found"
 
 # Final missing translations
+#: templates/pages/accounts_list.html:101
 msgid "В этой категории скоро появятся новые модели"
 msgstr "New models will be added to this category soon"
 
+#: templates/pages/accounts_list.html:111
+msgid "Загрузить еще"
+msgstr "Load More"
+
+#: templates/pages/accounts_list.html:123
+msgid "Ответы на популярные вопросы"
+msgstr "Answers to popular questions"
+
+#: templates/pages/accounts_list.html:162
+msgid "Быстрая навигация"
+msgstr "Quick Navigation"
+
+#: templates/pages/accounts_list.html:168
+msgid "В тренде"
+msgstr "Trending"
+
+#: templates/pages/accounts_list.html:174
+msgid "Лучшие"
+msgstr "Best"
+
+#: templates/pages/accounts_list.html:186
+msgid "Новые"
+msgstr "New"
+
+#: templates/pages/contacts.html:24
+msgid "Свяжитесь с нами"
+msgstr "Contact Us"
+
+#: templates/pages/contacts.html:25
+msgid "Мы всегда рады ответить на ваши вопросы и помочь решить любые проблемы"
+msgstr ""
+"We are always happy to answer your questions and help solve any problems"
+
+#: templates/pages/contacts.html:33
+msgid "Адрес"
+msgstr "Address"
+
+#: templates/pages/contacts.html:44 templates/pages/contacts.html:95
+msgid "Телефон"
+msgstr "Phone"
+
+#: templates/pages/contacts.html:55 templates/pages/contacts.html:86
+msgid "Email"
+msgstr "Email"
+
+#: templates/pages/contacts.html:66
+msgid "Время работы"
+msgstr "Working Hours"
+
+#: templates/pages/contacts.html:67
+msgid "Понедельник - Пятница: 9:00 - 18:00"
+msgstr "Monday - Friday: 9:00 - 18:00"
+
+#: templates/pages/contacts.html:68
+msgid "Суббота, Воскресенье: выходной"
+msgstr "Saturday, Sunday: closed"
+
+#: templates/pages/contacts.html:75
+msgid "Форма обратной связи"
+msgstr "Contact Form"
+
+#: templates/pages/contacts.html:80
+msgid "Ваше имя"
+msgstr "Your Name"
+
+#: templates/pages/contacts.html:101
+msgid "Тема"
+msgstr "Subject"
+
+#: templates/pages/contacts.html:103
+msgid "Выберите тему"
+msgstr "Select Topic"
+
+#: templates/pages/contacts.html:104
+msgid "Общий вопрос"
+msgstr "General Question"
+
+#: templates/pages/contacts.html:105 templates/pages/privacy.html:78
+msgid "Техническая поддержка"
+msgstr "Technical Support"
+
+#: templates/pages/contacts.html:106
+msgid "Вопросы оплаты"
+msgstr "Billing Issues"
+
+#: templates/pages/contacts.html:107
+msgid "Партнерство"
+msgstr "Partnership"
+
+#: templates/pages/contacts.html:108
+msgid "Жалоба"
+msgstr "Complaint"
+
+#: templates/pages/contacts.html:109
+msgid "Другое"
+msgstr "Other"
+
+#: templates/pages/contacts.html:116
+msgid "Сообщение"
+msgstr "Message"
+
+#: templates/pages/contacts.html:117
+msgid "Опишите ваш вопрос или предложение..."
+msgstr "Describe your question or suggestion..."
+
+#: templates/pages/contacts.html:124
+msgid "Отправить копию на мой email"
+msgstr "Send copy to my email"
+
+#: templates/pages/contacts.html:133
+msgid "Я согласен с"
+msgstr "I agree with"
+
+#: templates/pages/contacts.html:133
+msgid "политикой конфиденциальности"
+msgstr "privacy policy"
+
+#: templates/pages/contacts.html:140
+msgid "Отправить сообщение"
+msgstr "Send Message"
+
+#: templates/pages/contacts.html:143
+msgid "Очистить форму"
+msgstr "Clear Form"
+
+#: templates/pages/contacts.html:152
+msgid "Как нас найти"
+msgstr "How to Find Us"
+
+#: templates/pages/contacts.html:156
+msgid "Интерактивная карта"
+msgstr "Interactive map"
+
+#: templates/pages/contacts.html:165
+msgid "Быстрые ответы"
+msgstr "Quick answers"
+
+#: templates/pages/contacts.html:168
+msgid "Как быстро вы отвечаете?"
+msgstr "How quickly do you respond?"
+
+#: templates/pages/contacts.html:169
+msgid "Мы стараемся отвечать на все запросы в течение 24 часов в рабочие дни."
+msgstr "We try to respond to all requests within 24 hours on business days."
+
+#: templates/pages/contacts.html:172
+msgid "Есть ли у вас мобильное приложение?"
+msgstr "Do you have a mobile app?"
+
+#: templates/pages/contacts.html:173
+msgid "Да, наши приложения доступны в App Store и Google Play."
+msgstr "Yes, our apps are available in App Store and Google Play."
+
+#: templates/pages/contacts.html:176
+msgid "Как стать партнером?"
+msgstr "How to become a partner?"
+
+#: templates/pages/contacts.html:177
+msgid "Отправьте запрос на email:"
+msgstr "Send a request to email:"
+
+# FAQ page translations
+#: templates/pages/faq.html:26
+msgid "Поиск по вопросам..."
+msgstr "Search by questions..."
+
+#: templates/pages/faq.html:33
+msgid "Все вопросы"
+msgstr "All Questions"
+
+#: templates/pages/faq.html:34
+msgid "Общие вопросы"
+msgstr "General Questions"
+
+#: templates/pages/faq.html:35
+msgid "Аккаунт"
+msgstr "Account"
+
+#: templates/pages/faq.html:37
+msgid "Технические"
+msgstr "Technical"
+
+#: templates/pages/faq.html:70
+msgid "Как изменить пароль?"
+msgstr "How to change password?"
+
+#: templates/pages/faq.html:75
+msgid "Зайдите в настройки профиля, выберите \"Безопасность\" и нажмите \"Изменить пароль\". Введите текущий пароль и новый пароль дважды для подтверждения."
+msgstr "Go to profile settings, select \"Security\" and click \"Change Password\". Enter your current password and new password twice for confirmation."
+
+#: templates/pages/faq.html:82
+msgid "Как удалить аккаунт?"
+msgstr "How to delete account?"
+
+#: templates/pages/faq.html:87
+msgid "Перейдите в настройки профиля, прокрутите вниз до раздела \"Управление аккаунтом\" и нажмите \"Удалить аккаунт\". Подтвердите действие - аккаунт будет удален в течение 30 дней."
+msgstr "Go to profile settings, scroll down to \"Account Management\" section and click \"Delete Account\". Confirm the action - the account will be deleted within 30 days."
+
+#: templates/pages/faq.html:94
+msgid "Как изменить тарифный план?"
+msgstr "How to change pricing plan?"
+
+#: templates/pages/faq.html:99
+msgid "Зайдите в раздел \"Тарифы\" в личном кабинете, выберите новый план и подтвердите изменение. При переходе на более дорогой тариф разница будет рассчитана пропорционально."
+msgstr "Go to \"Pricing\" section in your personal account, select a new plan and confirm the change. When upgrading to a more expensive plan, the difference will be calculated proportionally."
+
+#: templates/pages/faq.html:106 templates/pages/pricing.html:171
+msgid "Есть ли бесплатный период?"
+msgstr "Is there a free trial?"
+
+# Additional FAQ translations
+#: templates/pages/faq.html:111
+msgid ""
+"Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период. Вы "
+"можете отменить подписку в любое время без дополнительных платежей."
+msgstr ""
+"Yes, for the Pro plan we provide a 14-day free trial period. You can cancel "
+"your subscription at any time without additional payments."
+
+#: templates/pages/faq.html:118
+msgid "Почему не работает поиск?"
+msgstr "Why doesn't search work?"
+
+#: templates/pages/faq.html:123
+msgid ""
+"Проверьте подключение к интернету, очистите кэш браузера, убедитесь что вы "
+"вошли в аккаунт. Если проблема осталась, обратитесь в техническую поддержку."
+msgstr ""
+"Check your internet connection, clear browser cache, make sure you are "
+"logged into your account. If the problem persists, contact technical support."
+
+#: templates/pages/faq.html:130
+msgid "Какие браузеры поддерживаются?"
+msgstr "Which browsers are supported?"
+
+#: templates/pages/faq.html:135
+msgid ""
+"Мы поддерживаем последние версии Chrome, Firefox, Safari, Edge. Для лучшего "
+"опыта рекомендуем использовать Chrome или Firefox."
+msgstr ""
+"We support the latest versions of Chrome, Firefox, Safari, Edge. For the "
+"best experience, we recommend using Chrome or Firefox."
+
+#: templates/pages/faq.html:145
+msgid "Вопросы не найдены"
+msgstr "No Questions Found"
+
+#: templates/pages/faq.html:146 templates/search.html:101
+msgid "Попробуйте изменить поисковый запрос или выбрать другую категорию"
+msgstr "Try changing your search query or select another category"
+
+#: templates/pages/faq.html:153
+msgid "Не нашли ответ на свой вопрос?"
+msgstr "Didn't find answer to your question?"
+
+#: templates/pages/faq.html:154
+msgid "Наша команда поддержки всегда готова помочь"
+msgstr "Our support team is always ready to help"
+
+#: templates/pages/faq.html:157
+msgid "Написать в поддержку"
+msgstr "Contact Support"
+
+#: templates/pages/faq.html:160 templates/pages/pricing.html:92
+msgid "Связаться с нами"
+msgstr "Contact Us"
+
+#: templates/pages/faq.html:174
+msgid "Популярные темы"
+msgstr "Popular Topics"
+
+# How it works page translations
+#: templates/pages/faq.html:180 templates/pages/how_it_works.html:26
+msgid "Регистрация"
+msgstr "Registration"
+
+#: templates/pages/faq.html:181
+msgid "Как создать аккаунт и начать использование"
+msgstr "How to create an account and get started"
+
+#: templates/pages/faq.html:187
+msgid "Поиск моделей"
+msgstr "Model Search"
+
+#: templates/pages/faq.html:188
+msgid "Эффективный поиск и фильтрация"
+msgstr "Effective search and filtering"
+
+#: templates/pages/faq.html:194
 msgid "Оплата"
 msgstr "Payment"
 
+#: templates/pages/faq.html:195
+msgid "Способы оплаты и тарифные планы"
+msgstr "Payment methods and pricing plans"
+
+#: templates/pages/faq.html:202
+msgid "Защита данных и конфиденциальность"
+msgstr "Data protection and privacy"
+
+#: templates/pages/how_it_works.html:27
+msgid ""
+"Создайте аккаунт за несколько минут. Укажите ваши предпочтения и требования "
+"к моделям."
+msgstr ""
+"Create an account in minutes. Specify your preferences and requirements for "
+"models."
+
+#: templates/pages/how_it_works.html:34
+msgid "Анализ предпочтений"
+msgstr "Preference Analysis"
+
+#: templates/pages/how_it_works.html:35
+msgid ""
+"Наш ИИ анализирует ваши требования и создает профиль ваших предпочтений."
+msgstr "Our AI analyzes your requirements and creates your preference profile."
+
+#: templates/pages/how_it_works.html:42
+msgid "Подбор моделей"
+msgstr "Model Matching"
+
+#: templates/pages/how_it_works.html:43
+msgid "Система находит наиболее подходящие модели из нашей базы данных."
+msgstr "The system finds the most suitable models from our database."
+
+#: templates/pages/how_it_works.html:50
+msgid "Просмотр результатов"
+msgstr "View Results"
+
+#: templates/pages/how_it_works.html:51
+msgid ""
+"Изучите предложенные варианты, используйте фильтры для уточнения поиска."
+msgstr "Review suggested options, use filters to refine your search."
+
+#: templates/pages/how_it_works.html:58
+msgid "Связь с моделями"
+msgstr "Contact Models"
+
+#: templates/pages/how_it_works.html:59
+msgid "Выберите подходящие модели и установите контакт через платформу."
+msgstr "Select suitable models and establish contact through the platform."
+
+#: templates/pages/how_it_works.html:65
+msgid "Технологии, которые мы используем"
+msgstr "Technologies We Use"
+
+#: templates/pages/how_it_works.html:69
+msgid "Машинное обучение"
+msgstr "Machine Learning"
+
+#: templates/pages/how_it_works.html:70
+msgid "Алгоритмы ML для точного анализа и предсказания"
+msgstr "ML algorithms for accurate analysis and prediction"
+
+#: templates/pages/how_it_works.html:74
+msgid "Большие данные"
+msgstr "Big Data"
+
+#: templates/pages/how_it_works.html:75
+msgid "Обработка тысяч профилей для нахождения идеальных совпадений"
+msgstr "Processing thousands of profiles to find perfect matches"
+
+#: templates/pages/how_it_works.html:79
+msgid "Шифрование"
+msgstr "Encryption"
+
+#: templates/pages/how_it_works.html:80
+msgid "Защита ваших данных с помощью современных криптографических методов"
+msgstr "Protecting your data with modern cryptographic methods"
+
+#: templates/pages/how_it_works.html:84 templates/pages/pricing.html:124
+msgid "Аналитика"
+msgstr "Analytics"
+
+#: templates/pages/how_it_works.html:85
+msgid "Детальная статистика и отчеты о результатах поиска"
+msgstr "Detailed statistics and reports on search results"
+
+#: templates/pages/how_it_works.html:91
+msgid "Как работает наш алгоритм"
+msgstr "How Our Algorithm Works"
+
+#: templates/pages/how_it_works.html:97
+msgid "Верификация профилей"
+msgstr "Profile verification"
+
+#: templates/pages/how_it_works.html:106
+msgid "Категоризация"
+msgstr "Categorization"
+
+#: templates/pages/how_it_works.html:115
+msgid "Поиск совпадений"
+msgstr "Matching search"
+
+#: templates/pages/how_it_works.html:124
+msgid "Ранжирование"
+msgstr "Ranking"
+
+#: templates/pages/how_it_works.html:137
+msgid "Преимущества нашей платформы"
+msgstr "Our platform advantages"
+
+#: templates/pages/how_it_works.html:143
+msgid "Экономия времени"
+msgstr "Time savings"
+
+#: templates/pages/how_it_works.html:144
+msgid "Находите нужных моделей за минуты вместо часов ручного поиска"
+msgstr "Find the right models in minutes instead of hours of manual search"
+
+#: templates/pages/how_it_works.html:150
+msgid "Точность"
+msgstr "Accuracy"
+
+#: templates/pages/how_it_works.html:151
+#, python-format
+msgid "ИИ обеспечивает релевантность результатов на уровне 98%%"
+msgstr "AI ensures 98%% relevance of results"
+
+#: templates/pages/how_it_works.html:157
+msgid "Экономия денег"
+msgstr "Money savings"
+
+#: templates/pages/how_it_works.html:158
+msgid "Не переплачивайте за ненужные услуги и рекламу"
+msgstr "Don't overpay for unnecessary services and advertising"
+
+#: templates/pages/pricing.html:24 templates/pages/pricing.html:105
 msgid "Бесплатный"
 msgstr "Free"
 
+# Pricing page translations
+#: templates/pages/pricing.html:27 templates/pages/pricing.html:53
+#: templates/pages/pricing.html:78
+msgid "/месяц"
+msgstr "/month"
+
+#: templates/pages/pricing.html:32
+msgid "До 10 поисков в день"
+msgstr "Up to 10 searches per day"
+
+#: templates/pages/pricing.html:33
+msgid "Базовые фильтры"
+msgstr "Basic filters"
+
+#: templates/pages/pricing.html:34 templates/pages/pricing.html:60
+msgid "Просмотр профилей"
+msgstr "Profile viewing"
+
+#: templates/pages/pricing.html:35 templates/pages/support.html:40
+msgid "Email поддержка"
+msgstr "Email Support"
+
+#: templates/pages/pricing.html:36 templates/pages/pricing.html:61
+msgid "Расширенная аналитика"
+msgstr "Advanced analytics"
+
+#: templates/pages/pricing.html:37 templates/pages/pricing.html:62
+msgid "Приоритетная поддержка"
+msgstr "Priority support"
+
+#: templates/pages/pricing.html:41
+msgid "Начать бесплатно"
+msgstr "Start Free"
+
+#: templates/pages/pricing.html:48
+msgid "Популярный"
+msgstr "Popular"
+
+#: templates/pages/pricing.html:50 templates/pages/pricing.html:106
+msgid "Профи"
+msgstr "Pro"
+
+#: templates/pages/pricing.html:58
+msgid "Неограниченные поиски"
+msgstr "Unlimited searches"
+
+#: templates/pages/pricing.html:59
+msgid "Все фильтры"
+msgstr "All filters"
+
+#: templates/pages/pricing.html:63
+msgid "Экспорт результатов"
+msgstr "Export results"
+
+#: templates/pages/pricing.html:67
+msgid "Выбрать Профи"
+msgstr "Choose Pro"
+
+#: templates/pages/pricing.html:75 templates/pages/pricing.html:107
+msgid "Бизнес"
+msgstr "Business"
+
+#: templates/pages/pricing.html:83
+msgid "Все функции Профи"
+msgstr "All Pro features"
+
+#: templates/pages/pricing.html:84
+msgid "Многопользовательский доступ"
+msgstr "Multi-user access"
+
+#: templates/pages/pricing.html:85 templates/pages/pricing.html:130
+msgid "API доступ"
+msgstr "API access"
+
+#: templates/pages/pricing.html:86
+msgid "Персональный менеджер"
+msgstr "Personal manager"
+
+#: templates/pages/pricing.html:87
+msgid "Кастомные отчеты"
+msgstr "Custom reports"
+
+#: templates/pages/pricing.html:88
+msgid "SLA гарантии"
+msgstr "SLA guarantees"
+
+#: templates/pages/pricing.html:99
+msgid "Сравнение тарифов"
+msgstr "Pricing Comparison"
+
+#: templates/pages/pricing.html:104
+msgid "Функция"
+msgstr "Feature"
+
+#: templates/pages/pricing.html:112
+msgid "Количество поисков"
+msgstr "Number of searches"
+
+#: templates/pages/pricing.html:113
+msgid "10 в день"
+msgstr "10 per day"
+
+#: templates/pages/pricing.html:114 templates/pages/pricing.html:115
+msgid "Неограниченно"
+msgstr "Unlimited"
+
+#: templates/pages/pricing.html:118
 msgid "Расширенные фильтры"
 msgstr "Advanced filters"
 
+# Pricing FAQ translations
+#: templates/pages/pricing.html:141
+msgid "Вопросы о тарифах"
+msgstr "Pricing Questions"
+
+#: templates/pages/pricing.html:147
+msgid "Можно ли изменить тариф?"
+msgstr "Can I change my plan?"
+
+#: templates/pages/pricing.html:152
+msgid ""
+"Да, вы можете изменить тариф в любой момент. При переходе на более дорогой "
+"тариф разница будет рассчитана пропорционально."
+msgstr ""
+"Yes, you can change your plan at any time. When upgrading to a more "
+"expensive plan, the difference will be calculated proportionally."
+
+#: templates/pages/pricing.html:159
+msgid "Какие способы оплаты доступны?"
+msgstr "What payment methods are available?"
+
+#: templates/pages/pricing.html:164
+msgid ""
+"Мы принимаем кредитные карты, PayPal, банковские переводы и криптовалюты."
+msgstr "We accept credit cards, PayPal, bank transfers and cryptocurrencies."
+
+#: templates/pages/pricing.html:176
+msgid "Да, для тарифа Профи мы предоставляем 14-дневный бесплатный период."
+msgstr "Yes, for the Pro plan we provide a 14-day free trial period."
+
+# Terms page translations
+#: templates/pages/privacy.html:24 templates/pages/terms.html:24
+msgid "Последнее обновление:"
+msgstr "Last updated:"
+
+#: templates/pages/privacy.html:24 templates/pages/terms.html:24
+msgid "1 января 2026 года"
+msgstr "January 1, 2026"
+
+#: templates/pages/privacy.html:27 templates/pages/terms.html:27
+msgid "1. Общие положения"
+msgstr "1. General Provisions"
+
+#: templates/pages/privacy.html:28
+#, fuzzy
+#| msgid "Политика конфиденциальности"
+msgid "Настоящая Политика конфиденциальности (далее \\"
+msgstr "Privacy Policy"
+
+#: templates/pages/privacy.html:30
+msgid "1.1. Основные принципы"
+msgstr "1.1. Basic Principles"
+
+#: templates/pages/privacy.html:32
+msgid "Законность обработки персональных данных"
+msgstr "Lawfulness of personal data processing"
+
+#: templates/pages/privacy.html:33
+msgid "Ограничение цели сбора данных"
+msgstr "Purpose limitation of data collection"
+
+#: templates/pages/privacy.html:34
+msgid "Минимизация собираемых данных"
+msgstr "Data minimization"
+
+#: templates/pages/privacy.html:35
+msgid "Точность и актуальность данных"
+msgstr "Data accuracy and relevance"
+
+#: templates/pages/privacy.html:36
+msgid "Ограничение срока хранения"
+msgstr "Storage limitation"
+
+#: templates/pages/privacy.html:37
+msgid "Обеспечение безопасности данных"
+msgstr "Data security"
+
+#: templates/pages/privacy.html:40
+msgid "2. Собираемые данные"
+msgstr "2. Collected Data"
+
+#: templates/pages/privacy.html:41
+msgid ""
+"Мы собираем различные типы данных для предоставления качественных услуг."
+msgstr "We collect various types of data to provide quality services."
+
+#: templates/pages/privacy.html:43
+msgid "2.1. Персональные данные"
+msgstr "2.1. Personal Data"
+
+#: templates/pages/privacy.html:45
+msgid "Имя и контактная информация"
+msgstr "Name and contact information"
+
+#: templates/pages/privacy.html:45
+msgid "email, телефон"
+msgstr "email, phone"
+
+#: templates/pages/privacy.html:46
+msgid "Данные аккаунта"
+msgstr "Account data"
+
+#: templates/pages/privacy.html:46
+msgid "логин, пароль (в зашифрованном виде)"
+msgstr "login, password (encrypted)"
+
+# Additional privacy translations
+#: templates/pages/privacy.html:47
+msgid "Демографические данные"
+msgstr "Demographic data"
+
+#: templates/pages/privacy.html:47
+msgid "возраст, страна, город"
+msgstr "age, country, city"
+
+#: templates/pages/privacy.html:48
+msgid "Предпочтения"
+msgstr "Preferences"
+
+#: templates/pages/privacy.html:48
+msgid "интересы, категории поиска"
+msgstr "interests, search categories"
+
+#: templates/pages/privacy.html:51
+msgid "2.2. Технические данные"
+msgstr "2.2. Technical data"
+
+#: templates/pages/privacy.html:53
+msgid "IP-адрес"
+msgstr "IP address"
+
+#: templates/pages/privacy.html:53
+msgid "для определения местоположения"
+msgstr "for location determination"
+
+#: templates/pages/privacy.html:54
+msgid "Данные устройства"
+msgstr "Device data"
+
+#: templates/pages/privacy.html:54
+msgid "тип, ОС, браузер"
+msgstr "type, OS, browser"
+
+#: templates/pages/privacy.html:55
 msgid "Cookies"
 msgstr "Cookies"
 
-msgid "Частые вопросы"
-msgstr "Frequently Asked Questions"
+#: templates/pages/privacy.html:55
+msgid "для персонализации и аналитики"
+msgstr "for personalization and analytics"
 
-msgid "Контент"
-msgstr "Content"
+#: templates/pages/privacy.html:56
+msgid "Данные использования"
+msgstr "Usage data"
 
+#: templates/pages/privacy.html:56
+msgid "страницы, время на сайте"
+msgstr "pages, time on site"
+
+#: templates/pages/privacy.html:59
+msgid "3. Цели сбора данных"
+msgstr "3. Data collection purposes"
+
+#: templates/pages/privacy.html:60
+msgid "Мы используем собранные данные для следующих целей:"
+msgstr "We use the collected data for the following purposes:"
+
+#: templates/pages/privacy.html:62
+msgid "3.1. Предоставление услуг"
+msgstr "3.1. Service provision"
+
+#: templates/pages/privacy.html:64
+msgid "Поиск и подбор моделей"
+msgstr "Search and model matching"
+
+#: templates/pages/privacy.html:65
+msgid "Персонализация рекомендаций"
+msgstr "Recommendation personalization"
+
+#: templates/pages/privacy.html:66
+msgid "Обеспечение функционала Платформы"
+msgstr "Platform functionality"
+
+#: templates/pages/privacy.html:69
+msgid "3.2. Улучшение качества"
+msgstr "3.2. Quality improvement"
+
+#: templates/pages/privacy.html:71
+msgid "Анализ использования Платформы"
+msgstr "Platform usage analysis"
+
+#: templates/pages/privacy.html:72
+msgid "Оптимизация пользовательского опыта"
+msgstr "User experience optimization"
+
+#: templates/pages/privacy.html:73
+msgid "Разработка новых функций"
+msgstr "New feature development"
+
+#: templates/pages/privacy.html:76
+msgid "3.3. Коммуникация"
+msgstr "3.3. Communication"
+
+#: templates/pages/privacy.html:79
+msgid "Информационные рассылки"
+msgstr "Newsletters"
+
+#: templates/pages/privacy.html:80
+msgid "Маркетинговые предложения"
+msgstr "Marketing offers"
+
+#: templates/pages/privacy.html:83
+msgid "4. Использование Cookies"
+msgstr "4. Use of Cookies"
+
+#: templates/pages/privacy.html:84
+msgid "Мы используем файлы cookie для улучшения работы Платформы."
+msgstr "We use cookies to improve the Platform's performance."
+
+#: templates/pages/privacy.html:86
+msgid "4.1. Типы cookies"
+msgstr "4.1. Types of cookies"
+
+#: templates/pages/privacy.html:88
+msgid "Необходимые"
+msgstr "Essential"
+
+#: templates/pages/privacy.html:88
+msgid "для базового функционала"
+msgstr "for basic functionality"
+
+#: templates/pages/privacy.html:89
+msgid "Аналитические"
+msgstr "Analytics"
+
+#: templates/pages/privacy.html:89
+msgid "для сбора статистики"
+msgstr "for statistics collection"
+
+#: templates/pages/privacy.html:90
+msgid "Маркетинговые"
+msgstr "Marketing"
+
+#: templates/pages/privacy.html:90
+msgid "для персонализации рекламы"
+msgstr "for ad personalization"
+
+#: templates/pages/privacy.html:91
+msgid "Функциональные"
+msgstr "Functional"
+
+#: templates/pages/privacy.html:91
+msgid "для запоминания настроек"
+msgstr "for saving preferences"
+
+#: templates/pages/privacy.html:94
+msgid "4.2. Управление cookies"
+msgstr "4.2. Cookie management"
+
+#: templates/pages/privacy.html:95
+msgid "Вы можете управлять файлами cookie через настройки браузера."
+msgstr "You can manage cookies through your browser settings."
+
+#: templates/pages/privacy.html:97
+msgid "5. Передача данных третьим лицам"
+msgstr "5. Data transfer to third parties"
+
+#: templates/pages/privacy.html:98
+msgid "Мы не продаем ваши персональные данные третьим лицам."
+msgstr "We do not sell your personal data to third parties."
+
+#: templates/pages/privacy.html:100
+msgid "5.1. Случаи передачи"
+msgstr "5.1. Cases of transfer"
+
+#: templates/pages/privacy.html:102
+msgid "Поставщики услуг"
+msgstr "Service providers"
+
+#: templates/pages/privacy.html:102
+msgid "хостинг, платежные системы"
+msgstr "hosting, payment systems"
+
+#: templates/pages/privacy.html:103
+msgid "Законные требования"
+msgstr "Legal requirements"
+
+#: templates/pages/privacy.html:103
+msgid "по запросу властей"
+msgstr "upon request of authorities"
+
+#: templates/pages/privacy.html:104
+msgid "С согласия пользователя"
+msgstr "With user consent"
+
+#: templates/pages/privacy.html:104
+msgid "при явном разрешении"
+msgstr "with explicit consent"
+
+#: templates/pages/privacy.html:107
+msgid "5.2. Международная передача"
+msgstr "5.2. International transfer"
+
+#: templates/pages/privacy.html:108
+msgid ""
+"Данные могут передаваться в другие страны при соблюдении адекватной защиты."
+msgstr ""
+"Data may be transferred to other countries with adequate protection in place."
+
+#: templates/pages/privacy.html:110
+msgid "6. Защита данных"
+msgstr "6. Data protection"
+
+#: templates/pages/privacy.html:111
+msgid "Мы применяем современные меры защиты данных."
+msgstr "We apply modern data protection measures."
+
+#: templates/pages/privacy.html:113
+msgid "6.1. Технические меры"
+msgstr "6.1. Technical measures"
+
+#: templates/pages/privacy.html:115
+msgid "Шифрование данных (SSL/TLS)"
+msgstr "Data encryption (SSL/TLS)"
+
+#: templates/pages/privacy.html:116
+msgid "Защита от несанкционированного доступа"
+msgstr "Protection against unauthorized access"
+
+# Terms page translations
+#: templates/pages/privacy.html:117
+msgid "Регулярное обновление систем"
+msgstr "Regular system updates"
+
+#: templates/pages/privacy.html:118
+msgid "Резервное копирование"
+msgstr "Backup"
+
+#: templates/pages/privacy.html:121
+msgid "6.2. Организационные меры"
+msgstr "6.2. Organizational measures"
+
+#: templates/pages/privacy.html:123
+msgid "Ограничение доступа к данным"
+msgstr "Data access restriction"
+
+#: templates/pages/privacy.html:124
+msgid "Обучение персонала"
+msgstr "Staff training"
+
+#: templates/pages/privacy.html:125
+msgid "Внутренние политики безопасности"
+msgstr "Internal security policies"
+
+#: templates/pages/privacy.html:128
+msgid "7. Ваши права"
+msgstr "7. Your rights"
+
+#: templates/pages/privacy.html:129
+msgid "Вы имеете права в отношении своих персональных данных."
+msgstr "You have rights regarding your personal data."
+
+#: templates/pages/privacy.html:131
+msgid "7.1. Право доступа"
+msgstr "7.1. Right of access"
+
+#: templates/pages/privacy.html:132
+msgid "Вы можете запросить информацию о собранных данных."
+msgstr "You can request information about the collected data."
+
+#: templates/pages/privacy.html:134
+msgid "7.2. Право исправления"
+msgstr "7.2. Right to rectification"
+
+#: templates/pages/privacy.html:135
+msgid "Вы можете исправить неточные или неполные данные."
+msgstr "You can correct inaccurate or incomplete data."
+
+#: templates/pages/privacy.html:137
+msgid "7.3. Право удаления"
+msgstr "7.3. Right to erasure"
+
+#: templates/pages/privacy.html:138
+msgid "Вы можете запросить удаление своих данных."
+msgstr "You can request deletion of your data."
+
+#: templates/pages/privacy.html:140
+msgid "7.4. Право на переносимость"
+msgstr "7.4. Right to data portability"
+
+#: templates/pages/privacy.html:141
+msgid "Вы можете получить свои данные в машиночитаемом формате."
+msgstr "You can obtain your data in a machine-readable format."
+
+#: templates/pages/privacy.html:143
+msgid "7.5. Право на возражение"
+msgstr "7.5. Right to object"
+
+#: templates/pages/privacy.html:144
+msgid "Вы можете возразить против обработки ваших данных."
+msgstr "You can object to the processing of your data."
+
+#: templates/pages/privacy.html:146
+msgid "8. Хранение данных"
+msgstr "8. Data storage"
+
+#: templates/pages/privacy.html:147
+msgid "Мы храним данные только необходимое время."
+msgstr "We store data only for as long as necessary."
+
+#: templates/pages/privacy.html:149
+msgid "8.1. Сроки хранения"
+msgstr "8.1. Storage periods"
+
+#: templates/pages/privacy.html:151
+msgid "Аккаунт активен"
+msgstr "Account active"
+
+#: templates/pages/privacy.html:151
+msgid "данные хранятся"
+msgstr "data is stored"
+
+#: templates/pages/privacy.html:152
+msgid "Удаление аккаунта"
+msgstr "Account deletion"
+
+#: templates/pages/privacy.html:152
+msgid "данные удаляются через 30 дней"
+msgstr "data is deleted within 30 days"
+
+#: templates/pages/privacy.html:153
+msgid "Юридические требования"
+msgstr "Legal requirements"
+
+#: templates/pages/privacy.html:153
+msgid "хранение по закону"
+msgstr "storage as required by law"
+
+#: templates/pages/privacy.html:156
+msgid "9. Дети"
+msgstr "9. Children"
+
+#: templates/pages/privacy.html:157
+msgid "Наша Платформа предназначена для лиц старше 18 лет."
+msgstr "Our Platform is intended for persons over 18 years of age."
+
+#: templates/pages/privacy.html:159
+msgid "9.1. Защита детей"
+msgstr "9.1. Protection of children"
+
+#: templates/pages/privacy.html:160
+msgid "Мы не сознательно собираем данные детей до 18 лет."
+msgstr "We do not knowingly collect data from children under 18."
+
+#: templates/pages/privacy.html:162
+msgid "10. Изменения Политики"
+msgstr "10. Policy changes"
+
+#: templates/pages/privacy.html:163
+msgid "Мы можем изменять Политику конфиденциальности."
+msgstr "We may change the Privacy Policy."
+
+#: templates/pages/privacy.html:165
+msgid "10.1. Уведомление об изменениях"
+msgstr "10.1. Notification of changes"
+
+#: templates/pages/privacy.html:166
+msgid "Об изменениях сообщается через Платформу или email."
+msgstr "Changes are communicated through the Platform or email."
+
+#: templates/pages/privacy.html:168
+msgid "11. Контактная информация"
+msgstr "11. Contact information"
+
+#: templates/pages/privacy.html:169
+msgid "Для вопросов по конфиденциальности свяжитесь с нами:"
+msgstr "For privacy questions, contact us:"
+
+#: templates/pages/privacy.html:178
+msgid "Жалобы и обращения"
+msgstr "Complaints and appeals"
+
+#: templates/pages/privacy.html:179
+msgid "Если вы считаете, что ваши права нарушены, вы можете:"
+msgstr "If you believe your rights have been violated, you can:"
+
+#: templates/pages/privacy.html:181
+msgid "Связаться с нашим уполномоченным по защите данных"
+msgstr "Contact our data protection officer"
+
+#: templates/pages/privacy.html:182
+msgid "Подать жалобу в Роскомнадзор"
+msgstr "File a complaint with Roskomnadzor"
+
+#: templates/pages/privacy.html:183
+msgid "Обратиться в суд"
+msgstr "Apply to court"
+
+# Support page translations
+#: templates/pages/support.html:28
+msgid "Чат поддержки"
+msgstr "Support Chat"
+
+#: templates/pages/support.html:29
+msgid "Быстрая помощь в режиме реального времени"
+msgstr "Real-time quick help"
+
+#: templates/pages/support.html:30
+msgid "Работает 24/7"
+msgstr "Available 24/7"
+
+#: templates/pages/support.html:31
+msgid "Начать чат"
+msgstr "Start Chat"
+
+#: templates/pages/support.html:41
+msgid "Отправьте нам письмо с вашим вопросом"
+msgstr "Send us an email with your question"
+
+#: templates/pages/support.html:43
+msgid "Написать письмо"
+msgstr "Send Email"
+
+#: templates/pages/support.html:52
+msgid "Телефон поддержки"
+msgstr "Phone Support"
+
+#: templates/pages/support.html:53
+msgid "Позвоните нам для получения помощи"
+msgstr "Call us for assistance"
+
+#: templates/pages/support.html:55
+msgid "Позвонить"
+msgstr "Call"
+
+#: templates/pages/terms.html:28
+#, fuzzy
+#| msgid "Условия использования"
+msgid "Настоящие Условия использования (далее \\"
+msgstr "Terms of Use"
+
+#: templates/pages/terms.html:30
+msgid "1.1. Определения"
+msgstr "1.1. Definitions"
+
+#: templates/pages/terms.html:32
 msgid "Платформа"
 msgstr "Platform"
 
+#: templates/pages/terms.html:32
+msgid "веб-сайт и мобильные приложения SCANLY"
+msgstr "SCANLY website and mobile applications"
+
+#: templates/pages/terms.html:33
 msgid "Пользователь"
 msgstr "User"
 
+#: templates/pages/terms.html:33
+msgid "любое физическое или юридическое лицо, использующее Платформу"
+msgstr "any natural or legal person using the Platform"
+
+#: templates/pages/terms.html:34
+msgid "Контент"
+msgstr "Content"
+
+#: templates/pages/terms.html:34
+msgid "вся информация, размещенная на Платформе"
+msgstr "all information posted on the Platform"
+
+#: templates/pages/terms.html:35
 msgid "Услуги"
 msgstr "Services"
+
+#: templates/pages/terms.html:35
+msgid "функционал Платформы по поиску и подбору моделей"
+msgstr "Platform functionality for searching and selecting models"
+
+#: templates/pages/terms.html:38
+msgid "2. Регистрация и аккаунт"
+msgstr "2. Registration and Account"
+
+#: templates/pages/terms.html:39
+msgid ""
+"Для использования некоторых функций Платформы требуется регистрация аккаунта."
+msgstr "Account registration is required to use some Platform features."
+
+#: templates/pages/terms.html:41
+msgid "2.1. Требования к регистрации"
+msgstr "2.1. Registration Requirements"
+
+#: templates/pages/terms.html:43
+msgid "Возраст от 18 лет"
+msgstr "Age 18+"
+
+#: templates/pages/terms.html:44
+msgid "Предоставление достоверной информации"
+msgstr "Providing accurate information"
+
+#: templates/pages/terms.html:45
+msgid "Соблюдение настоящих Условий"
+msgstr "Compliance with these Terms"
+
+#: templates/pages/terms.html:48
+msgid "2.2. Безопасность аккаунта"
+msgstr "2.2. Account Security"
+
+#: templates/pages/terms.html:49
+msgid ""
+"Пользователь несет ответственность за сохранность логина и пароля. Платформа "
+"не несет ответственности за несанкционированный доступ к аккаунту."
+msgstr ""
+"User is responsible for keeping login and password secure. Platform is not "
+"responsible for unauthorized access to account."
+
+#: templates/pages/terms.html:51
+msgid "3. Использование Платформы"
+msgstr "3. Platform Usage"
+
+#: templates/pages/terms.html:52
+msgid ""
+"Пользователь обязуется использовать Платформу в соответствии с "
+"законодательством и настоящими Условиями."
+msgstr ""
+"User undertakes to use the Platform in accordance with legislation and these "
+"Terms."
+
+#: templates/pages/terms.html:54
+msgid "3.1. Разрешенные действия"
+msgstr "3.1. Permitted Actions"
+
+#: templates/pages/terms.html:56
+msgid "Поиск и просмотр профилей моделей"
+msgstr "Searching and viewing model profiles"
+
+#: templates/pages/terms.html:57
+msgid "Использование фильтров и инструментов поиска"
+msgstr "Using filters and search tools"
+
+#: templates/pages/terms.html:58
+msgid "Связь с моделями через Платформу"
+msgstr "Contacting models through the Platform"
+
+#: templates/pages/terms.html:59
+msgid "Оставление отзывов и рейтингов"
+msgstr "Leaving reviews and ratings"
+
+#: templates/pages/terms.html:62
+msgid "3.2. Запрещенные действия"
+msgstr "3.2. Prohibited Actions"
+
+#: templates/pages/terms.html:64
+msgid "Размещение ложной информации"
+msgstr "Posting false information"
+
+#: templates/pages/terms.html:65
+msgid "Спам и нежелательная реклама"
+msgstr "Spam and unwanted advertising"
+
+#: templates/pages/terms.html:66
+msgid "Нарушение авторских прав"
+msgstr "Copyright infringement"
+
+#: templates/pages/terms.html:67
+msgid "Угрозы и оскорбления"
+msgstr "Threats and insults"
+
+#: templates/pages/terms.html:68
+msgid "Мошенничество"
+msgstr "Fraud"
+
+#: templates/pages/terms.html:71
+msgid "4. Контент и интеллектуальная собственность"
+msgstr "4. Content and Intellectual Property"
+
+#: templates/pages/terms.html:72
+msgid "Весь Контент на Платформе защищен авторским правом."
+msgstr "All Content on the Platform is protected by copyright."
+
+#: templates/pages/terms.html:74
+msgid "4.1. Права на Контент"
+msgstr "4.1. Content Rights"
+
+#: templates/pages/terms.html:76
+msgid "Платформа принадлежит SCANLY"
+msgstr "Platform belongs to SCANLY"
+
+#: templates/pages/terms.html:77
+msgid "Пользовательские профили принадлежат пользователям"
+msgstr "User profiles belong to users"
+
+#: templates/pages/terms.html:78
+msgid "Использование Контента только в личных целях"
+msgstr "Content usage for personal purposes only"
+
+#: templates/pages/terms.html:81
+msgid "4.2. Лицензия на использование"
+msgstr "4.2. License to Use"
+
+#: templates/pages/terms.html:82
+msgid ""
+"Пользователь получает неисключительную лицензию на использование Платформы в "
+"соответствии с Условиями."
+msgstr ""
+"User receives a non-exclusive license to use the Platform in accordance with "
+"the Terms."
+
+#: templates/pages/terms.html:84
+msgid "5. Конфиденциальность"
+msgstr "5. Privacy"
+
+#: templates/pages/terms.html:85
+msgid ""
+"Сбор и обработка персональных данных регулируется Политикой "
+"конфиденциальности."
+msgstr ""
+"Collection and processing of personal data is regulated by the Privacy "
+"Policy."
+
+#: templates/pages/terms.html:87
+msgid "5.1. Сбор данных"
+msgstr "5.1. Data Collection"
+
+#: templates/pages/terms.html:88
+msgid ""
+"Платформа собирает только необходимую информацию для предоставления Услуг."
+msgstr "Platform collects only necessary information to provide Services."
+
+#: templates/pages/terms.html:90
+msgid "5.2. Использование данных"
+msgstr "5.2. Data Usage"
+
+#: templates/pages/terms.html:91
+msgid ""
+"Персональные данные используются для улучшения качества Услуг и "
+"персонализации."
+msgstr "Personal data is used to improve service quality and personalization."
+
+#: templates/pages/terms.html:93
+msgid "6. Платные Услуги"
+msgstr "6. Paid Services"
+
+#: templates/pages/terms.html:94
+msgid "Некоторые функции Платформы предоставляются на платной основе."
+msgstr "Some Platform functions are provided on a paid basis."
+
+#: templates/pages/terms.html:96
+msgid "6.1. Тарифные планы"
+msgstr "6.1. Pricing Plans"
+
+#: templates/pages/terms.html:97
+msgid ""
+"Подробная информация о тарифах доступна в соответствующем разделе Платформы."
+msgstr ""
+"Detailed information about tariffs is available in the corresponding "
+"Platform section."
+
+#: templates/pages/terms.html:99
+msgid "6.2. Оплата"
+msgstr "6.2. Payment"
+
+#: templates/pages/terms.html:100
+msgid "Оплата Услуг производится через безопасные платежные системы."
+msgstr "Payment for Services is made through secure payment systems."
+
+#: templates/pages/terms.html:102
+msgid "6.3. Возврат средств"
+msgstr "6.3. Refunds"
+
+#: templates/pages/terms.html:103
+msgid ""
+"Возврат средств осуществляется в соответствии с законодательством и "
+"политикой возврата."
+msgstr "Refunds are made in accordance with legislation and refund policy."
+
+#: templates/pages/terms.html:105
+msgid "7. Ограничение ответственности"
+msgstr "7. Limitation of Liability"
+
+#: templates/pages/terms.html:106
+msgid "Платформа не несет ответственности за:"
+msgstr "The Platform is not responsible for:"
+
+#: templates/pages/terms.html:108
+msgid "Контент, размещенный пользователями"
+msgstr "Content posted by users"
+
+#: templates/pages/terms.html:109
+msgid "Прямые или косвенные убытки"
+msgstr "Direct or indirect damages"
+
+#: templates/pages/terms.html:110
+msgid "Перерывы в работе Платформы"
+msgstr "Platform interruptions"
+
+#: templates/pages/terms.html:111
+msgid "Действия третьих лиц"
+msgstr "Actions of third parties"
+
+#: templates/pages/terms.html:114
+msgid "8. Прекращение использования"
+msgstr "8. Termination of Use"
+
+#: templates/pages/terms.html:115
+msgid "Пользователь может прекратить использование Платформы в любой момент."
+msgstr "User may terminate use of the Platform at any time."
+
+#: templates/pages/terms.html:117
+msgid "8.1. Удаление аккаунта"
+msgstr "8.1. Account Deletion"
+
+#: templates/pages/terms.html:118
+msgid "Аккаунт может быть удален по запросу Пользователя."
+msgstr "Account may be deleted upon user request."
+
+#: templates/pages/terms.html:120
+msgid "8.2. Блокировка"
+msgstr "8.2. Blocking"
+
+#: templates/pages/terms.html:121
+msgid "Платформа вправе заблокировать аккаунт при нарушении Условий."
+msgstr "Platform has the right to block an account for violation of Terms."
+
+#: templates/pages/terms.html:123
+msgid "9. Изменения Условий"
+msgstr "9. Changes to Terms"
+
+#: templates/pages/terms.html:124
+msgid ""
+"Платформа оставляет за собой право изменять Условия. Изменения вступают в "
+"силу с момента публикации."
+msgstr ""
+"Platform reserves the right to change Terms. Changes come into force from "
+"the moment of publication."
+
+#: templates/pages/terms.html:126
+msgid "10. Заключительные положения"
+msgstr "10. Final Provisions"
+
+#: templates/pages/terms.html:127
+msgid ""
+"Настоящие Условия являются полным соглашением между Пользователем и "
+"Платформой."
+msgstr ""
+"These Terms constitute the complete agreement between the User and the "
+"Platform."
+
+#: templates/pages/terms.html:129
+msgid "10.1. Применимое право"
+msgstr "10.1. Applicable Law"
+
+#: templates/pages/terms.html:130
+msgid "К настоящим Условиям применяется законодательство Российской Федерации."
+msgstr "The legislation of the Russian Federation applies to these Terms."
+
+#: templates/pages/terms.html:132
+msgid "10.2. Споры"
+msgstr "10.2. Disputes"
+
+#: templates/pages/terms.html:133
+msgid "Все споры решаются путем переговоров или в судебном порядке."
+msgstr "All disputes are resolved through negotiation or in court."
+
+#: templates/pages/terms.html:135
+msgid "10.3. Контактная информация"
+msgstr "10.3. Contact Information"
+
+#: templates/pages/terms.html:136
+msgid ""
+"Для связи с нами используйте форму обратной связи или email: legal@scanly.com"
+msgstr "To contact us, use the contact form or email: legal@scanly.com"
+
+#: templates/search.html:4 templates/search.html:11
+msgid "Поиск"
+msgstr "Search"
+
+#: templates/search.html:11
+msgid "моделей"
+msgstr "models"
+
+#: templates/search.html:12
+msgid "Найдите идеальную модель по вашим критериям"
+msgstr "Find the perfect model based on your criteria"
+
+#: templates/search.html:23
+msgid "Поиск по описанию моделей..."
+msgstr "Search by model descriptions..."
+
+#: templates/search.html:57 templates/search.html:59
+msgid "Найдено моделей"
+msgstr "Models found"
+
+#: templates/search.html:57
+msgid "по вашему запросу"
+msgstr "for your query"
+
+#: templates/search.html:59
+msgid "в выбранной категории"
+msgstr "in selected category"
+
+#: templates/search.html:103
+msgid "Используйте поиск или выберите категорию для поиска моделей"
+msgstr "Use search or select a category to find models"
+
+#: templates/search.html:118
+msgid "Ответы на популярные вопросы о поиске"
+msgstr "Answers to popular questions about search"

@@ -46,18 +46,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'drf_yasg',
+    'ckeditor',
+    'ckeditor_uploader',
     'django_filters',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
 
 SITE_ID = 1
 
@@ -192,3 +185,35 @@ REST_FRAMEWORK = {
 # Media files configuration
 MEDIA_URL = os.getenv("MEDIA_URL", "/media/")
 MEDIA_ROOT = BASE_DIR / os.getenv("MEDIA_ROOT", "media")
+
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_UPLOAD_PATH = 'media/uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_RESTRICT_BY_USER = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'extraPlugins': ','.join(
+            [
+                'uploadimage',
+                'autolink',
+                'div'
+            ]),
+        'filebrowserUploadUrl': '/ckeditor/upload/',
+        'toolbar': 'Custom',
+        'width': '100%',
+        'toolbar_Custom': [
+            {'name': 'styles', 'items': ['Format', 'Font']},
+            ['Bold', 'Italic', 'Underline'],
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-',
+                       'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Language']},
+            ['Link', 'Unlink'],
+            {'name': 'insert',
+             'items': ['Image', 'Table', 'HorizontalRule', 'Iframe']},
+            {'name': 'tools', 'items': ['ShowBlocks', 'RemoveFormat', 'PasteText', 'Source', 'Maximize']}
+        ]
+    }
+}

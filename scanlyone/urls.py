@@ -23,11 +23,14 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 from api.views import home, category_page, search_page, static_page, trending_accounts, best_accounts, free_accounts, new_accounts
-from api.sitemaps import StaticViewSitemap, CategorySitemap
+from api.views import blog_list, blog_detail, blog_category
+from api.sitemaps import StaticViewSitemap, CategorySitemap, NewsSitemap, NewsCategorySitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
     'categories': CategorySitemap,
+    'news': NewsSitemap,
+    'news-categories': NewsCategorySitemap,
 }
 
 schema_view = get_schema_view(
@@ -56,6 +59,9 @@ urlpatterns = [
     path('best/', best_accounts, name='best_accounts'),
     path('free/', free_accounts, name='free_accounts'),
     path('new/', new_accounts, name='new_accounts'),
+    path('blog/', blog_list, name='blog_list'),
+    path('blog/category/<slug:slug>/', blog_category, name='blog_category'),
+    path('blog/<slug:slug>/', blog_detail, name='blog_detail'),
     path('<slug:page_name>/', static_page, name='static_page'),
 ]
 

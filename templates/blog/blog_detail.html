@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ news_item.get_localized_meta_title }} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
+
+{% block meta_description %}{{ news_item.get_localized_meta_description }}{% endblock %}
+
+{% block meta_keywords %}{{ news_item.meta_keywords_ru }}{% endblock %}
+
+{% block canonical_url %}
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ news_item.get_localized_title }}">
+<meta property="og:description" content="{{ news_item.get_localized_short_description }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% if news_item.preview_image %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ news_item.preview_image.url }}">
+{% endif %}
+<meta property="og:site_name" content="SCANLY">
+<meta property="article:published_time" content="{{ news_item.published_at|date:'c' }}">
+<meta property="article:modified_time" content="{{ news_item.updated_at|date:'c' }}">
+{% if news_item.category %}
+<meta property="article:section" content="{{ news_item.category.get_localized_name }}">
+{% endif %}
+{% for tag in tags %}
+<meta property="article:tag" content="{{ tag }}">
+{% endfor %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ news_item.get_localized_title }}">
+<meta name="twitter:description" content="{{ news_item.get_localized_short_description }}">
+{% if news_item.preview_image %}
+<meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ news_item.preview_image.url }}">
+{% endif %}
+
+<!-- JSON-LD Structured Data for E-E-A-T -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{ news_item.get_localized_title|escapejs }}",
+  "description": "{{ news_item.get_localized_short_description|escapejs }}",
+  "image": [
+    {% if news_item.preview_image %}"{{ request.scheme }}://{{ request.get_host }}{{ news_item.preview_image.url }}"{% endif %}
+    {% if news_item.main_image %},"{{ request.scheme }}://{{ request.get_host }}{{ news_item.main_image.url }}"{% endif %}
+  ],
+  "datePublished": "{{ news_item.published_at|date:'c' }}",
+  "dateModified": "{{ news_item.updated_at|date:'c' }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ news_item.author_name|escapejs }}",
+    {% if news_item.author_avatar %}"image": "{{ request.scheme }}://{{ request.get_host }}{{ news_item.author_avatar.url }}"{% endif %}
+    {% if news_item.author_bio %}"description": "{{ news_item.author_bio_ru|escapejs }}"{% endif %}
+  },
+  {% if news_item.expert_name %}
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "{{ news_item.expert_name|escapejs }}",
+    {% if news_item.expert_title %}"jobTitle": "{{ news_item.expert_title_ru|escapejs }}"{% endif %}
+    {% if news_item.expert_avatar %}"image": "{{ request.scheme }}://{{ request.get_host }}{{ news_item.expert_avatar.url }}"{% endif %}
+  },
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "SCANLY",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ request.scheme }}://{{ request.get_host }}/static/img/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ request.build_absolute_uri }}"
+  },
+  "wordCount": {{ news_item.get_localized_content|length }},
+  "timeRequired": "PT{{ news_item.reading_time }}M"
+}
+</script>
+
+{% block content %}
+<!-- Article Header -->
+<section class="article-header-section py-4">
+    <div class="container-fluid">
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">{% trans "Главная" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog_list' %}">{% trans "Блог" %}</a></li>
+                {% if news_item.category %}
+                    <li class="breadcrumb-item"><a href="{{ news_item.category.get_absolute_url }}">{{ news_item.category.get_localized_name }}</a></li>
+                {% endif %}
+                <li class="breadcrumb-item active">{{ news_item.get_localized_title|truncatechars:50 }}</li>
+            </ol>
+        </nav>
+
+        <div class="article-header-content">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="article-title">{{ news_item.get_localized_title }}</h1>
+                    
+                    <div class="article-meta">
+                        {% if news_item.category %}
+                            <span class="article-category">
+                                <a href="{{ news_item.category.get_absolute_url }}">{{ news_item.category.get_localized_name }}</a>
+                            </span>
+                        {% endif %}
+                        
+                        <span class="article-date">{{ news_item.published_at|date:"d F Y" }}</span>
+                        
+                        <span class="reading-time">{{ news_item.reading_time }} {% trans "мин чтения" %}</span>
+                        
+                        <span class="view-count">{{ news_item.view_count }} {% trans "просмотров" %}</span>
+                        
+                        {% if news_item.is_breaking %}
+                            <span class="breaking-badge">{% trans "Срочно" %}</span>
+                        {% elif news_item.is_featured %}
+                            <span class="featured-badge">{% trans "Избранное" %}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    {% if news_item.preview_image %}
+                        <div class="article-main-image">
+                            <img src="{{ news_item.preview_image.url }}" alt="{{ news_item.get_localized_title }}">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Article Content -->
+<section class="article-content-section py-4">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <article class="article-content">
+                    <!-- Author Box (E-E-A-T) -->
+                    <div class="author-box">
+                        <div class="author-info">
+                            {% if news_item.author_avatar %}
+                                <img src="{{ news_item.author_avatar.url }}" alt="{{ news_item.author_name }}" class="author-avatar">
+                            {% endif %}
+                            <div class="author-details">
+                                <h4>{{ news_item.author_name }}</h4>
+                                {% if news_item.author_bio %}
+                                    <p>{{ news_item.author_bio_ru|safe }}</p>
+                                {% endif %}
+                                <div class="author-social">
+                                    <span class="author-role">{% trans "Автор статьи" %}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article Text -->
+                    <div class="article-text">
+                        {{ news_item.get_localized_content|safe|linebreaks }}
+                    </div>
+
+                    <!-- Expert Review Box (E-E-A-T) -->
+                    {% if news_item.expert_name %}
+                        <div class="expert-box">
+                            <h3>{% trans "Проверено экспертом" %}</h3>
+                            <div class="expert-info">
+                                {% if news_item.expert_avatar %}
+                                    <img src="{{ news_item.expert_avatar.url }}" alt="{{ news_item.expert_name }}" class="expert-avatar">
+                                {% endif %}
+                                <div class="expert-details">
+                                    <h4>{{ news_item.expert_name }}</h4>
+                                    {% if news_item.expert_title %}
+                                        <p>{{ news_item.expert_title_ru }}</p>
+                                    {% endif %}
+                                    <div class="expert-credentials">
+                                        <span class="expert-role">{% trans "Эксперт" %}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Tags -->
+                    {% if tags %}
+                        <div class="article-tags">
+                            <h3>{% trans "Теги" %}</h3>
+                            <div class="tags-list">
+                                {% for tag in tags %}
+                                    <a href="?tag={{ tag }}" class="tag">{{ tag }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <!-- Share Buttons -->
+                    <div class="share-section">
+                        <h3>{% trans "Поделиться статьей" %}</h3>
+                        <div class="share-buttons">
+                            <a href="https://vk.com/share.php?url={{ request.build_absolute_uri }}" target="_blank" class="share-btn vk">
+                                <i class="bi bi-vk"></i> VK
+                            </a>
+                            <a href="https://t.me/share/url?url={{ request.build_absolute_uri }}&text={{ news_item.get_localized_title|urlencode }}" target="_blank" class="share-btn telegram">
+                                <i class="bi bi-telegram"></i> Telegram
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ news_item.get_localized_title|urlencode }}" target="_blank" class="share-btn twitter">
+                                <i class="bi bi-twitter"></i> Twitter
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="share-btn facebook">
+                                <i class="bi bi-facebook"></i> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Table of Contents -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">{% trans "Содержание" %}</h3>
+                    <div class="table-of-contents">
+                        <!-- Здесь можно добавить автоматическое оглавление -->
+                    </div>
+                </div>
+
+                <!-- Related News -->
+                {% if related_news %}
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">{% trans "Похожие статьи" %}</h3>
+                        <div class="related-news">
+                            {% for related in related_news %}
+                                <div class="related-news-item">
+                                    {% if related.preview_image %}
+                                        <img src="{{ related.preview_image.url }}" alt="{{ related.get_localized_title }}" class="related-news-image">
+                                    {% endif %}
+                                    <div class="related-news-content">
+                                        <h4><a href="{{ related.get_absolute_url }}">{{ related.get_localized_title|truncatechars:80 }}</a></h4>
+                                        <span class="related-news-date">{{ related.published_at|date:"d.m.Y" }}</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Latest News -->
+                {% if latest_news %}
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">{% trans "Последние новости" %}</h3>
+                        <div class="latest-news">
+                            {% for latest in latest_news %}
+                                <div class="latest-news-item">
+                                    <h4><a href="{{ latest.get_absolute_url }}">{{ latest.get_localized_title|truncatechars:70 }}</a></h4>
+                                    <span class="latest-news-date">{{ latest.published_at|date:"d.m.Y" }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- Newsletter Signup -->
+                <div class="sidebar-section newsletter-section">
+                    <h3 class="sidebar-title">{% trans "Подписка на новости" %}</h3>
+                    <p>{% trans "Получайте последние новости и обновления SCANLY" %}</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="{% trans "Ваш email" %}" required>
+                        <button type="submit" class="btn btn-primary">{% trans "Подписаться" %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

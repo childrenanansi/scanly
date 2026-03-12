@@ -12,7 +12,11 @@
                     <li class="category-dropdown-header"><strong>{% trans "Популярные категории" %}</strong></li>
                     {% if categories %}
                         {% for category in categories %}
-                            <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">
+                            {% if category.alias %}
+                                <li><a class="dropdown-item category-item" href="{% url 'category_page' category.alias %}">
+                            {% else %}
+                                <li><a class="dropdown-item category-item" href="/category/{{ category.id }}/">
+                            {% endif %}
                                 {% if current_language == 'en' %}
                                     {{category.name_en}}
                                 {% else %}
@@ -73,6 +77,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if page_type == 'free' %}active {% endif %}" href="{% url 'free_accounts' %}"><i class="bi bi-trophy me-1"></i>{% trans "Top Free" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if page_type == 'blog' %}active {% endif %}" href="{% url 'blog_list' %}"><i class="bi bi-newspaper me-1"></i>{% trans "Блог" %}</a>
                 </li>
               <!--  <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-geo-alt me-1"></i>Рядом со мной</a>

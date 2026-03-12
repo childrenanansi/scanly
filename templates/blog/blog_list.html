@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Блог новостей SCANLY" %} - {% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
+
+{% block meta_description %}{% trans "Читайте последние новости и статьи о SCANLY, обновлениях платформы, советах по поиску моделей и многом другом в нашем блоге." %}{% endblock %}
+
+{% block meta_keywords %}{% trans "блог scanly, новости, статьи, обновления, советы, поиск моделей, искусственный интеллект" %}{% endblock %}
+
+{% block content %}
+<!-- Blog Header Section -->
+<section class="blog-header-section py-5">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="section-title">{% trans "Блог SCANLY" %}</h1>
+            <p class="section-subtitle">{% trans "Последние новости, советы и обновления платформы" %}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Content Section -->
+<section class="blog-content-section py-4">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <!-- Filter Tags -->
+                <div class="blog-filters mb-4">
+                    <div class="filter-tags">
+                        <a href="{% url 'blog_list' %}" class="filter-tag {% if not current_category and not current_tag %}active{% endif %}">
+                            {% trans "Все новости" %}
+                        </a>
+                        {% for category in categories %}
+                            <a href="?category={{ category.slug }}" class="filter-tag {% if current_category == category.slug %}active{% endif %}">
+                                {{ category.get_localized_name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- News Grid -->
+                <div class="news-grid row g-4">
+                    {% for news_item in news %}
+                        <article class="col-md-6">
+                            <div class="news-card">
+                                {% if news_item.preview_image %}
+                                    <div class="news-card-image">
+                                        <img src="{{ news_item.preview_image.url }}" alt="{{ news_item.get_localized_title }}">
+                                        {% if news_item.is_breaking %}
+                                            <span class="breaking-badge">{% trans "Срочно" %}</span>
+                                        {% elif news_item.is_featured %}
+                                            <span class="featured-badge">{% trans "Избранное" %}</span>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                                
+                                <div class="news-card-content">
+                                    <div class="news-meta">
+                                        <span class="news-category">
+                                            {% if news_item.category %}
+                                                {{ news_item.category.get_localized_name }}
+                                            {% endif %}
+                                        </span>
+                                        <span class="news-date">{{ news_item.published_at|date:"d.m.Y" }}</span>
+                                        <span class="reading-time">{{ news_item.reading_time }} {% trans "мин чтения" %}</span>
+                                    </div>
+                                    
+                                    <h3 class="news-title">
+                                        <a href="{{ news_item.get_absolute_url }}">{{ news_item.get_localized_title }}</a>
+                                    </h3>
+                                    
+                                    <p class="news-excerpt">{{ news_item.get_localized_short_description|safe|truncatechars:150 }}</p>
+                                    
+                                    <div class="news-footer">
+                                        <div class="author-info">
+                                            {% if news_item.author_avatar %}
+                                                <img src="{{ news_item.author_avatar.url }}" alt="{{ news_item.author_name }}" class="author-avatar">
+                                            {% endif %}
+                                            <span class="author-name">{{ news_item.author_name }}</span>
+                                        </div>
+                                        <div class="news-stats">
+                                            <span class="view-count">{{ news_item.view_count }} {% trans "просмотров" %}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    {% empty %}
+                        <div class="col-12">
+                            <div class="no-news">
+                                <i class="bi bi-newspaper"></i>
+                                <h3>{% trans "Новостей пока нет" %}</h3>
+                                <p>{% trans "Здесь появятся наши новости и статьи" %}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Pagination -->
+                {% if news.has_other_pages %}
+                    <nav class="blog-pagination mt-5">
+                        <ul class="pagination justify-content-center">
+                            {% if news.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ news.previous_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            
+                            {% for num in news.paginator.page_range %}
+                                {% if news.number == num %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ num }}</span>
+                                    </li>
+                                {% elif num > news.number|add:'-3' and num < news.number|add:'3' %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ num }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}">{{ num }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            {% if news.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ news.next_page_number }}{% if current_category %}&category={{ current_category }}{% endif %}{% if current_tag %}&tag={{ current_tag }}{% endif %}">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Featured News -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">{% trans "Избранные новости" %}</h3>
+                    <div class="featured-news-list">
+                        {% for featured in featured_news %}
+                            <div class="featured-news-item">
+                                {% if featured.preview_image %}
+                                    <img src="{{ featured.preview_image.url }}" alt="{{ featured.get_localized_title }}" class="featured-news-image">
+                                {% endif %}
+                                <div class="featured-news-content">
+                                    <h4><a href="{{ featured.get_absolute_url }}">{{ featured.get_localized_title|truncatechars:60 }}</a></h4>
+                                    <span class="featured-news-date">{{ featured.published_at|date:"d.m.Y" }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">{% trans "Категории" %}</h3>
+                    <ul class="category-list">
+                        {% for category in categories %}
+                            <li>
+                                <a href="?category={{ category.slug }}" class="{% if current_category == category.slug %}active{% endif %}">
+                                    {{ category.get_localized_name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Tags Cloud -->
+                {% if tags %}
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">{% trans "Популярные теги" %}</h3>
+                        <div class="tags-cloud">
+                            {% for tag in tags %}
+                                <a href="?tag={{ tag }}" class="tag-cloud-item">{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

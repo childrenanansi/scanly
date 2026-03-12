@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import translation
 from django.urls import reverse
-from .models import MainModel, Category, FriendLink, FAQ
+from .models import MainModel, Category, FriendLink, FAQ, News, NewsCategory
 from .serializers import MainModelSerializer, CategorySerializer, FriendLinkSerializer, FAQSerializer
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
@@ -431,3 +431,143 @@ def set_language(request):
         return response
     
     return redirect(next_url)
+
+
+# Blog Views
+def blog_list(request):
+    """
+    Список всех новостей с пагинацией и фильтрами
+    """
+    from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+    
+    # Получаем параметры фильтрации
+    category_slug = request.GET.get('category')
+    tag = request.GET.get('tag')
+    featured = request.GET.get('featured')
+    
+    # Базовый queryset
+    news_queryset = News.objects.filter(status='published').select_related('category').prefetch_related('category')
+    
+    # Применяем фильтры
+    if category_slug:
+        news_queryset = news_queryset.filter(category__slug=category_slug)
+    
+    if tag:
+        news_queryset = news_queryset.filter(tags__icontains=tag)
+    
+    if featured:
+        news_queryset = news_queryset.filter(is_featured=True)
+    
+    # Сортировка
+    news_queryset = news_queryset.order_by('-published_at')
+    
+    # Пагинация
+    paginator = Paginator(news_queryset, 12)  # 12 новостей на страницу
+    page = request.GET.get('page')
+    
+    try:
+        news = paginator.page(page)
+    except PageNotAnInteger:
+        news = paginator.page(1)
+    except EmptyPage:
+        news = paginator.page(paginator.num_pages)
+    
+    # Получаем категории для фильтра
+    categories = NewsCategory.objects.filter(is_active=True).order_by('order')
+    
+    # Избранные новости для сайдбара
+    featured_news = News.objects.filter(status='published', is_featured=True).order_by('-published_at')[:5]
+    
+    context = {
+        'news': news,
+        'categories': categories,
+        'featured_news': featured_news,
+        'current_category': category_slug,
+        'current_tag': tag,
+        'page_type': 'blog',
+    }
+    
+    return render(request, 'blog/blog_list.html', context)
+
+
+def blog_detail(request, slug):
+    """
+    Детальная страница новости с SEO оптимизацией
+    """
+    try:
+        news_item = News.objects.get(slug=slug, status='published')
+    except News.DoesNotExist:
+        return render(request, '404.html', status=404)
+    
+    # Увеличиваем счетчик просмотров
+    news_item.view_count += 1
+    news_item.save(update_fields=['view_count'])
+    
+    # Получаем похожие новости
+    related_news = News.objects.filter(
+        status='published',
+        category=news_item.category
+    ).exclude(id=news_item.id).order_by('-published_at')[:4]
+    
+    # Получаем последние новости
+    latest_news = News.objects.filter(
+        status='published'
+    ).exclude(id=news_item.id).order_by('-published_at')[:5]
+    
+    # Получаем теги как список
+    tags = news_item.get_tag_list()
+    
+    context = {
+        'news_item': news_item,
+        'related_news': related_news,
+        'latest_news': latest_news,
+        'tags': tags,
+        'page_type': 'blog_detail',
+    }
+    
+    return render(request, 'blog/blog_detail.html', context)
+
+
+def blog_category(request, slug):
+    """
+    Страница категории новостей
+    """
+    from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+    
+    try:
+        category = NewsCategory.objects.get(slug=slug, is_active=True)
+    except NewsCategory.DoesNotExist:
+        return render(request, '404.html', status=404)
+    
+    # Получаем новости категории
+    news_queryset = News.objects.filter(
+        status='published',
+        category=category
+    ).order_by('-published_at')
+    
+    # Пагинация
+    paginator = Paginator(news_queryset, 12)
+    page = request.GET.get('page')
+    
+    try:
+        news = paginator.page(page)
+    except PageNotAnInteger:
+        news = paginator.page(1)
+    except EmptyPage:
+        news = paginator.page(paginator.num_pages)
+    
+    # Получаем все категории для сайдбара
+    categories = NewsCategory.objects.filter(is_active=True).order_by('order')
+    
+    # Избранные новости для сайдбара
+    featured_news = News.objects.filter(status='published', is_featured=True).order_by('-published_at')[:5]
+    
+    context = {
+        'category': category,
+        'news': news,
+        'categories': categories,
+        'featured_news': featured_news,
+        'page_type': 'blog_category',
+    }
+    
+    return render(request, 'blog/blog_category.html', context)

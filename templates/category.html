@@ -4,21 +4,40 @@
 {% block title %}{% if selected_category %}{{selected_category.name}} - {% else %}{% trans "Все категории" %} - {% endif %}{% trans "SCANLY - Ваш персональный поиск моделей на основе ИИ" %}{% endblock %}
 
 {% block content %}
-<!-- Categories Tiles Section -->
-<section class="categories-tiles-section py-4">
+<!-- Categories Burger Menu -->
+<section class="categories-tiles-section py-4" style="z-index: 999999;    position: relative;">
     <div class="container-fluid">
         <div class="categories-tiles">
-            {% for category in all_categories %}
-                <a href="{% url 'category_page' category.alias %}" class="category-tile {% if selected_category and selected_category.id == category.id %}active{% endif %}">
-                    <span class="category-tile-name">
-                        {% if current_language == 'en' %}
-                            {{category.name_en}}
+            <button class="btn btn-outline-primary categories-toggle w-100" type="button" id="categoriesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>
+                        {% if selected_category %}
+                            {% if current_language == 'en' %}
+                                {{selected_category.name_en}}
+                            {% else %}
+                                {{selected_category.name_ru}}
+                            {% endif %}
                         {% else %}
-                            {{category.name_ru}}
+                            {% trans "Все категории" %}
                         {% endif %}
                     </span>
-                </a>
-            {% endfor %}
+                    <i class="bi bi-list"></i>
+                </div>
+            </button>
+            <ul class="dropdown-menu categories-dropdown-menu w-100" aria-labelledby="categoriesDropdown">
+                {% for category in all_categories %}
+                    <li>
+                        <a class="dropdown-item {% if selected_category and selected_category.id == category.id %}active{% endif %}" 
+                           href="{% url 'category_page' category.alias %}">
+                            {% if current_language == 'en' %}
+                                {{category.name_en}}
+                            {% else %}
+                                {{category.name_ru}}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </section>

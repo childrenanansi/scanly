@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainModel, Category, FriendLink, FAQ
+from .models import MainModel, Category, FriendLink, FAQ, News, NewsCategory
 
 
 @admin.register(FAQ)
@@ -176,3 +176,90 @@ class CategoryAdmin(admin.ModelAdmin):
                 }
             )
         self.message_user(request, f'✅ Опубликовано: ')
+
+
+@admin.register(NewsCategory)
+class NewsCategoryAdmin(admin.ModelAdmin):
+    list_display = ['get_localized_name', 'slug', 'order', 'is_active', 'created_at']
+    list_filter = ['is_active', 'created_at']
+    list_editable = ['order', 'is_active']
+    search_fields = ['name_ru', 'name_en', 'slug']
+    prepopulated_fields = {'slug': ('name_ru',)}
+    
+    def get_localized_name(self, obj):
+        return obj.get_localized_name
+    get_localized_name.short_description = 'Название'
+    
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('name_ru', 'name_en', 'slug', 'order', 'is_active')
+        }),
+        ('Описание', {
+            'fields': ('description_ru', 'description_en')
+        }),
+        ('SEO', {
+            'fields': ('meta_title_ru', 'meta_title_en', 'meta_description_ru', 'meta_description_en')
+        }),
+    )
+
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ['get_localized_title', 'category', 'status', 'is_featured', 'is_breaking', 'published_at', 'view_count']
+    list_filter = ['status', 'is_featured', 'is_breaking', 'category', 'published_at']
+    list_editable = ['status', 'is_featured', 'is_breaking']
+    search_fields = ['title_ru', 'title_en', 'content_ru', 'content_en', 'tags']
+    prepopulated_fields = {'slug': ('title_ru',)}
+    filter_horizontal = []
+    date_hierarchy = 'published_at'
+    
+    def get_localized_title(self, obj):
+        return obj.get_localized_title
+    get_localized_title.short_description = 'Заголовок'
+    
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('title_ru', 'title_en', 'slug', 'status', 'category', 'tags')
+        }),
+        ('SEO метаданные', {
+            'fields': ('meta_title_ru', 'meta_title_en', 'meta_description_ru', 'meta_description_en', 'meta_keywords_ru', 'meta_keywords_en')
+        }),
+        ('Контент', {
+            'fields': ('short_description_ru', 'short_description_en', 'content_ru', 'content_en')
+        }),
+        ('Изображения', {
+            'fields': ('preview_image', 'main_image')
+        }),
+        ('Автор (E-E-A-T)', {
+            'fields': ('author_name', 'author_bio_ru', 'author_bio_en', 'author_avatar')
+        }),
+        ('Экспертиза (E-E-A-T)', {
+            'fields': ('expert_name', 'expert_title_ru', 'expert_title_en', 'expert_avatar')
+        }),
+        ('Настройки', {
+            'fields': ('is_featured', 'is_breaking', 'allow_comments', 'reading_time')
+        }),
+        ('Аналитика', {
+            'fields': ('view_count',)
+        }),
+    )
+    
+    readonly_fields = ('view_count',)
+    
+    actions = ['publish_news', 'make_featured', 'make_breaking']
+    
+    @admin.action(description='Опубликовать выбранные новости')
+    def publish_news(self, request, queryset):
+        from django.utils import timezone
+        updated = queryset.update(status='published', published_at=timezone.now())
+        self.message_user(request, f'✅ Опубликовано {updated} новостей')
+    
+    @admin.action(description='Сделать избранными')
+    def make_featured(self, request, queryset):
+        updated = queryset.update(is_featured=True)
+        self.message_user(request, f'✅ Сделано избранными {updated} новостей')
+    
+    @admin.action(description='Отметить как срочные')
+    def make_breaking(self, request, queryset):
+        updated = queryset.update(is_breaking=True)
+        self.message_user(request, f'✅ Отмечено как срочные {updated} новостей')
